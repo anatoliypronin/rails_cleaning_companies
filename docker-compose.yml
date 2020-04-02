@@ -4,6 +4,7 @@ services:
   web:
     build: .
     image: rails_cleaning_companies/web
+    command: bash -c "puma"
     container_name: clean-web
     ports:
       - 8080:8080
