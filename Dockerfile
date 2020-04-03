@@ -11,8 +11,9 @@ RUN mkdir -p /app && \
   npm install webpack yarn -g
 
 RUN bundle install --jobs 4 --no-binstubs && \
-  yarn install && \
-  bin/rake assets:precompile NODE_ENV=production RAILS_ENV=production && \
-  bin/rake webpacker:compile NODE_ENV=production RAILS_ENV=production
+-  yarn install && \
++  yarn install --check-files && \
+   bin/rake assets:precompile NODE_ENV=production RAILS_ENV=production && \
+   bin/rake webpacker:compile NODE_ENV=production RAILS_ENV=production
 
 EXPOSE 8080
