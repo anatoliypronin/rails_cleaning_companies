@@ -1,11 +1,16 @@
 version: '3'
 
 services:
+  db:
+    image: postgres:10.6
+    container_name: clean_db
   web:
     build: .
     image: rails_cleaning_companies/web
-    command: bash -c "puma"
     container_name: clean-web
+    command: bash -c "puma"
+    depends_on:
+      - db
     ports:
       - 8080:8080
     volumes:
