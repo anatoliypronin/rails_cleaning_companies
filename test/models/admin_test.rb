@@ -6,7 +6,7 @@ class AdminTest < ActiveSupport::TestCase
     admin.save
 
     created_admin = Admin.last
-    assert created_admin.persisted?
+    assert created_admin
   end
 
   test "should not create admin without email" do
