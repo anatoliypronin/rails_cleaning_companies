@@ -1,9 +1,6 @@
 require 'test_helper'
 
 class AdminTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
   test "should create admin" do
     admin = build :admin
     admin.save
