@@ -10,7 +10,7 @@ class ClientTest < ActiveSupport::TestCase
   end
 
   test 'Not enough numbers in phone number' do
-    client = build :client, phonenumber: '8'
+    client = build :client, phone_number: '8'
     client.save
 
     created_client = Client.last
@@ -18,7 +18,7 @@ class ClientTest < ActiveSupport::TestCase
   end
 
   test 'Letters in phonenumber' do 
-    client = build :client, phonenumber: '8900900WHOOP'
+    client = build :client, phone_number: '8900900WHOOP'
     client.save
 
     created_client = Client.last
@@ -34,7 +34,7 @@ class ClientTest < ActiveSupport::TestCase
   end
 
   test 'Small password' do 
-    client = build :client, password_digest: '123' 
+    client = build :client, password_digest: '123'
     client.save
 
     created_client = Client.last

@@ -4,6 +4,6 @@ FactoryBot.define do
     surname { 'MyString' }
     email { 'mymail@mail.ru' }
     password_digest { 'TestPasswordTest' }
-    phonenumber { '88005553535' }
+    phone_number { '88005553535' }
   end
 end
