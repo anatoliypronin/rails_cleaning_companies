@@ -10,7 +10,7 @@ class CompanyTest < ActiveSupport::TestCase
   end
 
   test "should not create company without email" do
-    company = build :company, email: nil
+    company = build :company, email: nil || "wrong email"
     company.save
 
     created_company = Company.last
