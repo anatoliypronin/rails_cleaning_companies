@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :article do
     title { "MyString" }
-    description { "MyString" }
-    body { "MyText" }
+    short_description { "MyString" }
+    description { "MyText" }
   end
 end
