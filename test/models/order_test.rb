@@ -40,4 +40,20 @@ class OrderTest < ActiveSupport::TestCase
     created_order = Order.last
     assert_not created_order
   end
+  test "Shouldn't create, review is > 5 or < 0 " do
+    order = build :order, review: 7
+    order.save
+
+    created_order = Order.last
+    assert_not created_order
+  end
+
+  test "Should create, review is right value " do
+    order = build :order, review: 2
+    order.save
+
+    created_order = Order.last
+    assert created_order
+  end
+  
 end
