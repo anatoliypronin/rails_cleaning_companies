@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class CityTest < ActiveSupport::TestCase
-  test "Should create City" do
+  test 'Should create City' do
     city = build :city
     city.save
 
@@ -9,7 +9,7 @@ class CityTest < ActiveSupport::TestCase
     assert created_city
   end
 
-  test "Should not create City" do
+  test 'Should not create City' do
     city = build :city, name: nil
     city.save
 
@@ -17,7 +17,7 @@ class CityTest < ActiveSupport::TestCase
     assert_not created_city
   end
 
-  test "Lesser than minimum" do
+  test 'Lesser than minimum' do
     city = build :city, name: 'Ker'
     city.save
 
