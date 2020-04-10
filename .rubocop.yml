@@ -1,0 +1,75 @@
+require: rubocop-rails
+
+Rails:
+  Enabled: true
+AllCops:
+  Exclude:
+    - "bin/*"
+    - "bundle_cache/**/*"
+    - "config/**/*"
+    - "db/**/*"
+    - "node_modules/**/*"
+    - "script/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+
+#This cop checks that the ABC size of methods is not higher than the configured maximum.
+Metrics/AbcSize:
+  Max: 30
+
+#This cop checks if the length of a block exceeds some maximum value.
+Metrics/BlockLength:
+  Enabled: false
+
+#This cop checks if the length a class exceeds some maximum value.
+Metrics/ClassLength:
+  Max: 120
+
+#This cop checks that the cyclomatic complexity of methods is not higher than the configured maximum.
+Metrics/CyclomaticComplexity:
+  Max: 10
+
+#This cop checks the length of lines in the source code. The maximum length is configurable.  
+Metrics/LineLength:
+  Max: 120
+
+#This cop checks if the length a method exceeds some maximum value. 
+#Comment lines can optionally be ignored. The maximum allowed length is configurable.
+Metrics/MethodLength:
+  Max: 30
+
+#This cop checks if the length a module exceeds some maximum value. 
+#Comment lines can optionally be ignored. The maximum allowed length is configurable.
+Metrics/ModuleLength:
+  Max: 150
+
+#This cop tries to produce a complexity score that's a measure of the complexity the 
+#reader experiences when looking at a method.
+Metrics/PerceivedComplexity:
+  Max: 10
+
+#This cop checks for non-ascii (non-English) characters in comments. 
+Style/AsciiComments:
+  Enabled: false
+
+#This cop checks the style of children definitions at classes and modules.
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+#This cop checks for missing top-level documentation of classes and modules. 
+#Classes with no body are exempt from the check and so are namespace modules
+#- modules that have nothing in their bodies except classes, other modules, 
+#constant definitions or constant visibility declarations.
+Style/Documentation:
+  Enabled: false
+
+#This cop checks for usage of comparison operators (==, >, <) to test numbers as zero, 
+#positive, or negative. These can be replaced by their respective predicate methods. 
+Style/NumericPredicate:
+  Exclude:
+    - "spec/**/*"
+    
+#This cop is designed to help upgrade to Ruby 3.0. 
+#It will add the comment `# frozen_string_literal: true` to the top of files to enable frozen string literals.
+Style/FrozenStringLiteralComment:
+  Enabled: false
