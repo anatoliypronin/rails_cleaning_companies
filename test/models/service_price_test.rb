@@ -14,4 +14,11 @@ class ServicePriceTest < ActiveSupport::TestCase
     service_price = build :service_price, state: 'test'
     assert_not service_price.save
   end
+  
+  test 'should deleted service_price' do
+    service_price = create :service_price
+    service_price.to_deleted
+    service_price.reload
+    assert_equal 'deleted', service_price.state
+  end
 end
