@@ -7,7 +7,7 @@ gem 'enumerize'
 gem 'pg'
 gem 'phonelib'
 gem 'rubocop-rails', require: false
-#gem 'simple_form'
+gem 'simple_form'
 gem 'state_machines-activerecord'
 gem 'valid_email'
 
