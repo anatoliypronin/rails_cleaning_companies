@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class AdminTest < ActiveSupport::TestCase
-  test "should create admin" do
+  test 'should create admin' do
     admin = build :admin
     admin.save
 
@@ -9,7 +9,7 @@ class AdminTest < ActiveSupport::TestCase
     assert created_admin
   end
 
-  test "should not create admin without email" do
+  test 'should not create admin without email' do
     admin = build :admin, email: nil
     admin.save
 
