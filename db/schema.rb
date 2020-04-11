@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_04_08_192646) do
 
   create_table "service_prices", force: :cascade do |t|
     t.integer "price"
+    t.string "state"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

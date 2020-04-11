@@ -1,15 +1,17 @@
 require 'test_helper'
 
 class ServicePriceTest < ActiveSupport::TestCase
-  test "should create service_price" do
+  test 'should create service_price' do
     assert create :service_price
   end
 
   test 'should not create service price, not integer price' do
     service_price = build :service_price, price: 'test123'
-    service_price.save
+    assert_not service_price.save
+  end
 
-    created_service_price = ServicePrice.last
-    assert_nil created_service_price
+  test 'should not create with wrong state' do
+    service_price = build :service_price, state: 'test'
+    assert_not service_price.save
   end
 end
