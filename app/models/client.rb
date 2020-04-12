@@ -6,3 +6,4 @@ class Client < ApplicationRecord
   validates :password_digest, length: { minimum: 5 }
   validates :phone_number, phone: true
 end
+
