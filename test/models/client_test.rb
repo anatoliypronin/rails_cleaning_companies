@@ -40,4 +40,10 @@ class ClientTest < ActiveSupport::TestCase
     created_client = Client.last
     assert_nil created_client
   end
+
+  test 'should deleted client' do
+    client = create :client
+    client.del
+    assert_equal 'deleted', client.state
+  end
 end
