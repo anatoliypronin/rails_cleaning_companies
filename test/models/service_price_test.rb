@@ -13,8 +13,7 @@ class ServicePriceTest < ActiveSupport::TestCase
 
   test 'should deleted service_price' do
     service_price = create :service_price
-    service_price.deleted
-    service_price.reload
+    service_price.del
     assert_equal 'deleted', service_price.state
   end
 

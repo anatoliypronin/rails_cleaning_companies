@@ -3,23 +3,23 @@ class ServicePrice < ApplicationRecord
   belongs_to :city
   belongs_to :company
 
-  validates :price, presence: true, numericality: { only_integer: true }
+  validates :price, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
   state_machine initial: :active do
     state :active
     state :disable
     state :deleted
 
-    event :disabled do
-      transition active: :unavailable, deleted: :unavailable
+    event :disable do
+      transition active: :disable, deleted: :disable
     end
 
-    event :deleted do
-      transition unavailable: :deleted, active: :deleted
+    event :del do
+      transition disable: :deleted, active: :deleted
     end
 
-    event :activated do
-      transition deleted: :active, unavailable: :active
+    event :activate do
+      transition deleted: :active, disable: :active
     end
   end
 end
