@@ -1,4 +1,8 @@
 class ServicePrice < ApplicationRecord
+  belongs_to :service
+  belongs_to :city
+  belongs_to :company
+
   validates :price, presence: true, numericality: { only_integer: true }
 
   state_machine initial: :active do
