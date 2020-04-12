@@ -1,5 +1,5 @@
 class Company < ApplicationRecord
-  has_many :service_prices, dependent: :restrict_with_error
+  has_many :service_prices, dependent: :destroy
 
   validates :name, :email, :password_digest, :requisites, :description,
             presence: true
