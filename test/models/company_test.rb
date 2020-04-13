@@ -40,4 +40,10 @@ class CompanyTest < ActiveSupport::TestCase
     created_company = Company.last
     assert_nil created_company
   end
+
+  test 'should deleted company' do
+    company = create :company
+    company.del
+    assert_equal 'deleted', company.state
+  end
 end

@@ -20,7 +20,6 @@ class AdminTest < ActiveSupport::TestCase
   test 'email should be unique' do
     first_admin = build :admin, email: 'test@gmail.com'
     first_admin.save
-
     second_admin = build :admin, email: 'test@gmail.com'
     assert_not second_admin.save
   end
@@ -28,5 +27,11 @@ class AdminTest < ActiveSupport::TestCase
   test 'should not create incorrect role' do
     admin = build :admin, role: 'some_test_role'
     assert admin.invalid?
+  end
+
+  test 'should deleted admin' do
+    admin = create :admin
+    admin.del
+    assert_equal 'deleted', admin.state
   end
 end
