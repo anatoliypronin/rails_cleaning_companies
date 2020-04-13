@@ -9,14 +9,13 @@ class Client < ApplicationRecord
   state_machine initial: :active do
     state :active
     state :deleted
-  
+
     event :del do
       transition active: :deleted
     end
-  
+
     event :activate do
       transition deleted: :active
     end
   end
 end
-
