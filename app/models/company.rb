@@ -1,4 +1,7 @@
 class Company < ApplicationRecord
+  has_many :company_cities, dependent: :destroy
+  has_many :cities, through: :company_cities
+  
   validates :name, :email, :password_digest, :requisites, :description,
             presence: true
   validates :name, length: { maximum: 30 }

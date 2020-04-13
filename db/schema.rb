@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_12_233323) do
+ActiveRecord::Schema.define(version: 2020_04_13_081516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,16 @@ ActiveRecord::Schema.define(version: 2020_04_12_233323) do
     t.string "state"
   end
 
+  create_table "company_cities", force: :cascade do |t|
+    t.bigint "company_id", null: false
+    t.bigint "city_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["city_id"], name: "index_company_cities_on_city_id"
+    t.index ["company_id", "city_id"], name: "index_company_cities_on_company_id_and_city_id", unique: true
+    t.index ["company_id"], name: "index_company_cities_on_company_id"
+  end
+
   create_table "service_prices", force: :cascade do |t|
     t.bigint "service_id", null: false
     t.bigint "city_id", null: false
@@ -75,6 +85,8 @@ ActiveRecord::Schema.define(version: 2020_04_12_233323) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "company_cities", "cities"
+  add_foreign_key "company_cities", "companies"
   add_foreign_key "service_prices", "cities"
   add_foreign_key "service_prices", "companies"
   add_foreign_key "service_prices", "services"
