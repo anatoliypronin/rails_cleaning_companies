@@ -1,12 +1,12 @@
 FactoryBot.define do
   factory :company do
-    name { "MyString" }
-    email { "test@mail.ru" }
-    password_digest { "MyString" }
-    requisites { "MyText" }
-    description { "MyText" }
+    name
+    email
+    password_digest
+    requisites
+    description
     rating { 1.5 }
-    website { "MyString" }
-    phone_number { "88007773555" }
+    website
+    phone_number
   end
 end

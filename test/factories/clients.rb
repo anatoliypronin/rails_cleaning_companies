@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :client do
-    name { 'MyString' }
-    surname { 'MyString' }
-    email { 'mymail@mail.ru' }
-    password_digest { 'TestPasswordTest' }
-    phone_number { '88005553535' }
+    name
+    surname
+    email
+    password_digest
+    phone_number
   end
 end

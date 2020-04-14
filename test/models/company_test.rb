@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class CompanyTest < ActiveSupport::TestCase
-  test "should create company" do
+  test 'should create company' do
     company = build :company
     company.save
 
@@ -9,8 +9,8 @@ class CompanyTest < ActiveSupport::TestCase
     assert created_company
   end
 
-  test "should not create company without email" do
-    company = build :company, email: nil || "wrong email"
+  test 'should not create company without email' do
+    company = build :company, email: nil || 'wrong email'
     company.save
 
     created_company = Company.last
@@ -33,11 +33,17 @@ class CompanyTest < ActiveSupport::TestCase
     assert_nil created_company
   end
 
-  test "should not create company with wrong raiting range" do
+  test 'should not create company with wrong raiting range' do
     company = build :company, rating: 6
     company.save
 
     created_company = Company.last
     assert_nil created_company
+  end
+
+  test 'should deleted company' do
+    company = create :company
+    company.del
+    assert_equal 'deleted', company.state
   end
 end

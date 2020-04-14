@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ServiceTest < ActiveSupport::TestCase
-  test "Should create" do
+  test 'Should create' do
     service = build :service
     service.save
 
@@ -9,7 +9,7 @@ class ServiceTest < ActiveSupport::TestCase
     assert created_service
   end
 
-  test "Empty service" do
+  test 'Empty service' do
     service = build :service, name: nil
     service.save
 
@@ -17,7 +17,7 @@ class ServiceTest < ActiveSupport::TestCase
     assert_not created_service
   end
 
-  test "Lesser than minimum" do
+  test 'Lesser than minimum' do
     service = build :service, name: 'Test'
     service.save
 
