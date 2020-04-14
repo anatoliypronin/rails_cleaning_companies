@@ -6,14 +6,11 @@ ruby '2.6.3'
 gem 'enumerize'
 gem 'pg'
 gem 'phonelib'
-<<<<<<< HEAD
 gem 'validates_timeliness'
-=======
 gem 'rubocop-rails', require: false
 gem 'simple_form'
 gem 'state_machines-activerecord'
 gem 'valid_email'
->>>>>>> f2b84a8bd6117c5af0c6ba2b0b17a55db1db4bc4
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
