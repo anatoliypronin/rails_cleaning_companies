@@ -1,0 +1,15 @@
+%table
+  %tr
+    %td Идентификатор
+    %td Имя
+    %td Почта
+    %td Роль
+    %td Пароль
+  - @admins.each do |admin|
+    %tr
+      %td=admin.id
+      %td=admin.name
+      %td=admin.email
+      %td=admin.role
+      %td=admin.password_digest
+
