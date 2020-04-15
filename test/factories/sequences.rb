@@ -18,4 +18,17 @@ FactoryBot.define do
   sequence :phone_number do
     "8800#{rand(10**6..10**7)}"
   end
+  sequence :date_start do
+    Time.now
+  end
+
+  sequence :date_end do
+    Time.now + 86400
+  end
+  
+  
+  sequence :review do
+    rand(0.0..5.0)
+  end
+
 end

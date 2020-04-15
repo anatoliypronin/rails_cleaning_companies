@@ -2,6 +2,7 @@ class Company < ApplicationRecord
   has_many :company_cities, dependent: :destroy
   has_many :cities, through: :company_cities
   has_many :service_prices, dependent: :destroy
+  has_many :orders
 
   validates :name, :email, :password_digest, :requisites, :description,
             presence: true

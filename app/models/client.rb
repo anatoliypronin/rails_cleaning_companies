@@ -1,4 +1,6 @@
 class Client < ApplicationRecord
+  has_many :orders
+
   validates :name, :email, :password_digest, :phone_number, presence: true
   validates :name, length: { maximum: 30 }
   validates :surname, length: { maximum: 30 }

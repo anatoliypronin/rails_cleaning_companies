@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_04_09_114444) do
-=======
 ActiveRecord::Schema.define(version: 2020_04_13_215125) do
->>>>>>> f2b84a8bd6117c5af0c6ba2b0b17a55db1db4bc4
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,14 +29,6 @@ ActiveRecord::Schema.define(version: 2020_04_13_215125) do
     t.string "title", null: false
     t.text "short_description", null: false
     t.text "description", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.string "short_description"
-    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -86,6 +74,21 @@ ActiveRecord::Schema.define(version: 2020_04_13_215125) do
     t.index ["company_id"], name: "index_company_cities_on_company_id"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.bigint "service_id", null: false
+    t.bigint "client_id", null: false
+    t.bigint "company_id", null: false
+    t.string "state"
+    t.datetime "date_start", null: false
+    t.datetime "date_end", null: false
+    t.float "review", default: 0.0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id"], name: "index_orders_on_client_id"
+    t.index ["company_id"], name: "index_orders_on_company_id"
+    t.index ["service_id"], name: "index_orders_on_service_id"
+  end
+
   create_table "service_prices", force: :cascade do |t|
     t.bigint "service_id", null: false
     t.bigint "city_id", null: false
@@ -99,15 +102,6 @@ ActiveRecord::Schema.define(version: 2020_04_13_215125) do
     t.index ["service_id"], name: "index_service_prices_on_service_id"
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.string "status"
-    t.datetime "date_start"
-    t.datetime "date_end"
-    t.float "review"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "services", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -116,6 +110,9 @@ ActiveRecord::Schema.define(version: 2020_04_13_215125) do
 
   add_foreign_key "company_cities", "cities"
   add_foreign_key "company_cities", "companies"
+  add_foreign_key "orders", "clients"
+  add_foreign_key "orders", "companies"
+  add_foreign_key "orders", "services"
   add_foreign_key "service_prices", "cities"
   add_foreign_key "service_prices", "companies"
   add_foreign_key "service_prices", "services"
