@@ -19,16 +19,14 @@ FactoryBot.define do
     "8800#{rand(10**6..10**7)}"
   end
   sequence :date_start do
-    Time.now
+    Time.zone.now
   end
 
   sequence :date_end do
-    Time.now + 86400
+    Time.zone.now + 86_400
   end
-  
-  
+
   sequence :review do
     rand(0.0..5.0)
   end
-
 end

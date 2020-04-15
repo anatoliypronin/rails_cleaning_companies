@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :company
   belongs_to :client
-  belongs_to :service 
+  belongs_to :service
 
   validates :date_start, :date_end, :review, presence: true
   validates :review, numericality: { greater_than_or_equal_to: 0.0, less_than_or_equal_to: 5.0 }
@@ -17,13 +17,13 @@ class Order < ApplicationRecord
     event :activate do
       transition pending: :active
     end
-    
+
     event :reject do
       transition pending: :rejected
-    end 
+    end
 
     event :complete do
       transition accepted: :completed
-    end 
+    end
   end
 end

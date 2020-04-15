@@ -7,11 +7,11 @@ gem 'enumerize'
 gem 'haml-rails', '~> 2.0'
 gem 'pg'
 gem 'phonelib'
-gem 'validates_timeliness'
 gem 'rubocop-rails', require: false
 gem 'simple_form'
 gem 'state_machines-activerecord'
 gem 'valid_email'
+gem 'validates_timeliness'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'

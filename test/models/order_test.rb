@@ -14,7 +14,7 @@ class OrderTest < ActiveSupport::TestCase
 
     created_order = Order.last
     assert_not created_order
-    end
+  end
 
   test "Shouldn't create, date_start is after date_end" do
     order = build :order, date_start: '2091-04-09 15:00:25'
@@ -31,5 +31,4 @@ class OrderTest < ActiveSupport::TestCase
     created_order = Order.last
     assert_not created_order
   end
-
 end
