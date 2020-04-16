@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_215125) do
     t.bigint "service_id", null: false
     t.bigint "client_id", null: false
     t.bigint "company_id", null: false
-    t.string "state"
+    t.string "state", null: false
     t.datetime "date_start", null: false
     t.datetime "date_end", null: false
     t.float "review", default: 0.0

@@ -1,5 +1,5 @@
 class Client < ApplicationRecord
-  has_many :orders, dependant: :destroy
+  has_many :orders, dependent: :destroy
 
   validates :name, :email, :password_digest, :phone_number, presence: true
   validates :name, length: { maximum: 30 }
