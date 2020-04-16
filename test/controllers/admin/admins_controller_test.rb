@@ -12,18 +12,42 @@ class Admin::AdminsControllerTest < ActionDispatch::IntegrationTest
     get new_admin_admin_path
     assert_response :success
   end
- 
+
   test 'should post create admin' do
-      admins_attrs = attributes_for :admin
-      post admin_admins_path, params: { admin: admins_attrs}
-      assert_response :redirect
-      admin = Admin.find_by(email: admins_attrs[:email])
-      assert_equal admins_attrs[:email], admin.email
+    admins_attrs = attributes_for :admin
+    post admin_admins_path, params: { admin: admins_attrs }
+    assert_response :redirect
+    admin = Admin.find_by(email: admins_attrs[:email])
+    assert_equal admins_attrs[:email], admin.email
   end
 
-  test 'should get admin page' do
+  test 'should get show admin page' do
     admin = create :admin
     get admin_admin_path(admin.id)
-    assert_response :success 
+    assert_response :success
+  end
+
+  test 'should get edit admin page' do
+    admin = create :admin
+    get edit_admin_admin_path(admin.id)
+    assert_response :success
+  end
+
+  test 'should put update admin' do
+    admin = create :admin
+    attrs = {}
+    attrs[:name] = generate :name
+    put admin_admin_path(admin.id), params: { admin: attrs }
+    assert_response :redirect
+    admin.reload
+    assert_equal attrs[:name], admin.name
+  end
+
+  test 'should delete destroy admin' do
+    admin = create :admin
+    delete admin_admin_path(admin.id)
+    assert_response :redirect
+
+    assert_not Admin.exists?(admin.id)
   end
 end
