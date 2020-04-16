@@ -1,0 +1,8 @@
+%h1= @admin.email
+%br
+%b= @admin.name
+%br
+%b= @admin.role
+= link_to 'назад к списку', admin_admins_path
+= link_to 'редактировать', edit_admin_admin_path(@admin.id)
+= link_to 'Destroy',admin_admin_path(@admin.id), method: :delete
