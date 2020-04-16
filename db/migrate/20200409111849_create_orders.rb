@@ -5,8 +5,8 @@ class CreateOrders < ActiveRecord::Migration[6.0]
       t.references :client, null: false, foreign_key: true
       t.references :company, null: false, foreign_key: true
       t.string :state, null: false
-      t.date :date_start, null: false
-      t.date :date_end, null: false
+      t.datetime :date_start, null: false
+      t.datetime :date_end, null: false
       t.float :review, :default => 0.0
 
       t.timestamps
