@@ -12,5 +12,6 @@
       %td=admin.email
       %td=admin.role
       %td=admin.password_digest
+      %td=link_to 'Просмотр', admin_admin_path(admin)
 = link_to 'Выход', root_path
 = link_to 'Создать нового администратора', new_admin_admin_path
