@@ -3,7 +3,7 @@ class Admin::ClientsController < Admin::ApplicationController
     @clients = Client.all
   end
 
-  def new 
+  def new
     @client = Client.new
   end
 
@@ -18,15 +18,15 @@ class Admin::ClientsController < Admin::ApplicationController
   end
 
   def show
-    @client = Client.find(params[:id]) 
+    @client = Client.find(params[:id])
   end
 
   def edit
-    @client = Client.find(params[:id]) 
+    @client = Client.find(params[:id])
   end
 
   def update
-    @client = Client.find(params[:id]) 
+    @client = Client.find(params[:id])
 
     if @client.update(client_attrs)
       redirect_to action: :index
@@ -34,7 +34,7 @@ class Admin::ClientsController < Admin::ApplicationController
       render action: :edit
     end
   end
-  
+
   def destroy
     client = Client.find(params[:id])
     client.destroy
