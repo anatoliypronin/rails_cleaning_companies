@@ -1,0 +1,8 @@
+%h1= @client.email 
+
+%br 
+%b= @client.name 
+%b= @client.surname
+%b= @client.phone_number
+%b= link_to 'Редактировать', edit_admin_client_path(@client)
+%b= link_to 'Удалить', admin_client_path(@client), method: :delete
