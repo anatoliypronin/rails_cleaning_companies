@@ -1,8 +1,14 @@
-%h1= @admin.email
-%br
-%b= @admin.name
-%br
-%b= @admin.role
-= link_to 'назад к списку', admin_admins_path
-= link_to 'редактировать', edit_admin_admin_path(@admin.id)
-= link_to 'Destroy',admin_admin_path(@admin.id), method: :delete
+%table.table
+  %thead
+    %tr
+      %th{:scope => "col"} name
+      %th{:scope => "col"} email
+      %th{:scope => "col"} role
+  %tbody
+    %tr
+      %td=@admin.name
+      %td=@admin.email
+      %td=@admin.role
+= link_to 'back to list', admin_admins_path, :class => "btn btn-info"
+= link_to 'Edit', edit_admin_admin_path(@admin.id), :class => "btn btn-info"
+= link_to 'Destroy',admin_admin_path(@admin.id), method: :delete, :class => "btn btn-info"

@@ -1,17 +1,22 @@
-%table
-  %tr
-    %td Идентификатор
-    %td Имя
-    %td Почта
-    %td Роль
-    %td Пароль
+%table.table
+  %tr.table-info
+    %th ID
+    %th Name
+    %th E-mail
+    %th Role
+    %th Password
+    %th 
   - @admins.each do |admin|
-    %tr
+    %tr.bg-success
       %td=admin.id
       %td=admin.name
       %td=admin.email
       %td=admin.role
       %td=admin.password_digest
-      %td=link_to 'Просмотр', admin_admin_path(admin)
-= link_to 'Выход', root_path
-= link_to 'Создать нового администратора', new_admin_admin_path
+      %td=link_to 'View profile', admin_admin_path(admin)
+.btn.btn-light
+  = link_to 'exit', admin_root_path, :class => "btn btn-info"
+.btn.btn-light
+  = link_to 'Create new', new_admin_admin_path, :class => "btn btn-info"
+
+

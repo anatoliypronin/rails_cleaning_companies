@@ -2,6 +2,8 @@ Rails.application.routes.draw do
  root to: 'welcome#index'
 
  namespace :admin do
-  resources :admins
+    root 'welcome#index'
+    resources :admins
+    
  end  
 end
