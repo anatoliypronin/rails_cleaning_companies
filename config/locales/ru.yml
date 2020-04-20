@@ -1,0 +1,35 @@
+ru:
+
+  admin:
+    clients:
+      index:
+        show: "Просмотр"
+        create: "Создать"
+        back: "Назад"
+      new:
+        back: "Назад"
+      show:
+        delete: "Удалить"
+        edit: "Изменить"
+        back: "Назад"
+
+  activerecord:
+    state_machines:
+      client:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            restore: Восстановить
+
+    models:
+      client:
+        one: Клиент
+        others: Клиенты
+
+    attributes:
+      client:
+        name: "Имя"
+        surname: Фамилия
