@@ -45,6 +45,6 @@ class Admin::ClientsController < Admin::ApplicationController
   private
 
   def client_attrs
-    params.require(:client).permit(:name, :surname, :email, :phone_number, :password_digest)
+    params.require(:client).permit(:name, :surname, :email, :phone_number, :password)
   end
 end

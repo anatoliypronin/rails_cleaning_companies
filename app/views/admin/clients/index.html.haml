@@ -5,7 +5,7 @@
     %td Фамилия
     %td Почта
     %td Телефон
-    %td Пароль
+
   - @clients.each do |client|
     %tr
       %td= client.id
@@ -13,7 +13,6 @@
       %td= client.surname
       %td= client.email
       %td= client.phone_number
-      %td= client.password_digest
       %td= link_to 'Просмотр', admin_client_path(client)
 = link_to 'Создать нового клиента', new_admin_client_path(@client)
 = link_to 'Выход', root_path
