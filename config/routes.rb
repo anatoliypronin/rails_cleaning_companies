@@ -2,6 +2,7 @@ Rails.application.routes.draw do
  root to: 'welcome#index'
 
  namespace :admin do
-  resources :admins, :clients
+  resources :admins
+  resources :clients
  end  
 end
