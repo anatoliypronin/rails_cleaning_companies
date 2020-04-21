@@ -53,10 +53,8 @@ class Admin::AdminsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should activate admin' do
     admin = create :admin
-
-    activate admin_admin_path(admin.id)
-    assert_response :redirect
+    admin_admin_restore_path(admin.id)
     admin.reload
-    assert admin.activate?
+    assert admin.active?
   end
 end
