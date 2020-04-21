@@ -1,4 +1,5 @@
 ru:
+  id: ID
 
   admin:
     clients:
@@ -12,6 +13,8 @@ ru:
         delete: "Удалить"
         edit: "Изменить"
         back: "Назад"
+
+
 
   activerecord:
     state_machines:
@@ -31,5 +34,9 @@ ru:
 
     attributes:
       client:
-        name: "Имя"
+        name: Имя
         surname: Фамилия
+        email: Почта
+        phone_number: Телефон
+        password: Пароль
+

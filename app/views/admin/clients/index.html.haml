@@ -1,10 +1,11 @@
 %table
   %tr
-    %td Идентификатор
-    %td Имя
-    %td Фамилия
-    %td Почта
-    %td Телефон
+    %td= I18n.t('.id')
+    %td= Client.human_attribute_name(:name)
+    %td= Client.human_attribute_name(:surname)
+    %td= Client.human_attribute_name(:email)
+    %td= Client.human_attribute_name(:phone_number)
+    %td= Client.human_attribute_name(:state)
 
   - @clients.each do |client|
     %tr
@@ -13,6 +14,7 @@
       %td= client.surname
       %td= client.email
       %td= client.phone_number
-      %td= link_to 'Просмотр', admin_client_path(client)
-= link_to 'Создать нового клиента', new_admin_client_path(@client)
-= link_to 'Выход', root_path
+      %td= client.state
+      %td= link_to t('.show'), admin_client_path(client)
+= link_to t('.create'), new_admin_client_path(@client)
+= link_to t('.back'), root_path

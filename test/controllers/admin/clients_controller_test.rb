@@ -49,13 +49,13 @@ class Admin::ClientControllerTest < ActionDispatch::IntegrationTest
     client = create :client
 
     attrs = {}
-    attrs[:surname] = generate :surname
+    attrs[:name] = generate :name
 
     put admin_client_path(client.id), params: { client: attrs }
     assert_response :redirect
 
     client.reload
-    assert_equal attrs[:surname], client.surname
+    assert_equal attrs[:name], client.name
   end
 
   test 'should destroy client' do

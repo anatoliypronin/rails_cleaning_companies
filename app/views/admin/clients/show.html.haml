@@ -4,5 +4,7 @@
 %b= @client.name 
 %b= @client.surname
 %b= @client.phone_number
-%b= link_to 'Редактировать', edit_admin_client_path(@client)
-%b= link_to 'Удалить', admin_client_path(@client), method: :delete
+%b= @client.state
+%b= link_to t('.edit'), edit_admin_client_path(@client)
+%b= link_to t('.delete'), admin_client_path(@client), method: :delete
+%b= link_to t('.back'), admin_clients_path 

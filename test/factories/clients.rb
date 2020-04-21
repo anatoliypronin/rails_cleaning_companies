@@ -3,7 +3,7 @@ FactoryBot.define do
     name
     surname
     email
-    password 
+    password
     phone_number
   end
 end
