@@ -4,7 +4,7 @@ Rails.application.routes.draw do
  namespace :admin do
     root 'welcome#index'
     resources :admins do
-      get 'restore'
+      put 'restore'
     end
  end  
 end
