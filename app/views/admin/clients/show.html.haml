@@ -5,6 +5,6 @@
 %b= @client.surname
 %b= @client.phone_number
 %b= @client.state
-%b= link_to t('.edit'), edit_admin_client_path(@client)
-%b= link_to t('.delete'), admin_client_path(@client), method: :delete
+%b= link_to t('.edit'), edit_admin_client_path(@client.id)
+%b= link_to t('.delete'), admin_client_path(@client.id), method: :delete
 %b= link_to t('.back'), admin_clients_path 
