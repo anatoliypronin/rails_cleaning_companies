@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
  namespace :admin do
     root 'welcome#index'
-    resources :admins
-    
+    resources :admins do
+      get 'restore'
+    end
  end  
 end

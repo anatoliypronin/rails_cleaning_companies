@@ -47,7 +47,16 @@ class Admin::AdminsControllerTest < ActionDispatch::IntegrationTest
     admin = create :admin
     delete admin_admin_path(admin.id)
     assert_response :redirect
+    admin.reload
+    assert admin.deleted?
+  end
 
-    assert_not Admin.exists?(admin.id)
+  test 'should activate admin' do
+    admin = create :admin
+
+    activate admin_admin_path(admin.id)
+    assert_response :redirect
+    admin.reload
+    assert admin.activate?
   end
 end

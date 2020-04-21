@@ -5,7 +5,8 @@
     %th E-mail
     %th Role
     %th Password
-    %th 
+    %th state
+    %th
   - @admins.each do |admin|
     %tr.bg-success
       %td=admin.id
@@ -13,6 +14,7 @@
       %td=admin.email
       %td=admin.role
       %td=admin.password_digest
+      %td=admin.state
       %td=link_to 'View profile', admin_admin_path(admin)
 .btn.btn-light
   = link_to 'exit', admin_root_path, :class => "btn btn-info"
