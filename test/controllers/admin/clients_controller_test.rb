@@ -50,7 +50,7 @@ class Admin::ClientControllerTest < ActionDispatch::IntegrationTest
 
     attrs = {}
     attrs[:name] = generate :name
-
+    attrs[:password] = '123456'
     put admin_client_path(client.id), params: { client: attrs }
     assert_response :redirect
 
