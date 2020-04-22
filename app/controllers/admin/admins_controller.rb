@@ -44,6 +44,7 @@ class Admin::AdminsController < Admin::ApplicationController
     admin.activate!
     redirect_to action: :index
   end
+
   private
 
   def admins_attrs

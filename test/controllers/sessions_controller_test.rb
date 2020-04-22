@@ -1,18 +1,18 @@
 require 'test_helper'
 
 class SessionsControllerTest < ActionDispatch::IntegrationTest
-    setup do
-        @admin = create :admin
-    end
+  setup do
+    @admin = create :admin
+  end
   test 'should get new sessions page' do
     get new_session_path
     assert_response :success
   end
 
   test 'should post create new session for admin' do
-  sign_in_as_admin(@admin)
-  assert_response :redirect
-  assert_equal session[:admin_id], @admin.id
+    sign_in_as_admin(@admin)
+    assert_response :redirect
+    assert_equal session[:admin_id], @admin.id
   end
 
   test 'should delete destroy session for admin' do
@@ -25,5 +25,5 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
 
     assert_nil session[:admin_id]
-    end
+  end
 end

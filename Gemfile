@@ -3,8 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'bootstrap', '~> 4.4.1'
 gem 'enumerize'
 gem 'haml-rails', '~> 2.0'
+gem 'jquery-rails'
 gem 'pg'
 gem 'phonelib'
 gem 'rubocop-rails', require: false
@@ -12,8 +14,6 @@ gem 'simple_form'
 gem 'state_machines-activerecord'
 gem 'valid_email'
 gem 'validates_timeliness'
-gem 'bootstrap', '~> 4.4.1'
-gem 'jquery-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
