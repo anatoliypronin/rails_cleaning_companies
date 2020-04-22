@@ -2,11 +2,13 @@ FactoryBot.define do
   factory :admin do
     name
     email
-    password_digest
+    password {'123456'}
     role { 'admin' }
+
     trait :deleted do
       state { deleted }
     end
+    
     trait :activated do
       state { active }
     end

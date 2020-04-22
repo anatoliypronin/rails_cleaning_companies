@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
  root to: 'welcome#index'
 
+ resource :session, only: [:new, :create, :destroy]
+
  namespace :admin do
     root 'welcome#index'
     resources :admins do

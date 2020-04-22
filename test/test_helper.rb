@@ -2,6 +2,8 @@ ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
 
+Dir[Rails.root.join('test/support/**/*.rb')].sort.each { |f| require f }
+
 class ActiveSupport::TestCase
   include FactoryBot::Syntax::Methods
   # Run tests in parallel with specified workers
@@ -11,4 +13,7 @@ class ActiveSupport::TestCase
   # fixtures :all
 
   # Add more helper methods to be used by all tests here...
+end
+class ActionDispatch::IntegrationTest
+  include Support::Auth
 end
