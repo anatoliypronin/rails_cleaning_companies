@@ -1,4 +1,5 @@
 class Admin::AdminsController < Admin::ApplicationController
+
   def index
     @admins = Admin.all
   end
@@ -33,8 +34,8 @@ class Admin::AdminsController < Admin::ApplicationController
     end
   end
 
-  def destroy
-    admin = Admin.find(params[:id])
+  def del
+    admin = Admin.find(params[:admin_id])
     admin.del!
     redirect_to action: :index
   end

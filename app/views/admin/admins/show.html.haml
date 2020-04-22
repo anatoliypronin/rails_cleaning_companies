@@ -13,5 +13,5 @@
       %td=@admin.state
 = link_to 'Back', admin_admins_path, :class => "btn btn-info"
 = link_to 'Edit', edit_admin_admin_path(@admin.id), :class => "btn btn-info"
-= link_to 'Deledet',admin_admin_path(@admin.id), method: :delete, :class => "btn btn-info"
+= link_to 'Deledet',admin_admin_del_path(@admin.id), method: :put, :class => "btn btn-info"
 = link_to 'Activate',admin_admin_restore_path(@admin.id), method: :put, :class => "btn btn-info"

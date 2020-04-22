@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     root 'welcome#index'
     resources :admins do
       put 'restore'
+      put "del"
     end
  end  
 end

@@ -5,7 +5,7 @@ FactoryBot.define do
     password { '123456' }
     role { 'admin' }
 
-    trait :deleted do
+    trait :del do
       state { deleted }
     end
 
