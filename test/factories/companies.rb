@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :company do
     name
     email
-    password_digest
+    password { '123456' }
     requisites
     description
     rating { 1.5 }

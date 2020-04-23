@@ -1,0 +1,24 @@
+%table.table
+  %tr.table-info
+    %th ID
+    %th Name
+    %th E-mail
+    %th Requisites
+    %th Rating
+    %th State
+    %th Control
+  - @companies.each do |company|
+    %tr.bg-success
+      %td=company.id
+      %td=company.name
+      %td=company.email
+      %td=company.requisites
+      %td=company.rating
+      %td=company.state
+      %td=link_to 'View profile', admin_company_path(company)
+.btn.btn-light
+  = link_to 'List', admin_root_path, :class => "btn btn-info"
+.btn.btn-light
+  = link_to 'Create new', new_admin_company_path, :class => "btn btn-info"
+
+

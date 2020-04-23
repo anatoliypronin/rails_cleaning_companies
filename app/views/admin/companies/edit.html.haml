@@ -1,0 +1,11 @@
+= simple_form_for @company, url: admin_company_path(@company.id) do |f|
+  = f.input :name
+  = f.input :email
+  = f.input :password
+  = f.input :requisites
+  = f.input :description
+  = f.input :rating
+  = f.input :website
+  = f.input :phone_number
+  = f.button :submit, :class => "btn btn-primary"
+  = link_to 'Cancel', admin_companies_path, :class => "btn btn-primary"

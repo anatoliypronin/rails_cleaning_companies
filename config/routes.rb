@@ -9,5 +9,9 @@ Rails.application.routes.draw do
       put 'restore'
       put "del"
     end
+    resources :companies do
+      put 'restore'
+      put "del"
+    end
  end  
 end
