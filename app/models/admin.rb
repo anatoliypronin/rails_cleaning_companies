@@ -1,6 +1,7 @@
 class Admin < ApplicationRecord
   extend Enumerize
-  validates :name, :email, :role, :password, presence: true, on: :create
+  validates :name, :email, :role, presence: true
+  validates :password, presence: true, on: :create
   validates :name, length: { maximum: 30 }
   validates :email, uniqueness: true, email: true
   enumerize :role, in: %i[admin editor], default: :admin

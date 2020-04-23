@@ -4,8 +4,9 @@ class Company < ApplicationRecord
   has_many :service_prices, dependent: :destroy
   has_many :orders, dependent: :destroy
 
-  validates :name, :email, :password, :requisites, :description,
-            presence: true, on: :create
+  validates :name, :email, :requisites, :description,
+            presence: true
+  validates :password, presence: true, on: :create
   validates :name, length: { maximum: 30 }
   validates :email, uniqueness: true, email: true
   validates :phone_number, phone: true

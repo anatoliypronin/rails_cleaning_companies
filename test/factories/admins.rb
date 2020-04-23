@@ -6,11 +6,11 @@ FactoryBot.define do
     role { 'admin' }
 
     trait :del do
-      state { deleted }
+      state { 'deleted' }
     end
 
     trait :activated do
-      state { active }
+      state { 'active' }
     end
   end
 end

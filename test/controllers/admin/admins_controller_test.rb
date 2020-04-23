@@ -49,7 +49,7 @@ class Admin::AdminsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should state active admin' do
-    @admin = create :admin, state: :deleted
+    @admin = create :admin, :del
     put admin_admin_restore_path(@admin.id)
     assert_response :redirect
   end
