@@ -1,4 +1,4 @@
-%table
+%table.table
   %tr
     %td= Client.human_attribute_name(:id)
     %td= Client.human_attribute_name(:name)
@@ -17,4 +17,4 @@
       %td= client.state
       %td= link_to t('.show'), admin_client_path(client)
 = link_to t('.create'), new_admin_client_path(@client)
-= link_to t('.back'), root_path
+= link_to t('.back'), admin_root_path
