@@ -5,8 +5,8 @@ class Client < ApplicationRecord
   validates :name, length: { maximum: 30 }
   validates :surname, length: { maximum: 30 }
   validates :email, uniqueness: true, email: true
-  validates :password, length: { minimum: 5 }
   validates :phone_number, phone: true
+  validates :password, length: { minimum: 5 }
 
   has_secure_password
 
