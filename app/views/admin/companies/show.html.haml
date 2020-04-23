@@ -1,15 +1,22 @@
 %table.table
   %thead
     %tr
-      %th name
-      %th email
-      %th role
-      %th state
+      %th Name
+      %th Email
+      %th Requisites
+      %th Description
+      %th Rating
+      %th Website
+      %th Phonenumber
   %tbody
     %tr
       %td=@company.name
       %td=@company.email
-      %td=@company.state
+      %td=@company.requisites
+      %td=@company.description
+      %td=@company.rating
+      %td=@company.website
+      %td=@company.phone_number
 = link_to 'Back', admin_companies_path, :class => "btn btn-info"
 = link_to 'Edit', edit_admin_company_path(@company.id), :class => "btn btn-info"
 = link_to 'Deledet',admin_company_del_path(@company.id), method: :put, :class => "btn btn-info"

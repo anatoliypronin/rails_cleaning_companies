@@ -14,11 +14,11 @@ class Admin < ApplicationRecord
     state :deleted
 
     event :del do
-      transition active: :deleted
+      transition from: :active, to: :deleted, if: :active?
     end
 
     event :activate do
-      transition deleted: :active
+      transition from: :deleted, to: :active, if: :deleted?
     end
   end
 end
