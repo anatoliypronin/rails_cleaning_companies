@@ -1,0 +1,6 @@
+ru:
+  enumerize:
+    admins:
+      role:
+        admin: Администратор
+        editor: Редактор

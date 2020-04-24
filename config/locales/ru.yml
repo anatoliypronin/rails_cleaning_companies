@@ -1,8 +1,47 @@
 ru:
+ 
+  header:
+    exit: Выход
+    home: Домашняя страница
+    
   attributes:
     id: ID
+    email: Почта
+    state: Статус
+    control: Управление
+    password: Пароль
+    phone_number: Телефон
+    role: Роль
 
   admin:
+    admins:
+      index:
+        back: "Назад"
+        create new: "Создать нового администратора"
+        view profile: Посмотреть данные администратора"
+      new:
+        cancel: "Отмена"
+      show:
+        back: "Назад"
+        edit: "Редактировать"
+        deleted: "Перевести в статус не активный"
+        activate: "Перевести в статус активный"
+      edit:
+        cancel: "Отмена"
+    companies:
+      index:
+        back: "Назад"
+        create new: "Создать новую компанию"
+        view profile: "Посмотреть данные компании"
+      new:
+        cancel: "Отмена"
+      show:
+        back: "Назад"
+        edit: "Редактировать"
+        deleted: "Перевести в статус не активный"
+        activate: "Перевести в статус активный"
+      edit:
+        cancel: "Назад"
     clients:
       index:
         show: "Просмотр"
@@ -13,12 +52,10 @@ ru:
       show:
         delete: "Удалить"
         edit: "Изменить"
-        back: "Назад"
-
-
-
+        back: "Назад"  
+        
   activerecord:
-    state_machines:
+    state_machine:
       client:
         state:
           states:
@@ -26,9 +63,23 @@ ru:
             deleted: Удаленный
           events:
             del: Удалить
-            restore: Восстановить
+            activate: Восстановить
+      admin:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            activate: Восстановить
 
     models:
+      admin:
+        one: Администратор
+        others: Администраторы
+      company:
+        one: Компания
+        other: Компании
       client:
         one: Клиент
         others: Клиенты
@@ -40,4 +91,15 @@ ru:
         email: Почта
         phone_number: Телефон
         password: Пароль
+      company:
+        name: Название компании
+        requisites: Реквизиты
+        rating: Рейтинг
+        description: Описание
+        website: Сайт
+        phonenumber: Телефон
+      admin:
+        name: Имя администратора
+
+
 

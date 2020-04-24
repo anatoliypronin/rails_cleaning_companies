@@ -34,7 +34,7 @@ class Admin::AdminsController < Admin::ApplicationController
   end
 
   def del
-    admin = Admin.find(params[:admin_id]) 
+    admin = Admin.find(params[:admin_id])
     admin.del
     redirect_to action: :index
   end

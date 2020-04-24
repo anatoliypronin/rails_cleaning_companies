@@ -1,24 +1,22 @@
 %table.table
   %tr.table-info
     %th ID
-    %th Name
-    %th E-mail
-    %th Role
-    %th Password
-    %th State
-    %th Control
+    %th= Admin.human_attribute_name (:name)
+    %th= Admin.human_attribute_name (:email)
+    %th= Admin.human_attribute_name (:role)
+    %th= Admin.human_attribute_name (:state)
+    %th= Admin.human_attribute_name (:control)
   - @admins.each do |admin|
     %tr.bg-success
       %td=admin.id
       %td=admin.name
       %td=admin.email
-      %td=admin.role
-      %td=admin.password_digest
-      %td=admin.state
-      %td=link_to 'View profile', admin_admin_path(admin)
+      %td=admin.role_text
+      %td=admin.human_state_name
+      %td=link_to t('.view profile'), admin_admin_path(admin)
 .btn.btn-light
-  = link_to 'List', admin_root_path, :class => "btn btn-info"
+  = link_to t('.back'), admin_root_path, :class => "btn btn-info"
 .btn.btn-light
-  = link_to 'Create new', new_admin_admin_path, :class => "btn btn-info"
+  = link_to t('.create new'), new_admin_admin_path, :class => "btn btn-info"
 
 
