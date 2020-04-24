@@ -69,4 +69,19 @@ class Admin::ClientControllerTest < ActionDispatch::IntegrationTest
 
     assert_not Client.exists?(client.id)
   end
+
+  test 'should change state to deleted' do
+    put admin_client_del_path(@client)
+    assert_response :redirect
+    @client.reload
+    assert_equal @client.state, 'deleted'
+  end
+
+  test 'should change state to active' do
+    @client = create :client, :del
+    put admin_client_restore_path(@client.id)
+    assert_response :redirect
+    @client.reload
+    assert_equal @client.state, 'active'
+  end
 end
