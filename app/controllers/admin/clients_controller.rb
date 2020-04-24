@@ -36,14 +36,14 @@ class Admin::ClientsController < Admin::ApplicationController
   end
 
   def del
-    client = Client.find(params[:id])
+    client = Client.find(params[:client_id])
     client.del
 
     redirect_to action: :index
   end
 
   def restore
-    client = Client.find(params[:id])
+    client = Client.find(params[:client_id])
     client.activate
 
     redirect_to action: :index

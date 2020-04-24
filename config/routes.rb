@@ -13,6 +13,9 @@ Rails.application.routes.draw do
       put 'restore'
       put 'del'
     end
-    resources :clients
+    resources :clients do
+      put 'restore'
+      put 'del'
+    end
  end  
 end
