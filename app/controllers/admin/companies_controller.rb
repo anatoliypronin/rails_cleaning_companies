@@ -35,13 +35,13 @@ class Admin::CompaniesController < Admin::ApplicationController
 
   def del
     company = Company.find(params[:company_id])
-    company.del!
+    company.del
     redirect_to action: :index
   end
 
   def restore
     company = Company.find(params[:company_id])
-    company.activate!
+    company.activate
     redirect_to action: :index
   end
 

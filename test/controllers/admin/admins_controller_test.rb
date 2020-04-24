@@ -36,7 +36,6 @@ class Admin::AdminsControllerTest < ActionDispatch::IntegrationTest
   test 'should put update admin' do
     attrs = {}
     attrs[:name] = generate :name
-    attrs[:password] = '123456'
     put admin_admin_path(@admin), params: { admin: attrs }
     assert_response :redirect
     @admin.reload

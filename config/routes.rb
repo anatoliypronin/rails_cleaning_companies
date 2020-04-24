@@ -7,11 +7,11 @@ Rails.application.routes.draw do
     root 'welcome#index'
     resources :admins do
       put 'restore'
-      put "del"
+      put 'del'
     end
     resources :companies do
       put 'restore'
-      put "del"
+      put 'del'
     end
     resources :clients
  end  

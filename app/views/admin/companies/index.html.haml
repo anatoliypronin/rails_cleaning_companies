@@ -1,6 +1,6 @@
 %table.table
   %tr.table-info
-    %th ID
+    %th= Company.human_attribute_name (:id)
     %th= Company.human_attribute_name (:name)
     %th= Company.human_attribute_name (:email)
     %th= Company.human_attribute_name (:requisites)
@@ -14,7 +14,7 @@
       %td=company.email
       %td=company.requisites
       %td=company.rating
-      %td=company.state
+      %td=company.human_state_name
       %td=link_to t('.view profile'), admin_company_path(company)
 .btn.btn-light
   = link_to t('.back'), admin_root_path, :class => "btn btn-info"

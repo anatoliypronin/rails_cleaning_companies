@@ -72,6 +72,14 @@ ru:
           events:
             del: Удалить
             activate: Восстановить
+      company:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            activate: Восстановить
 
     models:
       admin:

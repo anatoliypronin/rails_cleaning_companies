@@ -35,13 +35,27 @@ class Admin::CompaniesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should put update admin' do
+  test 'should put update company' do
     attrs = {}
     attrs[:name] = generate :name
-    attrs[:password] = '123456'
     put admin_company_path(@company), params: { company: attrs }
     assert_response :redirect
     @company.reload
     assert_equal attrs[:name], @company.name
+  end
+
+  test 'should state deleted  company' do
+    put admin_company_del_path(@company)
+    assert_response :redirect
+    @company.reload
+    assert_equal @company.state, 'deleted'
+  end
+
+  test 'should state active company' do
+    @company = create :company, :del
+    put admin_company_restore_path(@company.id)
+    assert_response :redirect
+    @company.reload
+    assert_equal @company.state, 'active'
   end
 end
