@@ -17,5 +17,6 @@ Rails.application.routes.draw do
       put 'restore'
       put 'del'
     end
+    resources :articles
  end  
 end
