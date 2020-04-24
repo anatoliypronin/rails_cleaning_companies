@@ -1,10 +1,17 @@
-%h1= @client.email 
-
-%br 
-%b= @client.name 
-%b= @client.surname
-%b= @client.phone_number
-%b= @client.state
-%b= link_to t('.edit'), edit_admin_client_path(@client.id)
-%b= link_to t('.delete'), admin_client_path(@client.id), method: :delete
-%b= link_to t('.back'), admin_clients_path 
+%table.table
+  %thead
+    %tr
+      %th= Client.human_attribute_name(:name)
+      %th= Client.human_attribute_name(:surname)
+      %th= Client.human_attribute_name(:phone_number)
+      %th= Client.human_attribute_name(:state)
+  %tbody
+    %tr
+      %th= @client.name 
+      %th= @client.surname
+      %th= @client.phone_number
+      %th= @client.human_state_name
+%b= link_to t('.back'), admin_clients_path, :class => 'btn btn-info'
+%b= link_to t('.edit'), edit_admin_client_path(@client.id), :class => 'btn btn-info'
+%b= link_to t('.deleted'), admin_client_del_path(@client.id), method: :put, :class => 'btn btn-info'
+%b= link_to t('.activate'), admin_client_restore_path(@client.id), method: :put, :class => 'btn btn-info'
