@@ -1,9 +1,12 @@
 require 'test_helper'
 
 class Admin::ClientControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @admin = create :admin
+    sign_in_as_admin(@admin)
+    @client = create :client
+  end
   test 'should get index clients page' do
-    create :client
-
     get admin_clients_path
     assert_response :success
   end
@@ -50,7 +53,7 @@ class Admin::ClientControllerTest < ActionDispatch::IntegrationTest
 
     attrs = {}
     attrs[:name] = generate :name
-    attrs[:password] = '123456'
+    # attrs[:password] = '123456'
     put admin_client_path(client.id), params: { client: attrs }
     assert_response :redirect
 

@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
  root to: 'welcome#index'
 
+ resource :session, only: [:new, :create, :destroy]
+
  namespace :admin do
-  resources :admins
-  resources :clients
+    root 'welcome#index'
+    resources :admins do
+      put 'restore'
+      put 'del'
+    end
+    resources :companies do
+      put 'restore'
+      put 'del'
+    end
+    resources :clients
  end  
 end

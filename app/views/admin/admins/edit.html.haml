@@ -2,6 +2,6 @@
   = f.input :name
   = f.input :email
   = f.input :role
-  = f.input :password_digest
-  = f.button :submit
-  = link_to 'Отмена', admin_admins_path
+  = f.input :password
+  = f.button :submit, :class => "btn btn-primary"
+  = link_to t('.cancel'), admin_admins_path, :class => "btn btn-primary"
