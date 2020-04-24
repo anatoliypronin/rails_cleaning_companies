@@ -61,26 +61,19 @@ class Admin::ClientControllerTest < ActionDispatch::IntegrationTest
     assert_equal attrs[:name], client.name
   end
 
-  test 'should destroy client' do
-    client = create :client
-
-    delete admin_client_path(client.id)
-    assert_response :redirect
-
-    assert_not Client.exists?(client.id)
-  end
-
   test 'should change state to deleted' do
     put admin_client_del_path(@client)
     assert_response :redirect
+
     @client.reload
     assert_equal @client.state, 'deleted'
   end
 
   test 'should change state to active' do
-    @client = create :client, :del
+    @client.del
     put admin_client_restore_path(@client.id)
     assert_response :redirect
+
     @client.reload
     assert_equal @client.state, 'active'
   end
