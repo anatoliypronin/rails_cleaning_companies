@@ -69,7 +69,7 @@ class Admin::ClientControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should change state to active' do
-    @client.del 
+    @client.del
     put admin_client_restore_path(@client.id)
     assert_response :redirect
     @client.reload
