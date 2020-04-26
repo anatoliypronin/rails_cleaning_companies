@@ -64,6 +64,7 @@ class Admin::ClientControllerTest < ActionDispatch::IntegrationTest
   test 'should change state to deleted' do
     put admin_client_del_path(@client)
     assert_response :redirect
+
     @client.reload
     assert_equal @client.state, 'deleted'
   end
@@ -72,6 +73,7 @@ class Admin::ClientControllerTest < ActionDispatch::IntegrationTest
     @client.del
     put admin_client_restore_path(@client.id)
     assert_response :redirect
+
     @client.reload
     assert_equal @client.state, 'active'
   end
