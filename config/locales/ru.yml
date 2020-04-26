@@ -101,6 +101,7 @@ ru:
         phone_number: Телефон
         password: Пароль
       company:
+        city: Город
         name: Название компании
         requisites: Реквизиты
         rating: Рейтинг
