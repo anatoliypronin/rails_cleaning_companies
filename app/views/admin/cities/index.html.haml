@@ -1,0 +1,16 @@
+%table.table
+  %tr.table-info
+    %th= 'id'
+    %th= 'name'
+    %th= 'control'
+  - @cities.each do |city|
+    %tr.bg-success
+      %td=city.id
+      %td=city.name
+      %td=link_to t('.deleted'), admin_city_path(city), method: :delete, :class => "btn btn-info"
+.btn.btn-light
+  = link_to t('.back'), admin_root_path, :class => "btn btn-info"
+.btn.btn-light
+  = link_to t('.create new'), new_admin_city_path, :class => "btn btn-info"
+
+
