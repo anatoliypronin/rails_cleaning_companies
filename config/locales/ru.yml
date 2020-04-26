@@ -64,6 +64,8 @@ ru:
         back: "Назад"
       show:
         edit: "Изменить"
+        delete: "Удалить"
+
         back: "Назад"  
         
   activerecord:

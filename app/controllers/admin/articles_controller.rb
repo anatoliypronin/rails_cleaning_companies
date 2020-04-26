@@ -35,6 +35,13 @@ class Admin::ArticlesController < Admin::ApplicationController
     end
   end
 
+  def destroy
+    article = Article.find(params[:id])
+    article.destroy
+
+    redirect_to action: :index
+  end
+
   private
 
   def article_attrs

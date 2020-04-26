@@ -11,4 +11,5 @@
       %td= @article.description
 
 = link_to t('.back'), admin_articles_path, :class => "btn btn-info"
+= link_to t('.delete'), admin_article_path(@article.id), method: :delete, :class => "btn btn-info"
 = link_to t('.edit'), edit_admin_article_path(@article.id), :class => "btn btn-info"
