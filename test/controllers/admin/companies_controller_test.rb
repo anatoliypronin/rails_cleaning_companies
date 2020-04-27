@@ -58,4 +58,10 @@ class Admin::CompaniesControllerTest < ActionDispatch::IntegrationTest
     @company.reload
     assert_equal @company.state, 'active'
   end
+
+  #test 'should create company with city' do
+  #  @attributes[:company_cities_attributes] = city:
+
+    
+  #end
 end

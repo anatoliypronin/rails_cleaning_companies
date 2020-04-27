@@ -48,6 +48,6 @@ class Admin::CompaniesController < Admin::ApplicationController
   private
 
   def companies_attrs
-    params.require(:company).permit(:name, :email, :password, :requisites, :description, :rating, :phone_number, :city_id)
+    params.require(:company).permit(:name, :email, :password, :requisites, :description, :rating, :phone_number, :city_ids[])
   end
 end

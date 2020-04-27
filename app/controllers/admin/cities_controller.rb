@@ -26,6 +26,6 @@ class Admin::CitiesController < Admin::ApplicationController
       private
 
       def city_attrs
-        params.require(:city).permit(:name)
+        params.require(:city).permit(:name, :company_ids)
       end
 end
