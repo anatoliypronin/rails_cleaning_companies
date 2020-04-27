@@ -54,6 +54,19 @@ ru:
         activate: "Перевести в статус активный"
         edit: "Изменить"
         back: "Назад"  
+    articles:
+      index:
+        show: "Просмотр"
+        create: "Создать"
+        back: "Назад"
+        view article: "Просмотреть"
+      new:
+        back: "Назад"
+      show:
+        edit: "Изменить"
+        delete: "Удалить"
+
+        back: "Назад"  
         
   activerecord:
     state_machine:
@@ -92,6 +105,9 @@ ru:
       client:
         one: Клиент
         others: Клиенты
+      articles:
+        one: Статья
+        others: Статьи
 
     attributes:
       client:
@@ -109,6 +125,10 @@ ru:
         phonenumber: Телефон
       admin:
         name: Имя администратора
+      article:
+        title: Заголовок
+        short_description: Краткое описание
+        description: Описание
 
 
 
