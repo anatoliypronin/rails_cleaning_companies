@@ -41,9 +41,8 @@ class Admin::ServicesController < Admin::ApplicationController
   end
 
   private
-  
+
   def service_attrs
     params.require(:service).permit(:name)
   end
-
 end
