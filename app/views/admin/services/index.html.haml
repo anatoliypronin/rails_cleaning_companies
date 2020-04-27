@@ -1,0 +1,13 @@
+%table.table
+  %tr.table-info
+    %th= Service.human_attribute_name(:id)
+    %th= Service.human_attribute_name(:name)
+  - @services.each do |service|
+    %tr.bg-success
+      %td= service.id
+      %td= service.name
+      %td= link_to t('.view'), admin_service_path(service)
+.btn.btn-light
+  = link_to t('.back'), admin_root_path, :class => "btn btn-info"
+.btn.btn-light
+  = link_to t('.create'), new_admin_service_path, :class => "btn btn-info"

@@ -18,5 +18,6 @@ Rails.application.routes.draw do
       put 'del'
     end
     resources :articles
+    resources :services
  end  
 end
