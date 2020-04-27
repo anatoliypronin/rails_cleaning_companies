@@ -11,11 +11,11 @@ gem 'pg'
 gem 'phonelib'
 gem 'rubocop-rails', require: false
 gem 'russian', '~> 0.6.0'
+gem 'select2-rails'
 gem 'simple_form'
 gem 'state_machines-activerecord'
 gem 'valid_email'
 gem 'validates_timeliness'
-gem "select2-rails"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'

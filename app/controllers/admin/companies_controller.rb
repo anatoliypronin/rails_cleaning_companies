@@ -25,6 +25,7 @@ class Admin::CompaniesController < Admin::ApplicationController
   end
 
   def update
+    byebug
     @company = Company.find(params[:id])
     if @company.update(companies_attrs)
       redirect_to action: :index
@@ -48,6 +49,6 @@ class Admin::CompaniesController < Admin::ApplicationController
   private
 
   def companies_attrs
-    params.require(:company).permit(:name, :email, :password, :requisites, :description, :rating, :phone_number, :city_ids[])
+    params.require(:company).permit(:name, :email, :password, :requisites, :description, :rating, :phone_number, city_ids: [])
   end
 end

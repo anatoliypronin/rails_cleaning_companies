@@ -69,7 +69,7 @@ ru:
         back: "Назад"  
         
   activerecord:
-    state_machine:
+    state_machines:
       client:
         state:
           states:

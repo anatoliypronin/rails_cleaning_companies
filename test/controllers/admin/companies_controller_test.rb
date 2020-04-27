@@ -59,9 +59,10 @@ class Admin::CompaniesControllerTest < ActionDispatch::IntegrationTest
     assert_equal @company.state, 'active'
   end
 
-  #test 'should create company with city' do
-  #  @attributes[:company_cities_attributes] = city:
-
-    
-  #end
+  test 'should create company with city' do
+    @city = create(:city)
+    @attributes = attributes_for(:company)
+    @attributes[:company_cities_attributes] = [{ city_id: @city.id }]
+    put admin_company_path(@company), params: { company: @attributes }
+  end
 end
