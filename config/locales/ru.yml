@@ -65,9 +65,20 @@ ru:
       show:
         edit: "Изменить"
         delete: "Удалить"
+        back: "Назад"
+    services:
+      index:
+        show: Просмотр"
+        create: Создать
+        back: Назад
+        view: Просмотреть
+      new:
+        back: Назад
+      show:
+        edit: "Изменить"
+        delete: "Удалить"
+        back: "Назад"
 
-        back: "Назад"  
-        
   activerecord:
     state_machine:
       client:
@@ -108,6 +119,9 @@ ru:
       articles:
         one: Статья
         others: Статьи
+      services:
+        one: Услуга
+        others: Услуга
 
     attributes:
       client:
@@ -129,6 +143,7 @@ ru:
         title: Заголовок
         short_description: Краткое описание
         description: Описание
-
+      service:
+        name: Услуга
 
 
