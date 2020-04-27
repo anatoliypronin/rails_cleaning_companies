@@ -1,4 +1,4 @@
-class Admin::ServiceController < Admin::ApplicationController
+class Admin::ServicesController < Admin::ApplicationController
   def index
     @services = Service.all
   end
@@ -43,7 +43,7 @@ class Admin::ServiceController < Admin::ApplicationController
   private
   
   def service_attrs
-    params.require(:articles).permit(:name)
+    params.require(:service).permit(:name)
   end
 
 end
