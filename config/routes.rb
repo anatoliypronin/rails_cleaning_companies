@@ -17,6 +17,10 @@ Rails.application.routes.draw do
       put 'restore'
       put 'del'
     end
+<<<<<<< HEAD
     resources :cities
+=======
+    resources :articles
+>>>>>>> develop
  end  
 end
