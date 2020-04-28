@@ -19,10 +19,6 @@ Rails.application.routes.draw do
     end
     resources :cities
     resources :articles
-<<<<<<< HEAD
-  end   
-=======
     resources :services
  end  
->>>>>>> develop
 end
