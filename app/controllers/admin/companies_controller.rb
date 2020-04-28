@@ -14,10 +14,10 @@ class Admin::CompaniesController < Admin::ApplicationController
     else
       render action: :new
     end
-    end
+  end
 
   def show
-    @company = Company.find(params[:id])
+    @company = Company.find(params[:id]).decorate
   end
 
   def edit
@@ -25,7 +25,6 @@ class Admin::CompaniesController < Admin::ApplicationController
   end
 
   def update
-    byebug
     @company = Company.find(params[:id])
     if @company.update(companies_attrs)
       redirect_to action: :index

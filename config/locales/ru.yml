@@ -138,6 +138,7 @@ ru:
         description: Описание
         website: Сайт
         phonenumber: Телефон
+        phone_and_email: Телефон и почта
       admin:
         name: Имя администратора
       article:

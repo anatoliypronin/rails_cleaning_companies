@@ -1,5 +1,5 @@
 class City < ApplicationRecord
-  has_many :company_cities, inverse_of: :company_sities, dependent: :destroy
+  has_many :company_cities, dependent: :destroy
   has_many :companies, through: :company_cities
   has_many :service_prices, dependent: :destroy
 
