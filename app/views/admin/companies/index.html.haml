@@ -7,7 +7,7 @@
     %th= Company.human_attribute_name (:requisites)
     %th= Company.human_attribute_name (:rating)
     %th= Company.human_attribute_name (:state)
-    %th= Company.human_attribute_name (:control)
+    %th= t('control')
   - @companies.each do |company|
     %tr.bg-success
       %td=company.id

@@ -1,8 +1,8 @@
 %table.table
   %tr.table-info
-    %th= 'id'
-    %th= 'name'
-    %th= 'control'
+    %th= City.human_attribute_name(:id)
+    %th= City.human_attribute_name(:name)
+    %th= t('control')
   - @cities.each do |city|
     %tr.bg-success
       %td=city.id
@@ -11,6 +11,6 @@
 .btn.btn-light
   = link_to t('.back'), admin_root_path, :class => "btn btn-info"
 .btn.btn-light
-  = link_to t('.create new'), new_admin_city_path, :class => "btn btn-info"
+  = link_to t('.create'), new_admin_city_path, :class => "btn btn-info"
 
 

@@ -1,47 +1,54 @@
 ru:
- 
+  control: Управление 
   header:
     exit: Выход
     home: Домашняя страница
+  cancel: Отмена
     
   attributes:
     id: ID
     email: Почта
     state: Статус
-    control: Управление
     password: Пароль
     phone_number: Телефон
     role: Роль
 
   admin:
+    welcome:
+      index:
+        list Admin: Список Администраторов
+        list Company: Список Компаний
+        list Client: Список Клиентов
+        list City: Список Городов
+        list Article: Список Статей
     admins:
       index:
         back: "Назад"
         create new: "Создать нового администратора"
-        view profile: Посмотреть данные администратора"
+        view profile: "Посмотреть данные администратора"
       new:
-        cancel: "Отмена"
+
       show:
         back: "Назад"
         edit: "Редактировать"
         deleted: "Перевести в статус не активный"
         activate: "Перевести в статус активный"
       edit:
-        cancel: "Отмена"
+
     companies:
       index:
         back: "Назад"
         create new: "Создать новую компанию"
         view profile: "Посмотреть данные компании"
       new:
-        cancel: "Отмена"
+
       show:
         back: "Назад"
         edit: "Редактировать"
         deleted: "Перевести в статус не активный"
         activate: "Перевести в статус активный"
       edit:
-        cancel: "Назад"
+
     clients:
       index:
         show: "Просмотр"
@@ -65,8 +72,12 @@ ru:
       show:
         edit: "Изменить"
         delete: "Удалить"
-
-        back: "Назад"  
+        back: "Назад"
+    cities:
+      index:
+        deleted: "Удалить"
+        create: "Создать"
+        back: "Назад"
         
   activerecord:
     state_machines:
@@ -108,6 +119,9 @@ ru:
       articles:
         one: Статья
         others: Статьи
+      city:
+        one: Город
+        others: Города
 
     attributes:
       client:
@@ -130,6 +144,7 @@ ru:
         title: Заголовок
         short_description: Краткое описание
         description: Описание
-
+      city:
+        name: Название города
 
 

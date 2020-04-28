@@ -2,7 +2,7 @@
   %tr.table-info
     %th= Article.human_attribute_name(:id)
     %th= Article.human_attribute_name(:title)
-    %th= Article.human_attribute_name(:control)
+    %th= t('control')
 
   - @articles.each do |article|
     %tr.bg-success
