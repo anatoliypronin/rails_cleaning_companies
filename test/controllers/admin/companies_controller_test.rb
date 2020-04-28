@@ -59,6 +59,8 @@ class Admin::CompaniesControllerTest < ActionDispatch::IntegrationTest
     assert_equal @company.state, 'active'
   end
 
+
+  #test not wrok!
   test 'should create company with city' do
     @city = create(:city)
     @attributes = attributes_for(:company)
