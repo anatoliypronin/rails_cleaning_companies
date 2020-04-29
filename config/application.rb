@@ -17,5 +17,7 @@ module App
     # the framework and any gems in your application.
     config.time_zone = 'Moscow'
     config.i18n.default_locale = :ru
+
+    config.active_record.observers = :company_observer
   end
 end

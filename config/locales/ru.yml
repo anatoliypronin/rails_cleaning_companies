@@ -16,11 +16,12 @@ ru:
   admin:
     welcome:
       index:
-        list Admin: Список Администраторов
-        list Company: Список Компаний
-        list Client: Список Клиентов
-        list City: Список Городов
-        list Article: Список Статей
+        list_admin: Список Администраторов
+        list_company: Список Компаний
+        list_client: Список Клиентов
+        list_city: Список Городов
+        list_article: Список Статей
+        list_service: Список Услуг
     admins:
       index:
         back: "Назад"

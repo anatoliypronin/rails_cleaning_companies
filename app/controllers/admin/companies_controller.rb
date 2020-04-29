@@ -10,7 +10,7 @@ class Admin::CompaniesController < Admin::ApplicationController
   def create
     @company = Company.new(companies_attrs)
     if @company.save
-      CompanyMailer.welcome_email(@company).deliver_now
+      # CompanyMailer.welcome_email(@company).deliver_now
       redirect_to action: :index
     else
       render action: :new

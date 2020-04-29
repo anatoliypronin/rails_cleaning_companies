@@ -59,12 +59,14 @@ class Admin::CompaniesControllerTest < ActionDispatch::IntegrationTest
     assert_equal @company.state, 'active'
   end
 
-
-  #test not wrok!
   test 'should create company with city' do
-    @city = create(:city)
-    @attributes = attributes_for(:company)
-    @attributes[:company_cities_attributes] = [{ city_id: @city.id }]
-    put admin_company_path(@company), params: { company: @attributes }
+ # byebug
+    @city = create :city
+    attrs_company = attributes_for :company
+    attrs_company[:city_ids] = [{ city_ids: @city.id }]
+    assert_difference('Company.count', 0) do
+      put admin_company_path(@company), params: { company: attrs_company }
+    assert_response :redirect
+    end
   end
 end
