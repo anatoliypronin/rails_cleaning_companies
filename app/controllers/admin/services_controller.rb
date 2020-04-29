@@ -14,7 +14,7 @@ class Admin::ServicesController < Admin::ApplicationController
     else
       render action: :new
     end
-    end
+  end
 
   def show
     @service = Service.find(params[:id])
