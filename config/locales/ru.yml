@@ -1,4 +1,9 @@
 ru:
+ 
+  client_mailer:
+    welcome:
+      subject: "Добро пожаловать!"
+
   control: Управление 
   header:
     exit: Выход
@@ -28,7 +33,7 @@ ru:
         create new: "Создать нового администратора"
         view profile: "Посмотреть данные администратора"
       new:
-
+        cancel: "Отмена"
       show:
         back: "Назад"
         edit: "Редактировать"
@@ -81,7 +86,7 @@ ru:
         back: "Назад"    
     services:
       index:
-        show: Просмотр"
+        show: Просмотр
         create: Создать
         back: Назад
         view: Просмотреть
@@ -165,5 +170,4 @@ ru:
         name: Название города
       service:
         name: Услуга
-
 
