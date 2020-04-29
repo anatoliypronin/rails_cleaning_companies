@@ -146,4 +146,7 @@ ru:
       service:
         name: Услуга
 
+    client_mailer:
+      welcome_email:
+        subject: "${client}, добро пожаловать!"
 
