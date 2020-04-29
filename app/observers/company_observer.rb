@@ -4,5 +4,4 @@ class CompanyObserver < ActiveRecord::Observer
   def after_save(record)
     CompanyMailer.welcome_email(record).deliver_now
   end
-    
 end

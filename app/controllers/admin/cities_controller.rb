@@ -5,7 +5,7 @@ class Admin::CitiesController < Admin::ApplicationController
 
   def new
     @city = City.new
-    end
+  end
 
   def create
     @city = City.new(city_attrs)
