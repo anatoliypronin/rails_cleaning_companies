@@ -3,15 +3,17 @@
     %th= Company.human_attribute_name (:id)
     %th= Company.human_attribute_name (:name)
     %th= Company.human_attribute_name (:email)
+    %th= Company.human_attribute_name (:city)
     %th= Company.human_attribute_name (:requisites)
     %th= Company.human_attribute_name (:rating)
     %th= Company.human_attribute_name (:state)
-    %th= Company.human_attribute_name (:control)
+    %th= t('control')
   - @companies.each do |company|
     %tr.bg-success
       %td=company.id
       %td=company.name
       %td=company.email
+      %td=company.cities.map(&:name).join(', ')
       %td=company.requisites
       %td=company.rating
       %td=company.human_state_name

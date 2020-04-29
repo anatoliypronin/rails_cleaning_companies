@@ -10,14 +10,15 @@ class Admin::CompaniesController < Admin::ApplicationController
   def create
     @company = Company.new(companies_attrs)
     if @company.save
+      # CompanyMailer.welcome_email(@company).deliver_now
       redirect_to action: :index
     else
       render action: :new
     end
-    end
+  end
 
   def show
-    @company = Company.find(params[:id])
+    @company = Company.find(params[:id]).decorate
   end
 
   def edit
@@ -48,6 +49,7 @@ class Admin::CompaniesController < Admin::ApplicationController
   private
 
   def companies_attrs
-    params.require(:company).permit(:name, :email, :password, :requisites, :description, :rating, :phone_number)
+    params.require(:company).permit(:name, :email, :password, :requisites, :description, :rating, :phone_number,
+                                    city_ids: [])
   end
 end

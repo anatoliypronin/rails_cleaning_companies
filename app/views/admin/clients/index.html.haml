@@ -6,7 +6,7 @@
     %td= Client.human_attribute_name(:email)
     %td= Client.human_attribute_name(:phone_number)
     %td= Client.human_attribute_name(:state)
-
+    %td= t('control')
   - @clients.each do |client|
     %tr.bg-success
       %td= client.id

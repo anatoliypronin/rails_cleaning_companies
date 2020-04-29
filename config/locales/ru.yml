@@ -4,25 +4,34 @@ ru:
     welcome:
       subject: "Добро пожаловать!"
 
+  control: Управление 
   header:
     exit: Выход
     home: Домашняя страница
+  cancel: Отмена
     
   attributes:
     id: ID
     email: Почта
     state: Статус
-    control: Управление
     password: Пароль
     phone_number: Телефон
     role: Роль
 
   admin:
+    welcome:
+      index:
+        list_admin: Список Администраторов
+        list_company: Список Компаний
+        list_client: Список Клиентов
+        list_city: Список Городов
+        list_article: Список Статей
+        list_service: Список Услуг
     admins:
       index:
         back: "Назад"
         create new: "Создать нового администратора"
-        view profile: Посмотреть данные администратора"
+        view profile: "Посмотреть данные администратора"
       new:
         cancel: "Отмена"
       show:
@@ -31,21 +40,21 @@ ru:
         deleted: "Перевести в статус не активный"
         activate: "Перевести в статус активный"
       edit:
-        cancel: "Отмена"
+
     companies:
       index:
         back: "Назад"
         create new: "Создать новую компанию"
         view profile: "Посмотреть данные компании"
       new:
-        cancel: "Отмена"
+
       show:
         back: "Назад"
         edit: "Редактировать"
         deleted: "Перевести в статус не активный"
         activate: "Перевести в статус активный"
       edit:
-        cancel: "Назад"
+
     clients:
       index:
         show: "Просмотр"
@@ -70,6 +79,11 @@ ru:
         edit: "Изменить"
         delete: "Удалить"
         back: "Назад"
+    cities:
+      index:
+        deleted: "Удалить"
+        create: "Создать"
+        back: "Назад"    
     services:
       index:
         show: Просмотр
@@ -84,7 +98,7 @@ ru:
         back: "Назад"
 
   activerecord:
-    state_machine:
+    state_machines:
       client:
         state:
           states:
@@ -123,6 +137,9 @@ ru:
       articles:
         one: Статья
         others: Статьи
+      city:
+        one: Город
+        others: Города
       services:
         one: Услуга
         others: Услуга
@@ -135,18 +152,22 @@ ru:
         phone_number: Телефон
         password: Пароль
       company:
+        city: Город
         name: Название компании
         requisites: Реквизиты
         rating: Рейтинг
         description: Описание
         website: Сайт
         phonenumber: Телефон
+        phone_and_email: Телефон и почта
       admin:
         name: Имя администратора
       article:
         title: Заголовок
         short_description: Краткое описание
         description: Описание
+      city:
+        name: Название города
       service:
         name: Услуга
 

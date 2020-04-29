@@ -28,5 +28,7 @@ module App
     :port => '2525',
     :authentication => :cram_md5
   }
+
+    config.active_record.observers = :company_observer
   end
 end

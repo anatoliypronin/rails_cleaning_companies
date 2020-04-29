@@ -58,4 +58,12 @@ class Admin::CompaniesControllerTest < ActionDispatch::IntegrationTest
     @company.reload
     assert_equal @company.state, 'active'
   end
+
+  test 'should update company with city' do
+    @city = create :city
+    attrs_company = attributes_for :company
+    attrs_company[:city_ids] = [@city.id]
+    put admin_company_path(@company), params: { company: attrs_company }
+    assert @company.cities.include?(@city)
+  end
 end
