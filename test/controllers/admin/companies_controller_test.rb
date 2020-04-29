@@ -64,6 +64,6 @@ class Admin::CompaniesControllerTest < ActionDispatch::IntegrationTest
     attrs_company = attributes_for :company
     attrs_company[:city_ids] = [@city.id]
     put admin_company_path(@company), params: { company: attrs_company }
-    assert_equal @company.cities.ids, [@city.id]
+    assert @company.cities.include?(@city)
   end
 end
