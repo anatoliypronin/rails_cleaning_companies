@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ClientMailerTest < ActionMailer::TestCase
-  test "welcome email for client" do
+  test 'welcome email for client' do
     client = create :client
 
     email = ClientMailer.welcome_email(client)
