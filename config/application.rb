@@ -17,5 +17,16 @@ module App
     # the framework and any gems in your application.
     config.time_zone = 'Moscow'
     config.i18n.default_locale = :ru
+    config.active_record.observers = :client_observer
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => 'd809728d378e1d',
+    :password => '412083a0f9e667',
+    :address => 'smtp.mailtrap.io',
+    :domain => 'smtp.mailtrap.io',
+    :port => '2525',
+    :authentication => :cram_md5
+  }
   end
 end

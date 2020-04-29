@@ -11,7 +11,6 @@ class Admin::ClientsController < Admin::ApplicationController
     @client = Client.new(client_attrs)
 
     if @client.save
-      ClientMailer.welcome_email(@client).deliver_now
       redirect_to action: :index
     else
       render action: :new

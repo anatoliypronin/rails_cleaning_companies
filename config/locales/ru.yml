@@ -1,5 +1,9 @@
 ru:
  
+  client_mailer:
+    welcome:
+      subject: "Добро пожаловать!"
+
   header:
     exit: Выход
     home: Домашняя страница
@@ -68,7 +72,7 @@ ru:
         back: "Назад"
     services:
       index:
-        show: Просмотр"
+        show: Просмотр
         create: Создать
         back: Назад
         view: Просмотреть
@@ -145,8 +149,4 @@ ru:
         description: Описание
       service:
         name: Услуга
-
-    client_mailer:
-      welcome_email:
-        subject: "${client}, добро пожаловать!"
 
