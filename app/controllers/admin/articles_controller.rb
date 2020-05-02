@@ -1,6 +1,6 @@
 class Admin::ArticlesController < Admin::ApplicationController
   def index
-    @articles = Article.all
+    @articles = Article.all.decorate
   end
 
   def new
@@ -9,7 +9,7 @@ class Admin::ArticlesController < Admin::ApplicationController
 
   def create
     @article = Article.new(article_attrs)
-
+    @article[:admin_id] = current_admin.id
     if @article.save
       redirect_to action: :index
     else
@@ -18,7 +18,7 @@ class Admin::ArticlesController < Admin::ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:id]).decorate
   end
 
   def edit
@@ -45,6 +45,6 @@ class Admin::ArticlesController < Admin::ApplicationController
   private
 
   def article_attrs
-    params.require(:article).permit(:title, :short_description, :description)
+    params.require(:article).permit(:title, :short_description, :description, :admin_id)
   end
 end
