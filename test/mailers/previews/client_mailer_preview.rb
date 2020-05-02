@@ -2,6 +2,6 @@
 class ClientMailerPreview < ActionMailer::Preview
   def welcome_email
     client = Struct.new(:email, :name).new('name@example.com', 'Test User')
-    mail = ClientMailer.welcome_email(client)
+    ClientMailer.welcome_email(client)
     end
 end

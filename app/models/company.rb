@@ -1,4 +1,6 @@
 class Company < ApplicationRecord
+  include CompanyRepository
+
   has_many :company_cities, dependent: :destroy
   has_many :cities, through: :company_cities
   has_many :service_prices, dependent: :destroy

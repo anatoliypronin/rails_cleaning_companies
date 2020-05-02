@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
  root to: 'welcome#index'
 
+ namespace :api do
+  namespace :v1 do
+    resources :company, only: [:index, :show]
+  end
+ end
+
  resource :session, only: [:new, :create, :destroy]
 
  namespace :admin do

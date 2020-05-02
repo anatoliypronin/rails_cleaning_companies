@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'active_model_serializers', '~> 0.10.0'
 gem 'bootstrap', '~> 4.4.1'
 gem 'draper'
 gem 'enumerize'
