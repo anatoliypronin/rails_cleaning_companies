@@ -1,5 +1,8 @@
 class Admin < ApplicationRecord
   extend Enumerize
+
+  has_many :article, dependent: :nullify
+
   validates :name, :email, :role, presence: true
   validates :password, presence: true, length: { minimum: 6 }, on: :create
   validates :name, length: { maximum: 30 }
