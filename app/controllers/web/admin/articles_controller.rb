@@ -9,7 +9,7 @@ class Web::Admin::ArticlesController < Web::Admin::ApplicationController
 
   def create
     @article = Article.new(article_attrs)
-    @article[:admin_id] = current_admin.id
+    @article.admin = current_admin
     if @article.save
       redirect_to action: :index
     else
@@ -45,6 +45,6 @@ class Web::Admin::ArticlesController < Web::Admin::ApplicationController
   private
 
   def article_attrs
-    params.require(:article).permit(:title, :short_description, :description, :admin_id)
+    params.require(:article).permit(:title, :short_description, :description)
   end
 end
