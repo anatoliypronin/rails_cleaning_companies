@@ -1,4 +1,4 @@
-class Admin::ServicesController < Admin::ApplicationController
+class Web::Admin::ServicesController < Web::Admin::ApplicationController
   def index
     @services = Service.all
   end
