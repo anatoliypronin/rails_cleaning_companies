@@ -1,0 +1,173 @@
+ru:
+ 
+  client_mailer:
+    welcome:
+      subject: "Добро пожаловать!"
+
+  control: Управление 
+  header:
+    exit: Выход
+    home: Домашняя страница
+  cancel: Отмена
+    
+  attributes:
+    id: ID
+    email: Почта
+    state: Статус
+    password: Пароль
+    phone_number: Телефон
+    role: Роль
+
+  admin:
+    welcome:
+      index:
+        list_admin: Список Администраторов
+        list_company: Список Компаний
+        list_client: Список Клиентов
+        list_city: Список Городов
+        list_article: Список Статей
+        list_service: Список Услуг
+    admins:
+      index:
+        back: "Назад"
+        create new: "Создать нового администратора"
+        view profile: "Посмотреть данные администратора"
+      new:
+        cancel: "Отмена"
+      show:
+        back: "Назад"
+        edit: "Редактировать"
+        deleted: "Перевести в статус не активный"
+        activate: "Перевести в статус активный"
+      edit:
+
+    companies:
+      index:
+        back: "Назад"
+        create new: "Создать новую компанию"
+        view profile: "Посмотреть данные компании"
+      new:
+
+      show:
+        back: "Назад"
+        edit: "Редактировать"
+        deleted: "Перевести в статус не активный"
+        activate: "Перевести в статус активный"
+      edit:
+
+    clients:
+      index:
+        show: "Просмотр"
+        create: "Создать"
+        back: "Назад"
+      new:
+        back: "Назад"
+      show:
+        deleted: "Перевести в статус не активный"
+        activate: "Перевести в статус активный"
+        edit: "Изменить"
+        back: "Назад"  
+    articles:
+      index:
+        show: "Просмотр"
+        create: "Создать"
+        back: "Назад"
+        view article: "Просмотреть"
+      new:
+        back: "Назад"
+      show:
+        edit: "Изменить"
+        delete: "Удалить"
+        back: "Назад"
+    cities:
+      index:
+        deleted: "Удалить"
+        create: "Создать"
+        back: "Назад"    
+    services:
+      index:
+        show: Просмотр
+        create: Создать
+        back: Назад
+        view: Просмотреть
+      new:
+        back: Назад
+      show:
+        edit: "Изменить"
+        delete: "Удалить"
+        back: "Назад"
+
+  activerecord:
+    state_machines:
+      client:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            activate: Восстановить
+      admin:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            activate: Восстановить
+      company:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+          events:
+            del: Удалить
+            activate: Восстановить
+
+    models:
+      admin:
+        one: Администратор
+        others: Администраторы
+      company:
+        one: Компания
+        other: Компании
+      client:
+        one: Клиент
+        others: Клиенты
+      articles:
+        one: Статья
+        others: Статьи
+      city:
+        one: Город
+        others: Города
+      services:
+        one: Услуга
+        others: Услуга
+
+    attributes:
+      client:
+        name: Имя
+        surname: Фамилия
+        email: Почта
+        phone_number: Телефон
+        password: Пароль
+      company:
+        city: Город
+        name: Название компании
+        requisites: Реквизиты
+        rating: Рейтинг
+        description: Описание
+        website: Сайт
+        phonenumber: Телефон
+        phone_and_email: Телефон и почта
+      admin:
+        name: Имя администратора
+      article:
+        title: Заголовок
+        short_description: Краткое описание
+        description: Описание
+      city:
+        name: Название города
+      service:
+        name: Услуга
+

@@ -19,9 +19,9 @@ class ArticleTest < ActiveSupport::TestCase
 
   test "Shouldn't create, title > 100 characters" do
     article = build :article,
-                    title: "While many users need the functionality of a database " \
-                           "management system like MySQL,they may not feel comfortable " \
-                           "interacting with the system solely from the MySQL prompt."
+                    title: 'While many users need the functionality of a database ' \
+                           'management system like MySQL,they may not feel comfortable ' \
+                           'interacting with the system solely from the MySQL prompt.'
     article.save
 
     created_article = Article.last

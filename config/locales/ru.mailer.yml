@@ -1,0 +1,8 @@
+ru:
+  mailers:
+    company_mailer:
+      welcome_email:
+        subject: "Добро пожаловать, %{name}!"
+    client_mailer:
+      welcome_email:
+        subject: "Добро пожаловать, %{name}!"

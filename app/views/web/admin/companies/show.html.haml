@@ -1,0 +1,21 @@
+%table.table
+  %thead
+    %tr
+      %th= Company.human_attribute_name (:name)
+      %th= Company.human_attribute_name (:requisites)
+      %th= Company.human_attribute_name (:description)
+      %th= Company.human_attribute_name (:rating)
+      %th= Company.human_attribute_name (:website)
+      %th= Company.human_attribute_name (:phone_and_email)
+  %tbody
+    %tr
+      %td=@company.name
+      %td=@company.requisites
+      %td=@company.description
+      %td=@company.rating
+      %td=@company.website
+      %td=@company.phone_and_email
+= link_to t('.back'), admin_companies_path, :class => "btn btn-info"
+= link_to t('.edit'), edit_admin_company_path(@company.id), :class => "btn btn-info"
+= link_to t('.deleted'),admin_company_del_path(@company.id), method: :put, :class => "btn btn-info"
+= link_to t('.activate'),admin_company_restore_path(@company.id), method: :put, :class => "btn btn-info"

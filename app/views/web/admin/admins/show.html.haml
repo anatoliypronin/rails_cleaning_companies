@@ -1,0 +1,17 @@
+%table.table
+  %thead
+    %tr
+      %th= Company.human_attribute_name (:name)
+      %th= Company.human_attribute_name (:email)
+      %th= Company.human_attribute_name (:role)
+      %th= Company.human_attribute_name (:state)
+  %tbody
+    %tr
+      %td=@admin.name
+      %td=@admin.email
+      %td=@admin.role_text
+      %td=@admin.human_state_name
+= link_to t('.back'), admin_admins_path, :class => "btn btn-info"
+= link_to t('.edit'), edit_admin_admin_path(@admin.id), :class => "btn btn-info"
+= link_to t('.deleted'),admin_admin_del_path(@admin.id), method: :put, :class => "btn btn-info"
+= link_to t('.activate'),admin_admin_restore_path(@admin.id), method: :put, :class => "btn btn-info"

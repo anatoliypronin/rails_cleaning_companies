@@ -3,14 +3,22 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
 
+gem 'active_model_serializers', '~> 0.10.0'
+gem 'bootstrap', '~> 4.4.1'
+gem 'draper'
 gem 'enumerize'
+gem 'haml-rails', '~> 2.0'
+gem 'jquery-rails'
 gem 'pg'
 gem 'phonelib'
+gem 'rails-observers'
 gem 'rubocop-rails', require: false
+gem 'russian', '~> 0.6.0'
+gem 'select2-rails'
 gem 'simple_form'
 gem 'state_machines-activerecord'
 gem 'valid_email'
-gem "haml-rails", "~> 2.0"
+gem 'validates_timeliness'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
@@ -29,7 +37,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

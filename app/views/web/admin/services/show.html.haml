@@ -1,0 +1,10 @@
+%table.table
+  %tr.table-info
+    %th= Service.human_attribute_name(:name)
+  %tbody
+    %tr
+      %td=@service.name
+= link_to t('.back'), admin_services_path, :class => "btn btn-info"
+= link_to t('.delete'), admin_service_path(@service.id), method: :delete, :class => "btn btn-info"
+= link_to t('.edit'), edit_admin_service_path(@service.id), :class => "btn btn-info"
+

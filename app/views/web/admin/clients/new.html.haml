@@ -1,0 +1,8 @@
+= simple_form_for @client, url: admin_clients_path do |f|
+  = f.input :name
+  = f.input :surname
+  = f.input :email
+  = f.input :phone_number
+  = f.input :password
+  = f.button :submit, class: 'btn btn-info'
+= link_to t('.back'), admin_clients_path, class: 'btn btn-info'

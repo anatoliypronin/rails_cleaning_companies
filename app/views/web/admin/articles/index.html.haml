@@ -1,0 +1,16 @@
+%table.table
+  %tr.table-info
+    %th= Article.human_attribute_name(:id)
+    %th= Article.human_attribute_name(:title)
+    %th= t('control')
+
+  - @articles.each do |article|
+    %tr.bg-success
+      %td= article.id
+      %td= article.title
+      %td= link_to t('.view article'), admin_article_path(article)
+.btn.btn-light
+  = link_to t('.back'), admin_root_path, :class => "btn btn-info"
+.btn.btn-light
+  = link_to t('.create'), new_admin_article_path, :class => "btn btn-info"
+

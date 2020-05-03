@@ -34,7 +34,7 @@ class ClientTest < ActiveSupport::TestCase
   end
 
   test 'Small password' do
-    client = build :client, password_digest: '123'
+    client = build :client, password: '123'
     client.save
 
     created_client = Client.last
