@@ -19,6 +19,6 @@ class Web::Admin::ServicePricesController < Web::Admin::ApplicationController
     private
 
     def service_prices_attrs
-        params.require(:service_price).permit(:price, city_id: [], company_id: [], service_id:[])
+        params.require(:service_price).permit( :city_id, :company_id , :service_id, :price)
     end
 end
