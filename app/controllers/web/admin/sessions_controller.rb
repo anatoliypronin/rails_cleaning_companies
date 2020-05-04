@@ -1,4 +1,5 @@
-class Web::SessionsController < Web::ApplicationController
+class Web::Admin::SessionsController < Web::Admin::ApplicationController
+  skip_before_action :authenticate_admin!
   def new; end
 
   def create
@@ -13,6 +14,6 @@ class Web::SessionsController < Web::ApplicationController
 
   def destroy
     admin_sign_out
-    redirect_to new_session_path
+    redirect_to new_admin_session_path
   end
 end

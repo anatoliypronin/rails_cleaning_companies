@@ -10,9 +10,8 @@ Rails.application.routes.draw do
  scope module: :web do
    root to: 'welcome#index'
 
-   resource :session, only: [:new, :create, :destroy]
-
     namespace :admin do
+      resource :session, only: [:new, :create, :destroy]
         root 'welcome#index'
         resources :admins do
           put 'restore'
@@ -30,5 +29,10 @@ Rails.application.routes.draw do
         resources :articles
         resources :services
     end  
+
+    scope module: :company do
+      resource :session, only: [:new, :create, :destroy]
+      resource :company
+    end
   end
 end
