@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
- 
 
  namespace :api do
   namespace :v1 do
@@ -29,6 +28,11 @@ Rails.application.routes.draw do
         resources :cities
         resources :articles
         resources :services
-    end  
+    end
+
+    scope module: :client do
+      resource :client
+      resource :client_session, only: %i[new create destroy]
+    end
   end
 end
