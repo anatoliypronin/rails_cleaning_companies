@@ -1,0 +1,7 @@
+= simple_form_for @service_price, url: admin_service_prices_path do |f|
+  = f.input :price
+  = f.association :city, as: :check_boxes
+  = f.association :company, as: :check_boxes
+  = f.association :service, as: :check_boxes
+  = f.button :submit, class: 'btn btn-info'
+  = link_to t('cancel'), admin_companies_path, :class => "btn btn-info"

@@ -29,6 +29,7 @@ Rails.application.routes.draw do
         resources :cities
         resources :articles
         resources :services
+        resources :service_prices
     end  
   end
 end

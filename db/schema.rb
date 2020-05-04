@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_215125) do
     t.bigint "city_id", null: false
     t.bigint "company_id", null: false
     t.integer "price", null: false
-    t.string "state", null: false
+    t.string "state", null: false 
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["city_id"], name: "index_service_prices_on_city_id"
