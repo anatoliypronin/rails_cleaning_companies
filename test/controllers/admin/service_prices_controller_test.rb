@@ -27,4 +27,23 @@ test 'should get index service_prices page' do
     assert_equal service_prices_attrs[:company_id], service_price.company_id
   end
 
+  test 'should get show service_price page' do
+    get admin_service_price_path(@service_price)
+    assert_response :success
+  end
+
+  test 'should get edit service_price page' do
+    get edit_admin_service_price_path(@service_price)
+    assert_response :success
+  end
+
+  test 'should put update service_price' do
+    attrs = {}
+    attrs[:price] = generate :price
+    put admin_service_price_path(@service_price), params: { service_price: attrs }
+    assert_response :redirect
+    @service_price.reload
+    assert_equal attrs[:price], @service_price.price
+  end
+
 end

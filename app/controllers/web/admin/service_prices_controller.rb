@@ -16,6 +16,23 @@ class Web::Admin::ServicePricesController < Web::Admin::ApplicationController
         end
     end
 
+    def show
+      @service_price = ServicePrice.find(params[:id])
+    end
+  
+    def edit
+      @service_price = ServicePrice.find(params[:id])
+    end
+  
+    def update
+      @service_price = ServicePrice.find(params[:id])
+      if @service_price.update(service_prices_attrs)
+        redirect_to action: :index
+      else
+        render action: :edit
+      end
+    end
+
     private
 
     def service_prices_attrs
