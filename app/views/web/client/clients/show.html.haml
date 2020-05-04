@@ -1,0 +1,14 @@
+%table.table
+  %thead
+    %tr
+      %th= Client.human_attribute_name(:name)
+      %th= Client.human_attribute_name(:surname)
+      %th= Client.human_attribute_name(:phone_number)
+      %th= Client.human_attribute_name(:state)
+  %tbody
+    %tr
+      %th= @client.name
+      %th= @client.surname
+      %th= @client.phone_number
+      %th= @client.human_state_name
+%b= link_to t('.edit'), edit_client_path, :class => 'btn btn-info'
