@@ -1,0 +1,7 @@
+= simple_form_for @service_price, url: admin_service_price_path(@service_price.id) do |f|
+  = f.input :price
+  = f.input :city_id, collection: City.all
+  = f.input :company_id, collection: Company.all
+  = f.input :service_id, collection: Service.all
+  = f.button :submit, :class => "btn btn-primary"
+  = link_to t('.cancel'), admin_service_price_path, :class => "btn btn-primary"

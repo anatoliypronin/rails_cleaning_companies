@@ -1,14 +1,18 @@
 %table.table
   %tr.table-info
     %th= ServicePrice.human_attribute_name (:id)
+    %th= ServicePrice.human_attribute_name (:service)
+    %th= ServicePrice.human_attribute_name (:price)
     %th= t('control')
   - @service_prices.each do |service_price|
     %tr.bg-success
       %td=service_price.id
-      /%td=link_to t('.view profile'), admin_company_path(company)
+      %td=service_price.service.name
+      %td=service_price.price
+      %td=link_to t('.view'), admin_service_price_path(service_price)
 .btn.btn-light
   = link_to t('.back'), admin_root_path, :class => "btn btn-info"
-/.btn.btn-light
-/  = link_to t('.create new'), new_admin_company_path, :class => "btn btn-info"
+.btn.btn-light
+  = link_to t('.create new'), new_admin_service_price_path, :class => "btn btn-info"
 
 
