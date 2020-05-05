@@ -29,7 +29,12 @@ Rails.application.routes.draw do
         resources :cities
         resources :articles
         resources :services
-        resources :service_prices
+        resources :service_prices do
+          put 'restore'
+          put 'del'
+          put 'disable'
+        end
+
     end  
   end
 end
