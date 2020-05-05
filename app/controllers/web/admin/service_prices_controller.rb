@@ -35,11 +35,21 @@ class Web::Admin::ServicePricesController < Web::Admin::ApplicationController
 
     def del
       service_price = ServicePrice.find(params[:service_price_id])
-      service_price.del!
+      service_price.del
       redirect_to action: :index
     end
 
-    
+    def restore
+      service_price = ServicePrice.find(params[:service_price_id])
+      service_price.activate
+      redirect_to action: :index
+    end
+
+    def disable
+      service_price = ServicePrice.find(params[:service_price_id])
+      service_price.disable
+      redirect_to action: :index
+    end
 
     private
 
