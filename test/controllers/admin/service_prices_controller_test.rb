@@ -1,15 +1,14 @@
 require 'test_helper'
 
 class Admin::ServicePriceControllerTest < ActionDispatch::IntegrationTest
-
-setup do
+  setup do
     @admin = create :admin
     sign_in_as_admin(@admin)
     @service_price = create :service_price
-end
+  end
 
-test 'should get index service_prices page' do
-    get  admin_service_prices_path
+  test 'should get index service_prices page' do
+    get admin_service_prices_path
     assert_response :success
   end
 
@@ -52,5 +51,4 @@ test 'should get index service_prices page' do
     @service_price.reload
     assert_equal @service_price.state, 'deleted'
   end
-
 end

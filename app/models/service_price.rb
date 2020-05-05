@@ -11,15 +11,15 @@ class ServicePrice < ApplicationRecord
     state :deleted
 
     event :disable do
-      transition from: [:active, :deleted], to: :disable
+      transition from: %i[active deleted], to: :disable
     end
 
     event :del do
-      transition from: [:disable, :active], to: :deleted
+      transition from: %i[disable active], to: :deleted
     end
 
     event :activate do
-      transition from: [:deleted, :disable], to: :active
+      transition from: %i[deleted disable], to: :active
     end
   end
 end
