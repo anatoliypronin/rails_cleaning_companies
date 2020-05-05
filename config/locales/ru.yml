@@ -17,85 +17,100 @@ ru:
     password: Пароль
     phone_number: Телефон
     role: Роль
+  web:
+    admin:
+      welcome:
+        index:
+          list_admin: Список Администраторов
+          list_company: Список Компаний
+          list_client: Список Клиентов
+          list_city: Список Городов
+          list_article: Список Статей
+          list_service: Список Услуг
+          list_service_price: Список цен
+      admins:
+        index:
+          back: "Назад"
+          create new: "Создать нового администратора"
+          view profile: "Посмотреть данные администратора"
+        show:
+          back: "Назад"
+          edit: "Редактировать"
+          deleted: "Перевести в статус не активный"
+          activate: "Перевести в статус активный"
+        edit:
+          cancel: "Отмена"
 
-  admin:
-    welcome:
-      index:
-        list_admin: Список Администраторов
-        list_company: Список Компаний
-        list_client: Список Клиентов
-        list_city: Список Городов
-        list_article: Список Статей
-        list_service: Список Услуг
-    admins:
-      index:
-        back: "Назад"
-        create new: "Создать нового администратора"
-        view profile: "Посмотреть данные администратора"
-      new:
-        cancel: "Отмена"
-      show:
-        back: "Назад"
-        edit: "Редактировать"
-        deleted: "Перевести в статус не активный"
-        activate: "Перевести в статус активный"
-      edit:
+      companies:
+        index:
+          back: "Назад"
+          create new: "Создать новую компанию"
+          view profile: "Посмотреть данные компании"
+        new:
 
-    companies:
-      index:
-        back: "Назад"
-        create new: "Создать новую компанию"
-        view profile: "Посмотреть данные компании"
-      new:
+        show:
+          back: "Назад"
+          edit: "Редактировать"
+          deleted: "Перевести в статус не активный"
+          activate: "Перевести в статус активный"
+        edit:
+          cancel: "Отмена"
 
-      show:
-        back: "Назад"
-        edit: "Редактировать"
-        deleted: "Перевести в статус не активный"
-        activate: "Перевести в статус активный"
-      edit:
-
-    clients:
-      index:
-        show: "Просмотр"
-        create: "Создать"
-        back: "Назад"
-      new:
-        back: "Назад"
-      show:
-        deleted: "Перевести в статус не активный"
-        activate: "Перевести в статус активный"
-        edit: "Изменить"
-        back: "Назад"  
-    articles:
-      index:
-        show: "Просмотр"
-        create: "Создать"
-        back: "Назад"
-        view article: "Просмотреть"
-      new:
-        back: "Назад"
-      show:
-        edit: "Изменить"
-        delete: "Удалить"
-        back: "Назад"
-    cities:
-      index:
-        deleted: "Удалить"
-        create: "Создать"
-        back: "Назад"    
-    services:
-      index:
-        show: Просмотр
-        create: Создать
-        back: Назад
-        view: Просмотреть
-      new:
-        back: Назад
-      show:
-        edit: "Изменить"
-        delete: "Удалить"
-        back: "Назад"
+      clients:
+        index:
+          show: "Просмотр"
+          create: "Создать"
+          back: "Назад"
+        new:
+          back: "Назад"
+        show:
+          deleted: "Перевести в статус не активный"
+          activate: "Перевести в статус активный"
+          edit: "Изменить"
+          back: "Назад" 
+        edit: 
+          back: "Назад" 
+      articles:
+        index:
+          show: "Просмотр"
+          create: "Создать"
+          back: "Назад"
+          view article: "Просмотреть"
+        new:
+          back: "Назад"
+        show:
+          edit: "Изменить"
+          delete: "Удалить"
+          back: "Назад"
+      cities:
+        index:
+          deleted: "Удалить"
+          create: "Создать"
+          back: "Назад"    
+      services:
+        index:
+          create: Создать
+          back: Назад
+          view: Просмотреть
+        new:
+          cancel: "Отмена"
+        show:
+          edit: "Изменить"
+          delete: "Удалить"
+          back: "Назад"
+        edit:
+          cancel: "Отмена"
+      service_prices:
+        index:
+          back: "Назад"
+          create: "Создать"
+          view: "Просмотреть"
+        show:
+          back: "Назад"
+          edit: "Изменить"
+          deleted: "Перевести в статус не активный"
+          activate: "Перевести в статус активный"
+          disable: "Перевести в статус временно не доступно"
 
   activerecord:
     state_machines:
@@ -123,7 +138,16 @@ ru:
           events:
             del: Удалить
             activate: Восстановить
-
+      service_price:
+        state:
+          states:
+            active: Активный
+            deleted: Удаленный
+            disable: Временно не доступный
+          events:
+            del: Удалить
+            activate: Доступна
+            disable: Временно не доступна
     models:
       admin:
         one: Администратор
@@ -140,9 +164,12 @@ ru:
       city:
         one: Город
         others: Города
-      services:
+      service:
         one: Услуга
         others: Услуга
+      service_price:
+        one: Цена
+        others: Цены  
 
     attributes:
       client:
@@ -170,4 +197,12 @@ ru:
         name: Название города
       service:
         name: Услуга
+      service_price:
+        price: Цена
+        service: Услуга
+        city: Город
+        company: Компания
+        city_id: Город
+        service_id: Услуга
+        company_id: Компания
 

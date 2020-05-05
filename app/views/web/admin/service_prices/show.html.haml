@@ -12,7 +12,7 @@
       %td=@service_price.service.name
       %td=@service_price.city.name
       %td=@service_price.company.name
-      %td=@service_price.state
+      %td=@service_price.human_state_name
 = link_to t('.back'), admin_service_prices_path, :class => "btn btn-info"
 = link_to t('.edit'), edit_admin_service_price_path(@service_price.id), :class => "btn btn-info" 
 -if @service_price.can_del?
