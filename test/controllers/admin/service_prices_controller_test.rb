@@ -46,4 +46,11 @@ test 'should get index service_prices page' do
     assert_equal attrs[:price], @service_price.price
   end
 
+  test 'should state deleted service_price' do
+    put admin_service_price_del_path(@service_price)
+    assert_response :redirect
+    @service_price.reload
+    assert_equal @service_price.state, 'deleted'
+  end
+
 end
