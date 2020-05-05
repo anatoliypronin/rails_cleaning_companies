@@ -19,7 +19,7 @@ class Company::SessionsControllerTest < ActionDispatch::IntegrationTest
     sign_in_as_company(@company)
     assert_response :redirect
 
-   assert_equal session[:company_id], @company.id
+    assert_equal session[:company_id], @company.id
 
     delete session_path
     assert_response :redirect
