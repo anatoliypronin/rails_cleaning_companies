@@ -9,13 +9,13 @@ class Company::SessionsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test 'should post create new session for admin' do
+  test 'should post create new session for company' do
     sign_in_as_company(@company)
     assert_response :redirect
     assert_equal session[:company_id], @company.id
   end
 
-  test 'should delete destroy session for admin' do
+  test 'should delete destroy session for company' do
     sign_in_as_company(@company)
     assert_response :redirect
 
