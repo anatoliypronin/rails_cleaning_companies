@@ -13,15 +13,15 @@ class Web::Client::ClientsController < Web::Client::ApplicationController
   end
 
   def show
-    @client = Client.find(current_client.id).decorate
+    @client = current_client.decorate
   end
 
   def edit
-    @client = Client.find(current_client.id)
+    @client = current_client
   end
 
   def update
-    @client = Client.find(current_client.id)
+    @client = current_client
 
     if @client.update(clients_params)
       redirect_to action: :show
