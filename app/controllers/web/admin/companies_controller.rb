@@ -1,6 +1,7 @@
 class Web::Admin::CompaniesController < Web::Admin::ApplicationController
   def index
-    @companies = Company.all
+    @search_company = Company.ransack(params[:q])
+    @companies = @search_company.result(distinct: true)
   end
 
   def new
