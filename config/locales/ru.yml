@@ -1,15 +1,15 @@
 ru:
- 
+
   client_mailer:
     welcome:
       subject: "Добро пожаловать!"
 
-  control: Управление 
+  control: Управление
   header:
     exit: Выход
     home: Домашняя страница
   cancel: Отмена
-    
+
   attributes:
     id: ID
     email: Почта
@@ -66,9 +66,11 @@ ru:
         deleted: "Перевести в статус не активный"
         activate: "Перевести в статус активный"
         edit: "Изменить"
-        back: "Назад"  
+        back: "Назад"
     articles:
       index:
+        author: Имя автора
+        published_at: Дата создания
         show: "Просмотр"
         create: "Создать"
         back: "Назад"
@@ -76,6 +78,8 @@ ru:
       new:
         back: "Назад"
       show:
+        author: Имя автора
+        published_at: Дата создания
         edit: "Изменить"
         delete: "Удалить"
         back: "Назад"
@@ -83,7 +87,7 @@ ru:
       index:
         deleted: "Удалить"
         create: "Создать"
-        back: "Назад"    
+        back: "Назад"
     services:
       index:
         show: Просмотр
