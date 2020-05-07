@@ -1,17 +1,4 @@
 class Web::Client::ProfilesController < Web::Client::ApplicationController
-  def new
-    @client = Client.new
-  end
-
-  def create
-    @client = Client.new(clients_params)
-    if @client.save
-      redirect_to client_profile_path(@client.id)
-    else
-      render action: :new
-    end
-  end
-
   def show
     @client = current_client.decorate
   end

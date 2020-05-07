@@ -31,7 +31,7 @@ Rails.application.routes.draw do
     end
 
     namespace :client do
-      resource :profile
+      resource :profile, only: %i[show edit update]
       resource :session, only: %i[new create destroy]
     end
   end
