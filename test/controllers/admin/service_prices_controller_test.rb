@@ -24,6 +24,8 @@ class Admin::ServicePriceControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     service_price = ServicePrice.last
     assert_equal service_prices_attrs[:company_id], service_price.company_id
+    assert_equal service_prices_attrs[:city_id], service_price.city_id
+    assert_equal service_prices_attrs[:service_id], service_price.service_id
   end
 
   test 'should get show service_price page' do
