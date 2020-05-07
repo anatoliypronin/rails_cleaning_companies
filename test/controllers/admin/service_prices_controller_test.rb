@@ -53,4 +53,19 @@ class Admin::ServicePriceControllerTest < ActionDispatch::IntegrationTest
     @service_price.reload
     assert_equal @service_price.state, 'deleted'
   end
+  
+  test 'should state disable service_price' do
+    put admin_service_price_disable_path(@service_price)
+    assert_response :redirect
+    @service_price.reload
+    assert_equal @service_price.state, 'disable'
+  end
+
+  test 'should state active service_price' do
+    @service_price = create :service_price, :disabled
+    put admin_service_price_restore_path(@service_price)
+    assert_response :redirect
+    @service_price.reload
+    assert_equal @service_price.state, 'active'
+  end
 end
