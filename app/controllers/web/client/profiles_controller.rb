@@ -1,4 +1,4 @@
-class Web::Client::ClientsController < Web::Client::ApplicationController
+class Web::Client::ProfilesController < Web::Client::ApplicationController
   def new
     @client = Client.new
   end
@@ -6,7 +6,7 @@ class Web::Client::ClientsController < Web::Client::ApplicationController
   def create
     @client = Client.new(clients_params)
     if @client.save
-      redirect_to client_path(@client.id)
+      redirect_to client_profile_path(@client.id)
     else
       render action: :new
     end

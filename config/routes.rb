@@ -30,9 +30,9 @@ Rails.application.routes.draw do
         resources :services
     end
 
-    scope module: :client do
-      resource :client
-      resource :client_session, only: %i[new create destroy]
+    namespace :client do
+      resource :profile
+      resource :session, only: %i[new create destroy]
     end
   end
 end
