@@ -69,29 +69,27 @@ class Admin::CompaniesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get company by company name' do
     get admin_companies_path, params: { q: { name_cont: @company.name } }
+    assert_response :success
     assert_select 'tr.bg-success'
   end
 
   test 'should not get company by company name' do
     get admin_companies_path, params: { q: { name_cont: 'foo' } }
+    assert_response :success
     assert_select 'tr.bg-success', false
   end
 
   test 'should get company by city name' do
-    city = create :city
-    attrs_company = attributes_for :company
-    attrs_company[:city_ids] = [city.id]
-    put admin_company_path(@company), params: { company: attrs_company }
+    company_city = create :company_city
+    city = City.find_by(id: company_city.city_id)
     get admin_companies_path, params: { q: { cities_name_cont: city.name } }
+    assert_response :success
     assert_select 'tr.bg-success'
   end
 
   test 'should not get company by city name' do
-    city = create :city
-    attrs_company = attributes_for :company
-    attrs_company[:city_ids] = [city.id]
-    put admin_company_path(@company), params: { company: attrs_company }
     get admin_companies_path, params: { q: { cities_name_cont: 'foo' } }
+    assert_response :success
     assert_select 'tr.bg-success', false
   end
 end
