@@ -1,5 +1,4 @@
 class Web::Company::ProfilesController < Web::Company::ApplicationController
-
   def show
     @company = current_company.decorate
   end
