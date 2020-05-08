@@ -26,9 +26,9 @@ class Admin::ServicePriceControllerTest < ActionDispatch::IntegrationTest
     assert_equal service_prices_attrs[:company_id], service_price.company_id
     assert_equal service_prices_attrs[:city_id], service_price.city_id
     assert_equal service_prices_attrs[:service_id], service_price.service_id
-    assert_equal service_price.city_id, @city.id
-    assert_equal service_price.service_id, @service.id
-    assert_equal service_price.company_id, @company.id
+    assert_equal service_price.city, @city
+    assert_equal service_price.service, @service
+    assert_equal service_price.company, @company
   end
 
   test 'should get show service_price page' do
@@ -56,7 +56,7 @@ class Admin::ServicePriceControllerTest < ActionDispatch::IntegrationTest
     @service_price.reload
     assert_equal @service_price.state, 'deleted'
   end
-  
+
   test 'should state disable service_price' do
     put admin_service_price_disable_path(@service_price)
     assert_response :redirect
