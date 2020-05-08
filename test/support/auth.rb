@@ -5,7 +5,7 @@ module Support
     end
 
     def sign_in_as_company(company)
-      post session_path, params: { company: { email: company.email, password: company.password } }
+      post company_session_path, params: { company: { email: company.email, password: company.password } }
     end
   end
 end
