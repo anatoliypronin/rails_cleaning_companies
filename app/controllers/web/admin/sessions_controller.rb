@@ -1,5 +1,5 @@
 class Web::Admin::SessionsController < Web::Admin::ApplicationController
-  skip_before_action :authenticate_admin!
+  skip_before_action :authenticate_admin!, only: %i[new create]
   def new; end
 
   def create

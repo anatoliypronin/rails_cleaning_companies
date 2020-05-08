@@ -30,9 +30,9 @@ Rails.application.routes.draw do
         resources :services
     end  
 
-    scope module: :company do
+    namespace :company do
       resource :session, only: [:new, :create, :destroy]
-      resource :company
+      resource :company, only: [:show, :edit, :update]
     end
   end
 end

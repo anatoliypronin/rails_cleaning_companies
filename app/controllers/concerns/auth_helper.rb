@@ -36,6 +36,6 @@ module AuthHelper
   end
 
   def authenticate_company!
-    redirect_to new_session_path unless company_sign_in?
+    redirect_to new_company_session_path unless company_sign_in?
   end
 end

@@ -1,5 +1,5 @@
 class Web::Company::SessionsController < Web::Company::ApplicationController
-  skip_before_action :authenticate_company!
+  skip_before_action :authenticate_company!,only: %i[new create]
   def new; end
 
   def create
