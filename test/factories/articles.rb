@@ -3,5 +3,6 @@ FactoryBot.define do
     title
     short_description
     description
+    admin
   end
 end

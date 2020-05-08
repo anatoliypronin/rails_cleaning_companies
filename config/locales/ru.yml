@@ -1,15 +1,15 @@
 ru:
- 
+
   client_mailer:
     welcome:
       subject: "Добро пожаловать!"
 
-  control: Управление 
+  control: Управление
   header:
     exit: Выход
     home: Домашняя страница
   cancel: Отмена
-    
+
   attributes:
     id: ID
     email: Почта
