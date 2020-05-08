@@ -1,23 +1,11 @@
-class Web::Company::CompaniesController < Web::Company::ApplicationController
-  def new
-    @company = Company.new
-  end
-
-  def create
-    @company = Company.new(company_params)
-    if @company.save
-      redirect_to company_path(@company.id)
-    else
-      render action: :new
-    end
-  end
+class Web::Company::ProfilesController < Web::Company::ApplicationController
 
   def show
-    @company = current_company
+    @company = current_company.decorate
   end
 
   def edit
-    @client = current_company
+    @company = current_company
   end
 
   def update

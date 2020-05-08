@@ -6,7 +6,7 @@ class Web::Company::SessionsController < Web::Company::ApplicationController
     company = Company.find_by(email: params[:company][:email])
     if company&.authenticate(params[:company][:password])
       company_sign_in(company)
-      redirect_to root_path
+      redirect_to company_profile_path
     else
       render action: :new
     end

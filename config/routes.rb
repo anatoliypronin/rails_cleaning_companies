@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
     namespace :company do
       resource :session, only: [:new, :create, :destroy]
-      resource :company, only: [:show, :edit, :update]
+      resource :profile, only: [:show, :edit, :update]
     end
   end
 end
