@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Client::SessionsControllerTest < ActionDispatch::IntegrationTest
+class Web::Client::SessionsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @client = create :client
   end

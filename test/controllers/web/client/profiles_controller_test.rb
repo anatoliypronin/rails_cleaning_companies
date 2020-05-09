@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Client::ProfilesControllerTest < ActionDispatch::IntegrationTest
+class Web::Client::ProfilesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @client = create :client
     sign_in_as_client(@client)
