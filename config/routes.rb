@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
- 
 
  namespace :api do
   namespace :v1 do
@@ -28,11 +27,18 @@ Rails.application.routes.draw do
         resources :cities
         resources :articles
         resources :services
-    end  
-
+        resources :service_prices do
+          put 'restore'
+          put 'del'
+          put 'disable'
+        end
+    end
+    namespace :client do
+      resource :profile, only: %i[show edit update]
+      resource :session, only: %i[new create destroy]
+    end
     namespace :company do
       resource :session, only: [:new, :create, :destroy]
       resource :profile, only: [:show, :edit, :update]
-    end
   end
 end

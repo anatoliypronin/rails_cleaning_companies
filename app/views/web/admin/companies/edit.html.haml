@@ -1,6 +1,7 @@
 = simple_form_for @company, url: admin_company_path(@company.id) do |f|
   = f.input :name
-  = f.association :cities, as: :check_boxes, group_method: :city
+  = f.association :cities, as: :check_boxes
+  = f.association :service_prices, as: :check_boxes
   = f.input :email
   = f.input :password
   = f.input :requisites

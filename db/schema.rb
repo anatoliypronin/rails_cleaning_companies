@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_215125) do
+ActiveRecord::Schema.define(version: 2020_05_10_163131) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_215125) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "state", null: false
+    t.index ["email"], name: "index_admins_on_email", unique: true
   end
 
   create_table "articles", force: :cascade do |t|
@@ -31,6 +32,8 @@ ActiveRecord::Schema.define(version: 2020_04_13_215125) do
     t.text "description", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "admin_id", null: false
+    t.index ["admin_id"], name: "index_articles_on_admin_id"
   end
 
   create_table "cities", force: :cascade do |t|
@@ -48,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_215125) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "state", null: false
+    t.index ["email"], name: "index_clients_on_email", unique: true
   end
 
   create_table "companies", force: :cascade do |t|
@@ -62,6 +66,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_215125) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "state", null: false
+    t.index ["email"], name: "index_companies_on_email", unique: true
   end
 
   create_table "company_cities", force: :cascade do |t|
@@ -94,7 +99,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_215125) do
     t.bigint "city_id", null: false
     t.bigint "company_id", null: false
     t.integer "price", null: false
-    t.string "state", null: false
+    t.string "state", null: false 
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["city_id"], name: "index_service_prices_on_city_id"
@@ -108,6 +113,7 @@ ActiveRecord::Schema.define(version: 2020_04_13_215125) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "articles", "admins"
   add_foreign_key "company_cities", "cities"
   add_foreign_key "company_cities", "companies"
   add_foreign_key "orders", "clients"

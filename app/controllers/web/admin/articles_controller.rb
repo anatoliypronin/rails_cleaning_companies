@@ -1,6 +1,6 @@
 class Web::Admin::ArticlesController < Web::Admin::ApplicationController
   def index
-    @articles = Article.all
+    @articles = Article.all.decorate
   end
 
   def new
@@ -9,7 +9,7 @@ class Web::Admin::ArticlesController < Web::Admin::ApplicationController
 
   def create
     @article = Article.new(article_attrs)
-
+    @article.admin = current_admin
     if @article.save
       redirect_to action: :index
     else
@@ -18,7 +18,7 @@ class Web::Admin::ArticlesController < Web::Admin::ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:id]).decorate
   end
 
   def edit
