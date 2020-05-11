@@ -1,0 +1,8 @@
+= simple_form_for @client, url: client_profile_path do |f|
+  = f.input :name
+  = f.input :surname
+  = f.input :email
+  = f.input :phone_number
+  = f.input :password
+  = f.button :submit, :class => "btn btn-primary"
+= link_to t('.back'), client_profile_path, :class => "btn btn-primary"

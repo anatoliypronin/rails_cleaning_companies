@@ -5,6 +5,7 @@ ruby '2.6.3'
 
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'bootstrap', '~> 4.4.1'
+gem 'coveralls', require: false
 gem 'draper'
 gem 'enumerize'
 gem 'haml-rails', '~> 2.0'
