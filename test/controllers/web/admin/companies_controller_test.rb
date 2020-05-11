@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Admin::CompaniesControllerTest < ActionDispatch::IntegrationTest
+class Web::Admin::CompaniesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @admin = create :admin
     sign_in_as_admin(@admin)
