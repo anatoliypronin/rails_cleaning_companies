@@ -4,11 +4,16 @@
       %th= Article.human_attribute_name (:title)
       %th= Article.human_attribute_name (:short_description)
       %th= Article.human_attribute_name (:description)
+      %th= t('.author')
+      %th= t('.published_at')
   %tbody
     %tr
       %td= @article.title
       %td= @article.short_description
       %td= @article.description
+      %td= @article.admin.name
+      %td= @article.created_at
+
 
 = link_to t('.back'), admin_articles_path, :class => "btn btn-info"
 = link_to t('.delete'), admin_article_path(@article.id), method: :delete, :class => "btn btn-info"
