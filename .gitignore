@@ -24,6 +24,7 @@
 /node_modules
 /yarn-error.log
 yarn-debug.log*
+/coverage/*
 
 # Ignore vim swap files.
 *.swp
