@@ -51,5 +51,4 @@ class Admin::ArticleControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     assert_not Article.exists?(@article.id)
   end
-
 end
