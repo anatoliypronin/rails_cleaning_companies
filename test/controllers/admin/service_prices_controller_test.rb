@@ -23,9 +23,6 @@ class Admin::ServicePriceControllerTest < ActionDispatch::IntegrationTest
     post admin_service_prices_path, params: { service_price: service_prices_attrs }
     assert_response :redirect
     service_price = ServicePrice.last
-    assert_equal service_prices_attrs[:company_id], service_price.company_id
-    assert_equal service_prices_attrs[:city_id], service_price.city_id
-    assert_equal service_prices_attrs[:service_id], service_price.service_id
     assert_equal service_price.city, @city
     assert_equal service_price.service, @service
     assert_equal service_price.company, @company
