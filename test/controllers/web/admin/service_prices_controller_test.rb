@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Admin::ServicePriceControllerTest < ActionDispatch::IntegrationTest
+class Web::Admin::ServicePriceControllerTest < ActionDispatch::IntegrationTest
   setup do
     @admin = create :admin
     sign_in_as_admin(@admin)
