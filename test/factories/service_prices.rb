@@ -5,16 +5,16 @@ FactoryBot.define do
     company
     price
 
-    trait :del do
+    trait :deleted do
       state { 'deleted' }
     end
 
-    trait :activated do
+    trait :active do
       state { 'active' }
     end
 
     trait :disabled do
-      state { 'disable' }
+      state { 'disabled' }
     end
   end
 end

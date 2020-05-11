@@ -7,7 +7,7 @@ class ServicePrice < ApplicationRecord
 
   state_machine initial: :active do
     state :active
-    state :disable
+    state :disabled
     state :deleted
 
     event :disable do
@@ -15,11 +15,11 @@ class ServicePrice < ApplicationRecord
     end
 
     event :del do
-      transition from: %i[disable active], to: :deleted
+      transition from: %i[disabled active], to: :deleted
     end
 
     event :activate do
-      transition from: %i[deleted disable], to: :active
+      transition from: %i[deleted disabled], to: :active
     end
   end
 end
