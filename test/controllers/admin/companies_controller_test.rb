@@ -52,7 +52,7 @@ class Admin::CompaniesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should state active company' do
-    @company = create :company, :del
+    @company = create :company, :deleted
     put admin_company_restore_path(@company.id)
     assert_response :redirect
     @company.reload
