@@ -2,6 +2,7 @@
   %tr.table-info
     %th= Service.human_attribute_name(:id)
     %th= Service.human_attribute_name(:name)
+    %th= t('control')
   - @services.each do |service|
     %tr.bg-success
       %td= service.id

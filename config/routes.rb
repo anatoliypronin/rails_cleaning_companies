@@ -28,8 +28,12 @@ Rails.application.routes.draw do
         resources :cities
         resources :articles
         resources :services
+        resources :service_prices do
+          put 'restore'
+          put 'del'
+          put 'disable'
+        end
     end
-
     namespace :client do
       resource :profile, only: %i[show edit update]
       resource :session, only: %i[new create destroy]

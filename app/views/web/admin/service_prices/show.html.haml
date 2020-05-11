@@ -1,0 +1,23 @@
+%table.table
+  %thead
+    %tr
+      %th= ServicePrice.human_attribute_name (:price)
+      %th= ServicePrice.human_attribute_name (:service)
+      %th= ServicePrice.human_attribute_name (:city)
+      %th= ServicePrice.human_attribute_name (:company)
+      %th= ServicePrice.human_attribute_name (:state)
+  %tbody
+    %tr
+      %td=@service_price.price
+      %td=@service_price.service.name
+      %td=@service_price.city.name
+      %td=@service_price.company.name
+      %td=@service_price.human_state_name
+= link_to t('.back'), admin_service_prices_path, :class => "btn btn-info"
+= link_to t('.edit'), edit_admin_service_price_path(@service_price.id), :class => "btn btn-info" 
+-if @service_price.can_del?
+  = link_to t('.deleted'),admin_service_price_del_path(@service_price.id), method: :put, :class => "btn btn-info"
+-if @service_price.can_activate?
+  = link_to t('.activate'),admin_service_price_restore_path(@service_price.id), method: :put, :class => "btn btn-info"
+-if @service_price.can_disable?
+  = link_to t('.disable'),admin_service_price_disable_path(@service_price.id), method: :put, :class => "btn btn-info"
