@@ -45,4 +45,10 @@ class Web::Admin::ArticleControllerTest < ActionDispatch::IntegrationTest
     @article.reload
     assert_equal attrs[:title], @article.title
   end
+
+  test 'should delete destroy article' do
+    delete admin_article_path(@article.id)
+    assert_response :redirect
+    assert_not Article.exists?(@article.id)
+  end
 end

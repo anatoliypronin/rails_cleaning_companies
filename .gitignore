@@ -26,5 +26,7 @@
 yarn-debug.log*
 /coverage/*
 
+/coverage/*
+
 # Ignore vim swap files.
 *.swp

@@ -51,6 +51,6 @@ class Web::Admin::CompaniesController < Web::Admin::ApplicationController
 
   def companies_attrs
     params.require(:company).permit(:name, :email, :password, :requisites, :description, :rating, :phone_number,
-                                    city_ids: [])
+                                    city_ids: [], service_price_id: [])
   end
 end
