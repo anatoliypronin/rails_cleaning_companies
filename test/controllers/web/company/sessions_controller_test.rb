@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Company::SessionsControllerTest < ActionDispatch::IntegrationTest
+class Web::Company::SessionsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @company = create :company
   end

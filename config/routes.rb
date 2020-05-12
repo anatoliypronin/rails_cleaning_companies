@@ -32,13 +32,14 @@ Rails.application.routes.draw do
           put 'del'
           put 'disable'
         end
+    end  
+    namespace :company do
+      resource :session, only: [:new, :create, :destroy]
+      resource :profile, only: [:show, :edit, :update]
     end
     namespace :client do
       resource :profile, only: %i[show edit update]
       resource :session, only: %i[new create destroy]
     end
-    namespace :company do
-      resource :session, only: [:new, :create, :destroy]
-      resource :profile, only: [:show, :edit, :update]
   end
 end

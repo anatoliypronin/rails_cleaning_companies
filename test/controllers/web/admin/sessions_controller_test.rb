@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Admin::SessionsControllerTest < ActionDispatch::IntegrationTest
+class Web::Admin::SessionsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @admin = create :admin
   end

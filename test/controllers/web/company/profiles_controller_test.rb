@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ProfilesControllerTest < ActionDispatch::IntegrationTest
+class Web::Company::ProfilesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @company = create :company
     sign_in_as_company(@company)
