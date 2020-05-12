@@ -66,4 +66,26 @@ class Web::Admin::CompaniesControllerTest < ActionDispatch::IntegrationTest
     put admin_company_path(@company), params: { company: attrs_company }
     assert @company.cities.include?(@city)
   end
+
+  test 'should get company by company name' do
+    get admin_companies_path, params: { q: { name_cont: @company.name } }
+    assert_response :success
+  end
+
+  test 'should not get company by company name' do
+    get admin_companies_path, params: { q: { name_cont: 'foo' } }
+    assert_response :success
+  end
+
+  test 'should get company by city name' do
+    company_city = create :company_city
+    city = City.find_by(id: company_city.city_id)
+    get admin_companies_path, params: { q: { cities_name_cont: city.name } }
+    assert_response :success
+  end
+
+  test 'should not get company by city name' do
+    get admin_companies_path, params: { q: { cities_name_cont: 'foo' } }
+    assert_response :success
+  end
 end

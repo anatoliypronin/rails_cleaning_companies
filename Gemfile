@@ -13,6 +13,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'phonelib'
 gem 'rails-observers'
+gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'rubocop-rails', require: false
 gem 'russian', '~> 0.6.0'
 gem 'select2-rails'
