@@ -18,6 +18,11 @@ ru:
     phone_number: Телефон
     role: Роль
   web:
+    welcome:
+      index:
+        login_admin: Вход администратор
+        login_company: Вход компания
+        login_client: Вход клиент
     admin:
       welcome:
         index:

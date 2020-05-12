@@ -1,2 +1,3 @@
-= link_to 'login',  new_session_path, :class => "btn btn-info"
-Главная страница
+= link_to t('.login_admin'),  new_admin_session_path, :class => "btn btn-info"
+= link_to t('.login_company'), new_company_session_path, :class => "btn btn-info"
+= link_to t('.login_client'), new_client_session_path, :class => "btn btn-info"
