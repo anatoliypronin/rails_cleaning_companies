@@ -3,6 +3,7 @@ Rails.application.routes.draw do
  namespace :api do
   namespace :v1 do
     resources :company, only: [:index, :show]
+    resources :service, only: :show
   end
  end
 
@@ -37,6 +38,7 @@ Rails.application.routes.draw do
     namespace :client do
       resource :profile, only: %i[show edit update]
       resource :session, only: %i[new create destroy]
+      resources :orders, except: :delete
     end
   end
 end
