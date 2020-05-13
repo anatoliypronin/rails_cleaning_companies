@@ -4,7 +4,7 @@ class Web::Company::OrdersController < Web::Company::ApplicationController
     end
 
     def show
-        @orders = Order.where(company_id: current_company.id)
+        @order = current_company.orders.find(params[:id])
     end
 
     private 
