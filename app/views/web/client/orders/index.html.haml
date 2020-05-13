@@ -1,0 +1,22 @@
+%table.table
+  %tr.table-info
+    %th= Order.human_attribute_name(:id)
+    %th= Order.human_attribute_name(:name)
+    %th= Order.human_attribute_name(:email)
+    %th= Order.human_attribute_name(:role)
+    %th= Order.human_attribute_name(:state)
+    %th= t('control')
+  - @orders.each do |order|
+    %tr.bg-success
+      = order
+-#       %td=order.id
+-#       %td=order.name
+-#       %td=order.email
+-#       %td=order.role_text
+-#       %td=order.human_state_name
+-#       %td=link_to t('.view profile'), admin_admin_path(admin)
+-# .btn.btn-light
+-#   = link_to t('.back'), admin_root_path, :class => "btn btn-info"
+-# .btn.btn-light
+-#   = link_to t('.create new'), new_admin_admin_path, :class => "btn btn-info"
+
