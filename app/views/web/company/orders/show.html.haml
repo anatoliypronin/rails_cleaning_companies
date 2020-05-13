@@ -1,0 +1,28 @@
+%table.table
+  %thead
+    %tr
+      %th= Order.human_attribute_name (:id)
+      %th= Order.human_attribute_name (:service)
+      %th= Order.human_attribute_name (:company)
+      %th= Order.human_attribute_name (:client)
+      %th= Order.human_attribute_name (:date_start)
+      %th= Order.human_attribute_name (:date_end)
+      %th= Order.human_attribute_name (:state)
+      %th= Order.human_attribute_name (:review)
+  %tbody
+    %tr
+      %td=@order.id
+      %td=@order.service.name
+      %td=@order.company.name
+      %td=@order.client.name
+      %td=@order.date_start
+      %td=@order.date_end
+      %td=@order.state
+      %td=@order.review
+= link_to t('.back'), company_orders_path, :class => "btn btn-info"
+      
+      
+      
+      
+      
+      
