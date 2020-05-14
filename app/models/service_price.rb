@@ -4,7 +4,6 @@ class ServicePrice < ApplicationRecord
   belongs_to :company
   has_many :order, dependent: :nullify
 
-
   validates :price, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
   state_machine initial: :active do
