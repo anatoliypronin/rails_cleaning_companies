@@ -36,11 +36,15 @@ Rails.application.routes.draw do
     namespace :company do
       resource :session, only: [:new, :create, :destroy]
       resource :profile, only: [:show, :edit, :update]
-      resources :orders, only: [:index, :show]
+      resources :orders, only: [:index, :show] do
+        put 'activate'
+        put 'reject'
+        put 'complete'
+      end
     end
     namespace :client do
-      resource :profile, only: %i[show edit update]
-      resource :session, only: %i[new create destroy]
+      resource :profile, only: %i[show edit update] 
+      resource :session, only: %i[new create destroy] 
       
     end
   end
