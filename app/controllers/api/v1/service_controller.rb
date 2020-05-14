@@ -1,6 +1,6 @@
 class Api::V1::ServiceController < Api::V1::ApplicationController
   def show
-    service = Service.find(params[:id])
-    render json: service, serializer: ServiceShowSerializer
+    companies = Company.select('companies.id, companies.name, service_prices.price').joins(:service_prices).where({ 'service_prices.service_id' => params[:id] })
+    render json: companies
   end
 end

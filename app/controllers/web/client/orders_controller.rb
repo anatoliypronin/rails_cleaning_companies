@@ -10,6 +10,7 @@ class Web::Client::OrdersController < Web::Client::ApplicationController
   def create
     @order = Order.new(orders_params)
     @order.client = current_client
+    @order[:date_start] = DateTime.now
     if @order.save
       redirect_to action: :index
     else
@@ -35,6 +36,6 @@ class Web::Client::OrdersController < Web::Client::ApplicationController
   end
 
   def orders_params
-    params.require(:order).permit(:date_start, :date_end, :company_id, :service_id)
+    params.require(:order).permit(:company_id, :service_id)
   end
 end

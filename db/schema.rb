@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_10_163131) do
+ActiveRecord::Schema.define(version: 2020_05_14_144027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_163131) do
     t.bigint "company_id", null: false
     t.string "state", null: false
     t.datetime "date_start", null: false
-    t.datetime "date_end", null: false
+    t.datetime "date_end"
     t.float "review", default: 0.0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_163131) do
     t.bigint "city_id", null: false
     t.bigint "company_id", null: false
     t.integer "price", null: false
-    t.string "state", null: false 
+    t.string "state", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["city_id"], name: "index_service_prices_on_city_id"
