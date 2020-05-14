@@ -1,6 +1,6 @@
 %nav.navbar.navbar-dark.bg-primary
   =link_to t('header.home'), root_path, class: 'navbar-brand'
   %ul.navbar-nav
-  
-  =current_admin.email
-  =link_to t('header.exit'), session_path, method: :delete, class:'navbar-brand'
+  - if current_admin.present?
+    =current_admin.email
+    =link_to t('header.exit'), admin_session_path, method: :delete, class:'navbar-brand'

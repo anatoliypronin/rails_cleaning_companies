@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :order do
-    service
+    service_price
     client
-    company
     date_start
     date_end
     review
+    price
   end
 end
