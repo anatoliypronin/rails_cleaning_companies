@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_10_163131) do
+ActiveRecord::Schema.define(version: 2020_05_14_191152) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,18 +80,17 @@ ActiveRecord::Schema.define(version: 2020_05_10_163131) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.bigint "service_id", null: false
     t.bigint "client_id", null: false
-    t.bigint "company_id", null: false
     t.string "state", null: false
     t.datetime "date_start", null: false
-    t.datetime "date_end", null: false
+    t.datetime "date_end"
     t.float "review", default: 0.0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price"
+    t.bigint "service_price_id"
     t.index ["client_id"], name: "index_orders_on_client_id"
-    t.index ["company_id"], name: "index_orders_on_company_id"
-    t.index ["service_id"], name: "index_orders_on_service_id"
+    t.index ["service_price_id"], name: "index_orders_on_service_price_id"
   end
 
   create_table "service_prices", force: :cascade do |t|
@@ -117,8 +116,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_163131) do
   add_foreign_key "company_cities", "cities"
   add_foreign_key "company_cities", "companies"
   add_foreign_key "orders", "clients"
-  add_foreign_key "orders", "companies"
-  add_foreign_key "orders", "services"
+  add_foreign_key "orders", "service_prices"
   add_foreign_key "service_prices", "cities"
   add_foreign_key "service_prices", "companies"
   add_foreign_key "service_prices", "services"
