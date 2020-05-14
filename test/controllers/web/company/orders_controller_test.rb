@@ -4,7 +4,7 @@ class Web::Company::OrdersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @company = create :company
     sign_in_as_company(@company)
-    @order = create :order
+    @order = create :order, company: @company
   end
 
   test 'should get index company orders page' do
@@ -12,11 +12,10 @@ class Web::Company::OrdersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  #test 'should get show company order page' do
-  #  byebug
-  #  get company_order_path(@order)
-  #  assert_response :success
-  #end
+  test 'should get show company order page' do
+    get company_order_path(@order)
+    assert_response :success
+  end
 
 test 'should state activate order' do
     put company_order_activate_path(@order)
