@@ -4,7 +4,7 @@ class Web::Company::OrdersController < Web::Company::ApplicationController
     end
 
     def show
-        @order = current_company.orders.find(params[:id])
+        @order = current_company.orders.find(params[:id]) rescue not_found
     end
 
     def activate
@@ -28,6 +28,6 @@ class Web::Company::OrdersController < Web::Company::ApplicationController
     private 
 
     def order_params
-        params.require(:order).permit(:data_start, :data_end, :review, client_id: [], company_id: [], service_id:[])
+        params.require(:order).permit(:data_start, :data_end, :review, :client_id, :company_id, :service_id)
     end
 end
