@@ -23,7 +23,7 @@ class Order < ApplicationRecord
     end
 
     event :complete do
-      transition accepted: :completed
+      transition active: :completed
     end
   end
 end
