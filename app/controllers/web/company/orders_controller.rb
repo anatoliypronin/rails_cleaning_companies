@@ -1,10 +1,9 @@
 class Web::Company::OrdersController < Web::Company::ApplicationController
     def index
-        @orders = Order.where(company_id: current_company.id)
+        @orders = Order.where(service_price_id: current_company.id)
     end
-
     def show
-        @order = current_company.orders.find(params[:id]) rescue not_found
+        @order = current_company.orders.find(params[:id])
     end
 
     def activate
@@ -15,7 +14,9 @@ class Web::Company::OrdersController < Web::Company::ApplicationController
 
     def complete
         order = Order.find(params[:order_id])
+        order[:date_end] = DateTime.now 
         order.complete
+        
         redirect_to action: :index
     end
 
@@ -28,6 +29,6 @@ class Web::Company::OrdersController < Web::Company::ApplicationController
     private 
 
     def order_params
-        params.require(:order).permit(:data_start, :data_end, :review, :client_id, :company_id, :service_id)
+        params.require(:order).permit(:data_start, :data_end, :review, :client_id, :service_price)
     end
 end
