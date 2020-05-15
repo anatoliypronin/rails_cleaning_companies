@@ -1,0 +1,4 @@
+= simple_form_for @order, url: client_order_path(@order.id) do |f|
+  = f.association :service_price, collection: []
+  = f.button :submit, :class => "btn btn-primary"
+  = link_to t('cancel'), client_orders_path, :class => "btn btn-primary"

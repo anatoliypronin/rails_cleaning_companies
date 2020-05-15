@@ -1,4 +1,6 @@
 class ServicePrice < ApplicationRecord
+  include ServicePriceRepository
+
   belongs_to :service
   belongs_to :city
   belongs_to :company

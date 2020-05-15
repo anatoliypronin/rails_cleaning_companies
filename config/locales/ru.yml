@@ -10,6 +10,18 @@ ru:
     home: Домашняя страница
   cancel: Отмена
 
+  orders:
+    id: id
+    service_name: Сервис
+    company_name: Компания
+    city_name: Город
+    price: Цена
+    state: Состояние
+    date_start: Дата заказа
+    new: Создать заказ
+    back: Назад
+    edit: Редактировать заказ
+
   attributes:
     id: ID
     email: Почта
@@ -129,6 +141,13 @@ ru:
         show: 
           edit: "Изменить"
           list_orders: "Список заказов"
+    client:
+      profiles:
+        show:
+          edit_profile: Редактировать профиль
+          create_new_order: Создать заказ
+          view_orders: Просмотр всех заказов
+
   activerecord:
     state_machines:
       client:
@@ -244,4 +263,5 @@ ru:
         date_start: Дата создания
         date_end: Дата выполнения
         review: Оценка заказ
+        service_price: Выберите сервис
 
