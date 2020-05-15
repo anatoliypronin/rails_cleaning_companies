@@ -3,7 +3,7 @@ Rails.application.routes.draw do
  namespace :api do
   namespace :v1 do
     resources :company, only: [:index, :show]
-    resources :service, only: :show
+    resources :service_price, only: :index
   end
  end
 
@@ -33,7 +33,7 @@ Rails.application.routes.draw do
           put 'del'
           put 'disable'
         end
-    end  
+    end
     namespace :company do
       resource :session, only: [:new, :create, :destroy]
       resource :profile, only: [:show, :edit, :update]
