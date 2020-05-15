@@ -11,4 +11,6 @@
       %th= @client.surname
       %th= @client.phone_number
       %th= @client.human_state_name
-%b= link_to t('.edit'), edit_client_profile_path, :class => 'btn btn-info'
+%b= link_to t('.edit_profile'), edit_client_profile_path, :class => 'btn btn-info'
+%b= link_to t('.create_new_order'), new_client_order_path, :class => 'btn btn-info'
+%b= link_to t('.view_orders'), client_orders_path, :class => 'btn btn-info'

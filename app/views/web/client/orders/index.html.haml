@@ -1,0 +1,25 @@
+%table.table
+  %tr.table-info
+    %th= t('orders.id')
+    %th= t('orders.service_name')
+    %th= t('orders.company_name')
+    %th= t('orders.city_name')
+    %th= t('orders.price')
+    %th= t('orders.state')
+    %th= t('orders.date_start')
+    %th= t('control')
+  - @orders.each do |order|
+    %tr.bg-success
+      %td=link_to order.id, client_order_path(order)
+      %td=order.service_price.service.name
+      %td=order.service_price.company.name
+      %td=order.service_price.city.name
+      %td=order.price
+      %td=order.state
+      %td=order.date_start
+      %td=link_to t('orders.edit'), edit_client_order_path(order)
+.btn.btn-light
+  = link_to t('orders.back'), client_profile_path, :class => "btn btn-info"
+.btn.btn-light
+  = link_to t('orders.new'), new_client_order_path, :class => "btn btn-info"
+
