@@ -10,6 +10,18 @@ ru:
     home: Домашняя страница
   cancel: Отмена
 
+  orders:
+    id: id
+    service_name: Сервис
+    company_name: Компания
+    city_name: Город
+    price: Цена
+    state: Состояние
+    date_start: Дата заказа
+    new: Создать заказ
+    back: Назад
+    edit: Редактировать заказ
+
   attributes:
     id: ID
     email: Почта
@@ -116,6 +128,12 @@ ru:
           deleted: "Перевести в статус не активный"
           activate: "Перевести в статус активный"
           disable: "Перевести в статус временно не доступно"
+    client:
+      profiles:
+        show:
+          edit_profile: Редактировать профиль
+          create_new_order: Создать заказ
+          view_orders: Просмотр всех заказов
 
   activerecord:
     state_machines:
@@ -210,4 +228,6 @@ ru:
         city_id: Город
         service_id: Услуга
         company_id: Компания
+      order:
+        service_price: Выберите сервис
 
