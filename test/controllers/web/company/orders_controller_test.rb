@@ -2,9 +2,9 @@ require 'test_helper'
 
 class Web::Company::OrdersControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @company = create :company
-    sign_in_as_company(@company)
-    @order = create :order, company: @company
+    @order = create :order
+    sign_in_as_company(@order.service_price.company)
+
   end
 
   test 'should get index company orders page' do
