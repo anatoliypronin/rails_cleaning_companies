@@ -1,6 +1,6 @@
 class Web::Client::OrdersController < Web::Client::ApplicationController
   def index
-    @orders = Order.where(client_id: current_client.id)
+    @orders = current_client.orders.decorate
   end
 
   def new
@@ -11,6 +11,7 @@ class Web::Client::OrdersController < Web::Client::ApplicationController
     @order = Order.new(orders_params)
     @order.client = current_client
     @order[:date_start] = DateTime.now
+    @order[:price] = ServicePrice.find(orders_params[:service_price_id]).price
     if @order.save
       redirect_to action: :index
     else
@@ -19,15 +20,16 @@ class Web::Client::OrdersController < Web::Client::ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
+    @order = current_client.orders.find(params[:id]).decorate
   end
 
   def edit
-    @order = Order.find(params[:id])
+    @order = current_client.orders.find(params[:id])
   end
 
   def update
-    @order = Order.find(params[:id])
+    @order = current_client.orders.find(params[:id])
+    @order[:price] = ServicePrice.find(orders_params[:service_price_id]).price
     if @order.update(orders_params)
       redirect_to action: :index
     else
@@ -36,6 +38,6 @@ class Web::Client::OrdersController < Web::Client::ApplicationController
   end
 
   def orders_params
-    params.require(:order).permit(:company_id, :service_id)
+    params.require(:order).permit(:service_price_id)
   end
 end
