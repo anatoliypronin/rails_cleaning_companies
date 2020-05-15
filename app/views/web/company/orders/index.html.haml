@@ -8,7 +8,7 @@
   - @orders.each do |order|
     %tr.bg-success
       %td=order.id
-      %td=order.company.name
+      %td=order.service_price.company.name
       %td=order.client.name
       %td=order.human_state_name
       %td=link_to t('.view'), company_order_path(order)
