@@ -5,7 +5,7 @@ class Company < ApplicationRecord
   has_many :cities, through: :company_cities
   has_many :service_prices, dependent: :destroy
   has_many :orders, through: :service_prices
-  
+
   validates :name, :email, :requisites, :description,
             presence: true
   validates :password, presence: true, on: :create
