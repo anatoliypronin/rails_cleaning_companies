@@ -4,7 +4,6 @@ class Web::Company::OrdersControllerTest < ActionDispatch::IntegrationTest
   setup do
     @order = create :order
     sign_in_as_company(@order.service_price.company)
-
   end
 
   test 'should get index company orders page' do
@@ -17,7 +16,7 @@ class Web::Company::OrdersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-test 'should state activate order' do
+  test 'should state activate order' do
     put company_order_activate_path(@order)
     assert_response :redirect
     @order.reload
@@ -38,5 +37,4 @@ test 'should state activate order' do
     @order.reject
     assert_equal @order.state, 'rejected'
   end
-
 end
