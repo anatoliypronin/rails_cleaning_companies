@@ -24,11 +24,12 @@ class Web::Company::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should state completed order' do
-    @order = create :order, :active
-    put company_order_complete_path(@order)
+    order = create :order, :active
+    sign_in_as_company(order.service_price.company)
+    put company_order_complete_path(order)
     assert_response :redirect
-    @order.reload
-    assert_equal @order.state, 'completed'
+    order.reload
+    assert_equal order.state, 'completed'
   end
 
   test 'should state rejected order' do
