@@ -1,6 +1,6 @@
 class Web::Admin::CitiesController < Web::Admin::ApplicationController
   def index
-    @cities = City.all
+    @cities = City.order(:name).page(params[:page])
   end
 
   def new

@@ -12,5 +12,6 @@
   = link_to t('.back'), admin_root_path, :class => "btn btn-info"
 .btn.btn-light
   = link_to t('.create'), new_admin_city_path, :class => "btn btn-info"
+= paginate @cities
 
 

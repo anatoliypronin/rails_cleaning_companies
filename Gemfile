@@ -21,6 +21,7 @@ gem 'simple_form'
 gem 'state_machines-activerecord'
 gem 'valid_email'
 gem 'validates_timeliness'
+gem 'kaminari'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'

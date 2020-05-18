@@ -1,4 +1,5 @@
 class City < ApplicationRecord
+  paginates_per 1
   has_many :company_cities, dependent: :destroy
   has_many :companies, through: :company_cities
   has_many :service_prices, dependent: :destroy
