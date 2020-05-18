@@ -16,3 +16,4 @@
       %td=@company.website
       %td=@company.phone_and_email
 = link_to t('.edit'), edit_company_profile_path(@company.id), :class => "btn btn-info"
+= link_to t('.list_orders'), company_orders_path(@company.id), :class => "btn btn-info"

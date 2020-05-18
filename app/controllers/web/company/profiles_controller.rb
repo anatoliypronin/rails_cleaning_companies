@@ -17,8 +17,10 @@ class Web::Company::ProfilesController < Web::Company::ApplicationController
     end
   end
 
+  private
+
   def company_params
     params.require(:company).permit(:name, :email, :password, :requisites, :description, :rating, :phone_number,
-                                    city_ids: [])
+                                    city_ids: [], order_ids: [])
   end
 end

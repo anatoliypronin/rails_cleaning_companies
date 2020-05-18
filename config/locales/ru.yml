@@ -128,6 +128,19 @@ ru:
           deleted: "Перевести в статус не активный"
           activate: "Перевести в статус активный"
           disable: "Перевести в статус временно не доступно"
+    company:
+      orders:
+        index:
+          view: "Просмотреть"
+          back: "Назад"
+        show:
+          back: "Назад"
+      profiles:
+        edit:
+          cancel: "Отмена"
+        show: 
+          edit: "Изменить"
+          list_orders: "Список заказов"
     client:
       profiles:
         show:
@@ -171,6 +184,18 @@ ru:
             del: Удалить
             activate: Доступна
             disable: Временно не доступна
+      order:
+        state:
+          states:
+            active: В работе
+            rejected: Отклонён
+            pending: Создан
+            completed: Выполнен
+          events:
+            activate: В работе
+            reject: Отменен
+            complete: Выполнен
+            pending: Создан
     models:
       admin:
         one: Администратор
@@ -192,7 +217,10 @@ ru:
         others: Услуга
       service_price:
         one: Цена
-        others: Цены  
+        others: Цены
+      order:
+        one: Заказ
+        others: Заказы  
 
     attributes:
       client:
@@ -229,5 +257,11 @@ ru:
         service_id: Услуга
         company_id: Компания
       order:
+        service: Услуга
+        client: Клиент
+        company: Компания
+        date_start: Дата создания
+        date_end: Дата выполнения
+        review: Оценка заказ
         service_price: Выберите сервис
 

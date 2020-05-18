@@ -1,8 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-Admin.create(name:"ХопХейЛалалей", email:"test@mail.ru", role:"admin", password_digest:1234567890)
+Admin.create(name: "Администратор", email: "admin@mail.ru", role: "admin", password: "123456")
+Admin.create(name: "Редактор", email: "editor@mail.ru", role: "editor", password: "123456")
+City.create(name: "Ульяновск")
+City.create(name: "Москва")
+City.create(name: "Казань")
+City.create(name: "Владивосток")
+Service.create(name: "Химчистка")
+Service.create(name: "Сушка")
+Service.create(name: "Мойка окон")
+Service.create(name: "Мойка машины")
+Company.create(name: "Чистюля", email: "company@mail.ru", password: "123456", requisites: "ИНН 2360007573, КПП 236001001", description: "Компания работает с 2014 г.", phone_number: "88008888888", rating: 0)
+Company.create(name: "Гигиенист", email: "company1@mail.ru", password: "123456", requisites: "ИНН 7325048054, КПП 732501001", description: "Компания работает с 2004 г. ", phone_number: "88008888812", rating: 0)
+Client.create(name: "Иван", surname: "Иванов", email: "client@mail.ru", password: "123456", phone_number: "88008888800" )
+Client.create(name: "Петр", surname: "Петров", email: "client1@mail.ru", password: "123456", phone_number: "88008888899" )

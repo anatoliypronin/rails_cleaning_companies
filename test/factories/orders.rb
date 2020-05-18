@@ -6,5 +6,9 @@ FactoryBot.define do
     date_end
     review
     price
+
+    trait :active do
+      state { 'active' }
+    end
   end
 end
