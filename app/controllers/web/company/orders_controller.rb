@@ -1,6 +1,6 @@
 class Web::Company::OrdersController < Web::Company::ApplicationController
   def index
-    @orders = current_company.orders
+    @orders = Order.includes(:service_price).where(service_prices: { company_id: current_company.id})
   end
 
   def show
@@ -8,13 +8,13 @@ class Web::Company::OrdersController < Web::Company::ApplicationController
   end
 
   def activate
-    order = Order.find(params[:order_id])
+    order = current_company.orders.find(params[:order_id])
     order.activate
     redirect_to action: :index
   end
 
   def complete
-    order = Order.find(params[:order_id])
+    order = current_company.orders.find(params[:order_id])
     order[:date_end] = DateTime.now
     order.complete
 
@@ -22,15 +22,9 @@ class Web::Company::OrdersController < Web::Company::ApplicationController
   end
 
   def reject
-    order = Order.find(params[:order_id])
+    order = current_company.orders.find(params[:order_id])
     order[:date_end] = DateTime.now
     order.reject
     redirect_to action: :index
-  end
-
-  private
-
-  def order_params
-    params.require(:order).permit(:data_start, :data_end, :review, :client_id, :service_price)
   end
 end
