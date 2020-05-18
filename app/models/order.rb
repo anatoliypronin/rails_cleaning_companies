@@ -7,9 +7,13 @@ class Order < ApplicationRecord
 
   state_machine initial: :pending do
     state :active
-    state :rejected
+    state :rejected do
+      validates_presence_of :date_end
+    end
     state :pending
-    state :completed
+    state :completed do
+      validates_presence_of :date_end
+    end
 
     event :activate do
       transition pending: :active
