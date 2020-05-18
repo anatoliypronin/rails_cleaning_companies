@@ -8,11 +8,11 @@ class Order < ApplicationRecord
   state_machine initial: :pending do
     state :active
     state :rejected do
-      validates_presence_of :date_end
+      validates :date_end, presence: true
     end
     state :pending
     state :completed do
-      validates_presence_of :date_end
+      validates :date_end, presence: true
     end
 
     event :activate do
