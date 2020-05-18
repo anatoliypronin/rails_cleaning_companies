@@ -6,35 +6,10 @@
     %th= Order.human_attribute_name (:state)
     %th= t('control')
   - @orders.each do |order|
-    - if order.active?
-      %tr.bg-transparent
-        %td=order.id
-        %td=order.service_price.company.name
-        %td=order.client.name
-        %td=order.human_state_name
-        %td=link_to t('.view'), company_order_path(order)
-    - if order.pending?
-      %tr.bg-warning
-        %td=order.id
-        %td=order.service_price.company.name
-        %td=order.client.name
-        %td=order.human_state_name
-        %td=link_to t('.view'), company_order_path(order)
-    - if order.rejected?
-      %tr.bg-danger
-        %td=order.id
-        %td=order.service_price.company.name
-        %td=order.client.name
-        %td=order.human_state_name
-        %td=link_to t('.view'), company_order_path(order)    
-    - if order.completed?
-      %tr.bg-success
-        %td=order.id
-        %td=order.service_price.company.name
-        %td=order.client.name
-        %td=order.human_state_name
-        %td=link_to t('.view'), company_order_path(order)    
-
+    %tr{ class:[ ('bg-light' if order.active?), ('bg-danger' if order.rejected?), ('bg-success' if order.completed?), ('bg-warning' if order.pending?) ] }
+      %td=order.id
+      %td=order.service_price.company.name
+      %td=order.client.name
+      %td=order.human_state_name
+      %td=link_to t('.view'), company_order_path(order)
 = link_to t('.back'), company_profile_path, :class => "btn btn-info"
-      
-      
