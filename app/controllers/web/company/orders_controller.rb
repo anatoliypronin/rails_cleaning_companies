@@ -1,6 +1,6 @@
 class Web::Company::OrdersController < Web::Company::ApplicationController
   def index
-    @orders = Order.includes(:service_price).where(service_prices: { company_id: current_company.id })
+    @orders = Order.includes(:service_price).where(service_prices: { company_id: current_company.id }).page(params[:page])
   end
 
   def show

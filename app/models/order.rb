@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+  paginates_per 1
   belongs_to :service_price
   belongs_to :client
 

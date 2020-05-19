@@ -12,4 +12,5 @@
       %td=order.client.name
       %td=order.human_state_name
       %td=link_to t('.view'), company_order_path(order)
+  = paginate @orders
 = link_to t('.back'), company_profile_path, :class => "btn btn-info"
