@@ -26,7 +26,6 @@
 yarn-debug.log*
 /coverage/*
 /.idea/*
-.rakeTasks
 /coverage/*
 
 # Ignore vim swap files.
