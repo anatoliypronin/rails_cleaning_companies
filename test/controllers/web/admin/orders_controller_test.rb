@@ -28,7 +28,6 @@ class Web::Admin::OrdersControllerTest < ActionDispatch::IntegrationTest
     orders_params[:service_price_id] = service_price.id
     put admin_order_path(@order), params: { order: orders_params }
     assert_response :redirect
-
     @order.reload
     assert_equal orders_params[:service_price_id], @order.service_price_id
     assert_equal service_price.price, @order.price

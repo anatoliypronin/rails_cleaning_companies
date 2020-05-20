@@ -88,15 +88,13 @@ ru:
           back: "Назад"
       orders:
         index:
-          show: "Просмотр"
-          create: "Создать"
-          back: "Назад"
-          view order: "Просмотреть"
-        new:
+          view: "Просмотр"
           back: "Назад"
         show:
+          rejected: "Отменить "
+          activate: "Перевести в статус активный"
+          completed: "Перевести в статус Выполненный"
           edit: "Изменить"
-          delete: "Удалить"
           back: "Назад"
       articles:
         index:
@@ -225,7 +223,7 @@ ru:
         others: Города
       service:
         one: Услуга
-        others: Услуга
+        others: Услуги
       service_price:
         one: Цена
         others: Цены
@@ -271,8 +269,10 @@ ru:
         service: Услуга
         client: Клиент
         company: Компания
+        city: Город
+        price: Цена
         date_start: Дата создания
         date_end: Дата выполнения
-        review: Оценка заказ
+        review: Оценка заказа
         service_price: Выберите сервис
 
