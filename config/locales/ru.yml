@@ -45,6 +45,7 @@ ru:
           list_article: Список Статей
           list_service: Список Услуг
           list_service_price: Список цен
+          list_order: Список заказов
       admins:
         index:
           back: "Назад"
@@ -57,7 +58,6 @@ ru:
           activate: "Перевести в статус активный"
         edit:
           cancel: "Отмена"
-
       companies:
         index:
           back: "Назад"
@@ -72,7 +72,6 @@ ru:
           activate: "Перевести в статус активный"
         edit:
           cancel: "Отмена"
-
       clients:
         index:
           show: "Просмотр"
@@ -86,7 +85,19 @@ ru:
           edit: "Изменить"
           back: "Назад" 
         edit: 
-          back: "Назад" 
+          back: "Назад"
+      orders:
+        index:
+          show: "Просмотр"
+          create: "Создать"
+          back: "Назад"
+          view order: "Просмотреть"
+        new:
+          back: "Назад"
+        show:
+          edit: "Изменить"
+          delete: "Удалить"
+          back: "Назад"
       articles:
         index:
           show: "Просмотр"
@@ -103,7 +114,7 @@ ru:
         index:
           deleted: "Удалить"
           create: "Создать"
-          back: "Назад"    
+          back: "Назад"
       services:
         index:
           create: Создать

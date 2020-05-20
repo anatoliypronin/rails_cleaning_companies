@@ -1,0 +1,29 @@
+%table.table
+  %thead
+    %tr
+      %th= Order.human_attribute_name (:service_name)
+      %th= Order.human_attribute_name (:client_name)
+      %th= Order.human_attribute_name (:client_surname)
+      %th= Order.human_attribute_name (:client_phone)
+      %th= Order.human_attribute_name (:company_name)
+      %th= Order.human_attribute_name (:city_name)
+      %th= Order.human_attribute_name (:price)
+      %th= Order.human_attribute_name (:state)
+      %th= Order.human_attribute_name (:date_start)
+      %th= Order.human_attribute_name (:review)
+  %tbody
+    %tr
+      %td=@order.service_price.service.name
+      %td=@order.client.name
+      %td=@order.client.surname
+      %td=@order.client.phone_number
+      %td=@order.service_price.company.name
+      %td=@order.service_price.city.name
+      %td=@order.price
+      %td=@order.state
+      %td=@order.date_start
+      %td=@order.review
+= link_to t('.back'), admin_orders_path, :class => "btn btn-info"
+= link_to t('.edit'), edit_admin_order_path(@order.id), :class => "btn btn-info"
+= link_to t('.deleted'),admin_order_del_path(@order.id), method: :put, :class => "btn btn-info"
+= link_to t('.activate'),admin_order_restore_path(@order.id), method: :put, :class => "btn btn-info"
