@@ -25,9 +25,10 @@ Rails.application.routes.draw do
           put 'restore'
           put 'del'
         end
-        resources :orders do
-          put 'restore'
-          put 'del'
+        resources :orders, except: :new do
+          put 'activate'
+          put 'reject'
+          put 'complete'
         end
         resources :cities
         resources :articles

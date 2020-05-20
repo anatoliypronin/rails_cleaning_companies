@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2020_05_16_092912) do
     t.string "state", null: false
     t.datetime "date_start", null: false
     t.datetime "date_end"
-    t.integer "review", default: 0
+    t.float "review", default: 0.0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "service_price_id"

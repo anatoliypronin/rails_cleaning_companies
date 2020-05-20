@@ -11,19 +11,16 @@
     %th= Order.human_attribute_name (:review)
     %th= t('control')
   - @orders.each do |order|
-    %tr.bg-success
+    %tr{ class:[ ('bg-light' if order.active?), ('bg-danger' if order.rejected?), ('bg-success' if order.completed?), ('bg-warning' if order.pending?) ] }
       %td=order.id
       %td=order.service_price.service.name
-      %td=order.client.name
+      %td=order.client.name + ' ' + order.client.surname
       %td=order.service_price.company.name
       %td=order.service_price.city.name
       %td=order.price
       %td=order.state
       %td=order.date_start
       %td=order.review
-      %td=link_to t('.view order'), admin_order_path(order)
+      %td=link_to t('orders.edit'), edit_admin_order_path(order)
 .btn.btn-light
   = link_to t('orders.back'), admin_root_path, :class => "btn btn-info"
-.btn.btn-light
-  = link_to t('orders.new'), new_admin_order_path, :class => "btn btn-info"
-

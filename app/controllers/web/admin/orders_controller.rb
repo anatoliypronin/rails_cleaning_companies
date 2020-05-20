@@ -6,4 +6,28 @@ class Web::Admin::OrdersController < Web::Admin::ApplicationController
   def new
     @order = Order.new
   end
+
+  def show
+      @order = Order.find(params[:id])
+  end
+
+  def edit
+    @order = Order.find(params[:id])
+  end
+
+  def update
+    @order = Order.find(params[:id])
+    @order[:price] = ServicePrice.find(orders_params[:service_price_id]).price
+    if @order.update(orders_params)
+      redirect_to action: :index
+    else
+      render action: :edit
+    end
+  end
+
+  private
+
+  def orders_params
+    params.require(:order).permit(:price, :state, :date_start, :date_end, :review, :service_price_id, client_id: [], city_id: [], company_id: [])
+  end
 end
