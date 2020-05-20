@@ -33,4 +33,26 @@ class Web::Admin::OrdersControllerTest < ActionDispatch::IntegrationTest
     assert_equal orders_params[:service_price_id], @order.service_price_id
     assert_equal service_price.price, @order.price
   end
+
+  test 'should state activate order' do
+    put admin_order_activate_path(@order)
+    assert_response :redirect
+    @order.reload
+    assert_equal @order.state, 'active'
+  end
+
+  test 'should state completed order' do
+    order = create :order, :active
+    put admin_order_complete_path(order)
+    assert_response :redirect
+    order.reload
+    assert_equal order.state, 'completed'
+  end
+
+  test 'should state rejected order' do
+    put admin_order_complete_path(@order)
+    assert_response :redirect
+    @order.reject
+    assert_equal @order.state, 'rejected'
+  end
 end

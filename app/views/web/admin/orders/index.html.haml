@@ -21,6 +21,6 @@
       %td=order.state
       %td=order.date_start
       %td=order.review
-      %td=link_to t('orders.edit'), edit_admin_order_path(order)
+      %td=link_to t('.view'), admin_order_path(order)
 .btn.btn-light
   = link_to t('orders.back'), admin_root_path, :class => "btn btn-info"

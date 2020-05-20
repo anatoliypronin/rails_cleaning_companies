@@ -26,10 +26,10 @@
       %td=@order.date_start
       %td=@order.review
 = link_to t('orders.back'), admin_orders_path, :class => "btn btn-info"
-= link_to t('.del'), edit_admin_order_path(@order.id), :class => "btn btn-info"
+= link_to t('.edit'), edit_admin_order_path(@order.id), :class => "btn btn-info"
 -if @order.can_activate?
   = link_to t('.activate'),admin_order_activate_path(@order.id), method: :put, :class => "btn btn-info"
 -if @order.can_complete?
-  = link_to t('.complited'),admin_order_complete_path(@order.id), method: :put, :class => "btn btn-info"
+  = link_to t('.completed'),admin_order_complete_path(@order.id), method: :put, :class => "btn btn-info"
 -if @order.can_reject?
   = link_to t('.rejected'),admin_order_reject_path(@order.id), method: :put, :class => "btn btn-info"

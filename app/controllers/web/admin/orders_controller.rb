@@ -25,6 +25,27 @@ class Web::Admin::OrdersController < Web::Admin::ApplicationController
     end
   end
 
+  def activate
+    order = Order.find(params[:order_id])
+    order.activate
+    redirect_to action: :index
+  end
+
+  def complete
+    order = Order.find(params[:order_id])
+    order[:date_end] = DateTime.now
+    order.complete
+
+    redirect_to action: :index
+  end
+
+  def reject
+    order = Order.find(params[:order_id])
+    order[:date_end] = DateTime.now
+    order.reject
+    redirect_to action: :index
+  end
+
   private
 
   def orders_params
