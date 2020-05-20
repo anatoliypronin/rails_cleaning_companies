@@ -25,4 +25,5 @@
 -if @order.can_complete?
   = link_to t('.completed'),company_order_complete_path(@order.id), method: :put, :class => "btn btn-info"
 -if @order.can_reject?
-  = link_to t('.rejected'),company_order_reject_path(@order.id), method: :put, :class => "btn btn-info" 
+  = link_to t('.rejected'),company_order_reject_path(@order.id), method: :put, :class => "btn btn-info"
+  
