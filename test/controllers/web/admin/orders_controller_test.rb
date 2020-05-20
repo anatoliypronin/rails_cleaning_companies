@@ -23,7 +23,6 @@ class Web::Admin::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should put update order' do
-    #byebug
     service_price = create :service_price
     orders_params = {}
     orders_params[:service_price_id] = service_price.id

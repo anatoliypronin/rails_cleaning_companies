@@ -8,7 +8,7 @@ class Web::Admin::OrdersController < Web::Admin::ApplicationController
   end
 
   def show
-      @order = Order.find(params[:id])
+    @order = Order.find(params[:id])
   end
 
   def edit
@@ -28,6 +28,6 @@ class Web::Admin::OrdersController < Web::Admin::ApplicationController
   private
 
   def orders_params
-    params.require(:order).permit(:price, :state, :date_start, :date_end, :review, :service_price_id, client_id: [], city_id: [], company_id: [])
+    params.require(:order).permit(:service_price_id)
   end
 end
