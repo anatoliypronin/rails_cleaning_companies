@@ -2,8 +2,8 @@
   %tr.table-info
     %th= Article.human_attribute_name(:id)
     %th= Article.human_attribute_name(:title)
-    %th= t('.author')
-    %th= t('.published_at')
+    %th= Article.human_attribute_name(:author)
+    %th= Article.human_attribute_name(:published_at)
     %th= t('control')
 
   - @articles.each do |article|
