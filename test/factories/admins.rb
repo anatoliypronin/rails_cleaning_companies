@@ -12,5 +12,9 @@ FactoryBot.define do
     trait :active do
       state { 'active' }
     end
+
+    trait :editor do
+      role { 'editor' }
+    end
   end
 end
