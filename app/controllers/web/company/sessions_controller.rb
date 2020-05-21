@@ -14,6 +14,6 @@ class Web::Company::SessionsController < Web::Company::ApplicationController
 
   def destroy
     company_sign_out
-    redirect_to new_company_session_path
+    redirect_to root_path
   end
 end
