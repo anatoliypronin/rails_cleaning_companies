@@ -1,15 +1,17 @@
 class Web::Admin::CitiesController < Web::Admin::ApplicationController
   def index
     @cities = City.order(:name).page(params[:page])
+    authorize current_admin, policy_class: AdminPolicy
   end
 
   def new
     @city = City.new
+    authorize current_admin, policy_class: AdminPolicy
   end
 
   def create
+    authorize current_admin, policy_class: AdminPolicy
     @city = City.new(city_attrs)
-
     if @city.save
       redirect_to action: :index
     else
@@ -18,6 +20,7 @@ class Web::Admin::CitiesController < Web::Admin::ApplicationController
   end
 
   def destroy
+    authorize current_admin, policy_class: AdminPolicy
     @city = City.find(params[:id])
     @city.destroy
     redirect_to action: :index
