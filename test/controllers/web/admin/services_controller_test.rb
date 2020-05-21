@@ -48,7 +48,51 @@ class Web::Admin::ServicesControllerTest < ActionDispatch::IntegrationTest
     service = create :service
     delete admin_service_path(service.id)
     assert_response :redirect
-
     assert_not Service.exists?(service.id)
+  end
+
+  test 'should not get show service page for editor' do
+    sign_out_as_admin
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+    get admin_service_path(@service)
+    assert_redirected_to admin_root_path
+  end
+
+  test 'should not get edit service page for editor' do
+    sign_out_as_admin
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+    get edit_admin_service_path(@service)
+    assert_redirected_to admin_root_path
+  end
+
+  test 'should not get index service page for editor' do
+    sign_out_as_admin
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+    get admin_services_path
+    assert_redirected_to admin_root_path
+  end
+
+  test 'should not create service by editor' do
+    services_attrs = attributes_for :service
+    sign_out_as_admin
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+    post admin_services_path, params: { service: services_attrs }
+    assert_redirected_to admin_root_path
+    service = Service.last
+    assert_not_equal services_attrs[:name], service.name
+  end
+
+  test 'should not destroy service' do
+    service = create :service
+    sign_out_as_admin
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+    delete admin_service_path(service.id)
+    assert_redirected_to admin_root_path
+    assert_equal Service.last, service
   end
 end
