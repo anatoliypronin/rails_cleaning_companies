@@ -1,10 +1,11 @@
 class Web::Company::OrdersController < Web::Company::ApplicationController
   def index
-    @orders = Order.includes(:service_price).where(service_prices: { company_id: current_company.id }).page(params[:page])
+    @orders = Order.includes(:service_price)
+                   .where(service_prices: { company_id: current_company.id }).page(params[:page])
   end
 
   def show
-    @order = current_company.orders.find(params[:id])
+    @order = current_company.orders.find(params[:id]).decorate
   end
 
   def activate
