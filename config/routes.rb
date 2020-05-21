@@ -25,10 +25,6 @@ Rails.application.routes.draw do
           put 'restore'
           put 'del'
         end
-        resources :orders do
-          put 'restore'
-          put 'del'
-        end
         resources :cities
         resources :articles
         resources :services
