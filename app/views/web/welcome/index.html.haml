@@ -1,3 +1,28 @@
-= link_to t('.login_admin'),  new_admin_session_path, :class => "btn btn-info"
-= link_to t('.login_company'), new_company_session_path, :class => "btn btn-info"
-= link_to t('.login_client'), new_client_session_path, :class => "btn btn-info"
+#container
+  .blog
+    .content
+      %h3.title_page TITLE
+      %p
+        Duis non lectus sit amet est imperdiet cursus elementum vitae eros.
+        %span.highlight Etiam adipiscing
+        morbi vitae magna tellus, ac mattis urna.
+        %span.highlight2 Phasellus rhoncus tincidunt
+        posuere. Cras quis odio in risus euismod suscipit.
+        %img.left{:alt => "", :src => "https://cdn.pixabay.com/photo/2018/08/08/01/04/cleaning-service-3591146_960_720.png"}/
+        Fusce viverra ligula vel justo bibendum semper. Nulla facilisi. Donec interdum, enim in dignissim lacinia, lectus nisl viverra lorem, ac pulvinar nunc ante at neque. Proin et dui eros, at aliquet est. Pellentesque consectetur lectus quis enim mollis ut convallis urna malesuada. Sed tincidunt interdum sapien vel gravida. Nulla a tellus lectus, in aliquet tellus. Donec aliquam neque quis mi vestibulum ut cursus velit consectetur.  Mauris convallis, sapien id ultricies aliquet, mi nisi congue dui, id laoreet ligula ante vitae ligula. Duis lectus magna, cursus in molestie eget, cursus eget quam.
+      %br/
+      %br/
+      %p
+        %img.right{:alt => "", :src => "https://www.homemaids.ae/blog/wp-content/uploads/2018/08/cleaning-services.png"}/
+        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris convallis, sapien id ultricies aliquet, mi nisi congue dui, id laoreet ligula ante vitae ligula. Duis lectus magna, cursus in molestie eget, cursus eget quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nunc in turpis metus. Sed sit amet dictum magna.  Aliquam vel mauris ut quam sodales ultricies nec sed dolor. Duis sed ipsum at tellus sodales ultrices. Proin sit amet ligula non mauris lacinia malesuada. Nam nisl felis, tincidunt sit amet pharetra at, lacinia ut turpis. Ut fermentum nisl vel arcu blandit cursus. Vivamus eget nibh dolor, in viverra leo. Fusce tincidunt metus in dui accumsan tempor. In sit amet viverra magna. Phasellus facilisis porta dolor ut sagittis. Morbi ullamcorper laoreet metus, eu commodo diam cursus et. Nam eleifend aliquam augue, id condimentum erat vehicula vel.
+      %br/
+      %br/
+      %p
+        %img.center{:alt => "", :src => "https://image.freepik.com/free-vector/_1416-1236.jpg"}/
+        Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nullam quis risus eget urna mollis ornare vel eu leo. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Etiam porta sem malesuada magna mollis euismod. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
+
+    .sidebar.content__right.col-md-4
+      = react_component('ArticlesList')
+      = react_component('CompaniesTopList')
+      = react_component('StaticData')
+  .clear

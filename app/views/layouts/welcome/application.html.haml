@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Мойдодыр
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'welcome'
+    = javascript_pack_tag 'application'
+    = javascript_include_tag "i18n"
+    = javascript_include_tag "translations", skip_pipeline: true
+    :javascript
+      I18n.defaultLocale = "#{I18n.default_locale}";
+      I18n.locale = "#{I18n.locale}";
+  %body
+    #wrapper
+      = render 'layouts/welcome/header'
+      = yield
