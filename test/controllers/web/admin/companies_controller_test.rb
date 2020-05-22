@@ -88,4 +88,49 @@ class Web::Admin::CompaniesControllerTest < ActionDispatch::IntegrationTest
     get admin_companies_path, params: { q: { cities_name_cont: 'foo' } }
     assert_response :success
   end
+
+  test 'should not get show company page for editor' do
+    sign_out_as_admin
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+    get admin_company_path(@company)
+    assert_redirected_to admin_root_path
+  end
+
+  test 'should not get edit company page for editor' do
+    sign_out_as_admin
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+    get edit_admin_company_path(@company)
+    assert_redirected_to admin_root_path
+  end
+
+  test 'should not get index company page for editor' do
+    sign_out_as_admin
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+    get admin_companies_path
+    assert_redirected_to admin_root_path
+  end
+
+  test 'should not create company by editor' do
+    companies_attrs = attributes_for :company
+    sign_out_as_admin
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+    post admin_companies_path, params: { company: companies_attrs }
+    assert_redirected_to admin_root_path
+    company = Company.last
+    assert_not_equal companies_attrs[:email], company.email
+  end
+
+  test 'should not change state to deleted by editor' do
+    sign_out_as_admin
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+    put admin_company_del_path(@company)
+    assert_redirected_to admin_root_path
+    @company.reload
+    assert_equal @company.state, 'active'
+  end
 end

@@ -1,4 +1,5 @@
 class Client < ApplicationRecord
+  paginates_per 5
   has_many :orders, dependent: :destroy
 
   validates :name, :email, :phone_number, presence: true

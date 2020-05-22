@@ -56,4 +56,39 @@ class Web::Admin::AdminsControllerTest < ActionDispatch::IntegrationTest
     @admin.reload
     assert_equal @admin.state, 'active'
   end
+
+  test 'should not get show admin page for editor' do
+    sign_out_as_admin
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+    get admin_admin_path(@admin)
+    assert_redirected_to admin_root_path
+  end
+
+  test 'should not get edit admin page for editor' do
+    sign_out_as_admin
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+    get edit_admin_admin_path(@admin)
+    assert_redirected_to admin_root_path
+  end
+
+  test 'should not get new admin page for editor' do
+    sign_out_as_admin
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+    get new_admin_admin_path
+    assert_redirected_to admin_root_path
+  end
+
+  test 'should not post create admin by editor' do
+    admins_attrs = attributes_for :admin
+    sign_out_as_admin
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+    post admin_admins_path, params: { admin: admins_attrs }
+    assert_redirected_to admin_root_path
+    admin = Admin.last
+    assert_not_equal admins_attrs[:email], admin.email
+  end
 end

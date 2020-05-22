@@ -14,6 +14,6 @@ class Web::Client::SessionsController < Web::Client::ApplicationController
 
   def destroy
     client_sign_out
-    redirect_to new_client_session_path
+    redirect_to root_path
   end
 end

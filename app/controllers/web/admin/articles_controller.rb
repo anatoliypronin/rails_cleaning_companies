@@ -1,6 +1,6 @@
 class Web::Admin::ArticlesController < Web::Admin::ApplicationController
   def index
-    @articles = Article.all.decorate
+    @articles = Article.all.page(params[:page]).decorate
   end
 
   def new
@@ -23,11 +23,12 @@ class Web::Admin::ArticlesController < Web::Admin::ApplicationController
 
   def edit
     @article = Article.find(params[:id])
+    authorize @article
   end
 
   def update
     @article = Article.find(params[:id])
-
+    authorize @article
     if @article.update(article_attrs)
       redirect_to action: :index
     else
@@ -37,8 +38,8 @@ class Web::Admin::ArticlesController < Web::Admin::ApplicationController
 
   def destroy
     article = Article.find(params[:id])
+    authorize article
     article.destroy
-
     redirect_to action: :index
   end
 

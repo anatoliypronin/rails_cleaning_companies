@@ -1,5 +1,6 @@
 class Company < ApplicationRecord
   include CompanyRepository
+  paginates_per 5
 
   has_many :company_cities, dependent: :destroy
   has_many :cities, through: :company_cities

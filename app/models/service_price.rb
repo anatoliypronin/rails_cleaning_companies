@@ -1,5 +1,6 @@
 class ServicePrice < ApplicationRecord
   include ServicePriceRepository
+  paginates_per 5
 
   belongs_to :service
   belongs_to :city

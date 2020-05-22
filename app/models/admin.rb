@@ -1,5 +1,6 @@
 class Admin < ApplicationRecord
   extend Enumerize
+  paginates_per 5
 
   has_many :article, dependent: :nullify
 

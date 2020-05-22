@@ -23,7 +23,7 @@ Metrics/BlockLength:
 
 #This cop checks if the length a class exceeds some maximum value.
 Metrics/ClassLength:
-  Max: 120
+  Max: 150
 
 #This cop checks that the cyclomatic complexity of methods is not higher than the configured maximum.
 Metrics/CyclomaticComplexity:
