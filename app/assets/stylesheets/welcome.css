@@ -292,6 +292,8 @@ img {
 }
 img.left {
 	float: left;
+	height: 200px;
+	width: 200px;
 	margin: 10px 10px 5px 0;
 }
 img.right {
