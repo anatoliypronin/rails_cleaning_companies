@@ -1,0 +1,28 @@
+%table.table
+  %thead
+    %tr
+      %th= Order.human_attribute_name (:id)
+      %th= Order.human_attribute_name (:service)
+      %th= Order.human_attribute_name (:company)
+      %th= Order.human_attribute_name (:client)
+      %th= Order.human_attribute_name (:date_start)
+      %th= Order.human_attribute_name (:date_end)
+      %th= Order.human_attribute_name (:state)
+      %th= Order.human_attribute_name (:review)
+  %tbody
+    %tr
+      %td=@order.id
+      %td=@order.service_price.service.name
+      %td=@order.service_price.company.name
+      %td=@order.client.name
+      %td=@order.date_start
+      %td=@order.date_end
+      %td=@order.human_state_name
+      %td=@order.review
+= link_to t('.back'), company_orders_path, :class => "btn btn-info"
+-if @order.can_activate?
+  = link_to t('.activate'),company_order_activate_path(@order.id), method: :put, :class => "btn btn-info" 
+-if @order.can_complete?
+  = link_to t('.complited'),company_order_complete_path(@order.id), method: :put, :class => "btn btn-info" 
+-if @order.can_reject?
+  = link_to t('.rejected'),company_order_reject_path(@order.id), method: :put, :class => "btn btn-info" 

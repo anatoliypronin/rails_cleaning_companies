@@ -4,8 +4,8 @@
       %th= Article.human_attribute_name (:title)
       %th= Article.human_attribute_name (:short_description)
       %th= Article.human_attribute_name (:description)
-      %th= t('.author')
-      %th= t('.published_at')
+      %th= Article.human_attribute_name (:author)
+      %th= Article.human_attribute_name (:published_at)
   %tbody
     %tr
       %td= @article.title

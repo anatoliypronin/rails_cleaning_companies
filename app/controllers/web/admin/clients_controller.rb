@@ -1,15 +1,17 @@
 class Web::Admin::ClientsController < Web::Admin::ApplicationController
   def index
-    @clients = Client.all
+    @clients = Client.all.page(params[:page])
+    authorize current_admin, policy_class: AdminPolicy
   end
 
   def new
     @client = Client.new
+    authorize current_admin, policy_class: AdminPolicy
   end
 
   def create
     @client = Client.new(client_attrs)
-
+    authorize current_admin, policy_class: AdminPolicy
     if @client.save
       redirect_to action: :index
     else
@@ -19,15 +21,17 @@ class Web::Admin::ClientsController < Web::Admin::ApplicationController
 
   def show
     @client = Client.find(params[:id])
+    authorize @client
   end
 
   def edit
     @client = Client.find(params[:id])
+    authorize @client
   end
 
   def update
     @client = Client.find(params[:id])
-
+    authorize @client
     if @client.update(client_attrs)
       redirect_to action: :index
     else
@@ -37,6 +41,7 @@ class Web::Admin::ClientsController < Web::Admin::ApplicationController
 
   def del
     client = Client.find(params[:client_id])
+    authorize current_admin, policy_class: AdminPolicy
     client.del
 
     redirect_to action: :index
@@ -44,6 +49,7 @@ class Web::Admin::ClientsController < Web::Admin::ApplicationController
 
   def restore
     client = Client.find(params[:client_id])
+    authorize current_admin, policy_class: AdminPolicy
     client.activate
 
     redirect_to action: :index

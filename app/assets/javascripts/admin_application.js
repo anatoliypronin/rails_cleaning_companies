@@ -6,3 +6,5 @@
 //= require i18n.js
 //= require i18n/translations
 //= link i18n.js
+//= require Chart.bundle
+//= require chartkick

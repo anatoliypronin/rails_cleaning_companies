@@ -4,6 +4,10 @@ module Support
       post admin_session_path, params: { admin: { email: admin.email, password: admin.password } }
     end
 
+    def sign_out_as_admin
+      delete admin_session_path
+    end
+
     def sign_in_as_company(company)
       post company_session_path, params: { company: { email: company.email, password: company.password } }
     end

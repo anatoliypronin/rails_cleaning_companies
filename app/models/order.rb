@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+  paginates_per 5
   belongs_to :service_price
   belongs_to :client
 
@@ -7,9 +8,13 @@ class Order < ApplicationRecord
 
   state_machine initial: :pending do
     state :active
-    state :rejected
+    state :rejected do
+      validates :date_end, presence: true
+    end
     state :pending
-    state :completed
+    state :completed do
+      validates :date_end, presence: true
+    end
 
     event :activate do
       transition pending: :active
@@ -20,7 +25,7 @@ class Order < ApplicationRecord
     end
 
     event :complete do
-      transition accepted: :completed
+      transition active: :completed
     end
   end
 end

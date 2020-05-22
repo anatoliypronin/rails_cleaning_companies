@@ -1,13 +1,13 @@
 %table.table
   %thead
     %tr
-      %th= t('orders.id')
-      %th= t('orders.service_name')
-      %th= t('orders.company_name')
-      %th= t('orders.city_name')
-      %th= t('orders.price')
-      %th= t('orders.state')
-      %th= t('orders.date_start')
+      %th= Order.human_attribute_name (:id)
+      %th= Order.human_attribute_name (:service)
+      %th= Order.human_attribute_name (:company)
+      %th= Order.human_attribute_name (:city)
+      %th= Order.human_attribute_name (:price)
+      %th= Order.human_attribute_name (:state)
+      %th= Order.human_attribute_name (:date_start)
   %tbody
     %tr
       %td=@order.id
@@ -15,7 +15,7 @@
       %td=@order.service_price.company.name
       %td=@order.service_price.city.name
       %td=@order.price
-      %td=@order.state
+      %td=@order.human_state_name
       %td=@order.date_start
-= link_to t('orders.back'), client_orders_path, :class => "btn btn-info"
+= link_to t('.orders_back'), client_orders_path, :class => "btn btn-info"
 

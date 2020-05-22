@@ -8,6 +8,8 @@
       %td= service.id
       %td= service.name
       %td= link_to t('.view'), admin_service_path(service)
+.float-right
+  = paginate @services
 .btn.btn-light
   = link_to t('.back'), admin_root_path, :class => "btn btn-info"
 .btn.btn-light

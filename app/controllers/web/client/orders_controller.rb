@@ -1,6 +1,6 @@
 class Web::Client::OrdersController < Web::Client::ApplicationController
   def index
-    @orders = current_client.orders.decorate
+    @orders = current_client.orders.page(params[:page]).decorate
   end
 
   def new
