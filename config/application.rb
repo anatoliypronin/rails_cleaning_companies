@@ -17,5 +17,6 @@ module App
     # the framework and any gems in your application.
     config.time_zone = 'Moscow'
     config.i18n.default_locale = :ru
+    config.middleware.use I18n::JS::Middleware
   end
 end
