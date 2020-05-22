@@ -1,6 +1,6 @@
 class Web::Admin::ClientsController < Web::Admin::ApplicationController
   def index
-    @clients = Client.all
+    @clients = Client.all.page(params[:page])
     authorize current_admin, policy_class: AdminPolicy
   end
 

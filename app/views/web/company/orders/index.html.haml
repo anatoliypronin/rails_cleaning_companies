@@ -12,5 +12,10 @@
       %td=order.client.name
       %td=order.human_state_name
       %td=link_to t('.view'), company_order_path(order)
+.float-right
   = paginate @orders
 = link_to t('.back'), company_profile_path, :class => "btn btn-info"
+.container.col-md-8.mt-4
+  %div
+    %p.text-center Статистика заказов
+    = area_chart Order.group_by_day(:created_at).count, max: 8

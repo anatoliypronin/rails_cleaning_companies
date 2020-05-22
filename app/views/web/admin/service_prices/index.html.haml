@@ -10,6 +10,8 @@
       %td=service_price.service.name
       %td=service_price.price
       %td=link_to t('.view'), admin_service_price_path(service_price)
+.float-right
+  = paginate @service_prices
 .btn.btn-light
   = link_to t('.back'), admin_root_path, :class => "btn btn-info"
 .btn.btn-light

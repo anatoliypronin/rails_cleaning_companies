@@ -1,6 +1,6 @@
 class Web::Admin::ServicePricesController < Web::Admin::ApplicationController
   def index
-    @service_prices = ServicePrice.all
+    @service_prices = ServicePrice.all.page(params[:page])
     authorize current_user, policy_class: AdminPolicy
   end
 

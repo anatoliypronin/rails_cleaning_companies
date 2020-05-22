@@ -24,9 +24,16 @@
       %td=company.rating
       %td=company.human_state_name
       %td=link_to t('.view profile'), admin_company_path(company)
+.float-right
+  = paginate @companies
 .btn.btn-light
   = link_to t('.back'), admin_root_path, :class => "btn btn-info"
 .btn.btn-light
   = link_to t('.create new'), new_admin_company_path, :class => "btn btn-info"
+.container.col-md-8.mt-4
+  %div
+    %p.text-center Статистика зарегистрированных компаний
+    = area_chart Article.group_by_day(:created_at).count, max: 8
+
 
 

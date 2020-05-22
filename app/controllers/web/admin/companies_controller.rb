@@ -1,7 +1,7 @@
 class Web::Admin::CompaniesController < Web::Admin::ApplicationController
   def index
     @search = Company.ransack(params[:q])
-    @companies = @search.result
+    @companies = @search.result.page(params[:page])
     authorize current_user, policy_class: AdminPolicy
   end
 

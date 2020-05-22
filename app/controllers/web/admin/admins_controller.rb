@@ -1,6 +1,6 @@
 class Web::Admin::AdminsController < Web::Admin::ApplicationController
   def index
-    @admins = Admin.all
+    @admins = Admin.all.page(params[:page])
     authorize current_user
   end
 

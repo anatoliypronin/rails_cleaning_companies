@@ -99,6 +99,7 @@ GEM
       xpath (~> 3.2)
     case_transform (0.2)
       activesupport
+    chartkick (3.3.1)
     childprocess (3.0.0)
     concurrent-ruby (1.1.6)
     coveralls (0.8.23)
@@ -128,6 +129,8 @@ GEM
     ffi (1.12.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupdate (5.0.0)
+      activesupport (>= 5)
     haml (5.1.2)
       temple (>= 0.8.0)
       tilt
@@ -351,10 +354,12 @@ DEPENDENCIES
   bootstrap (~> 4.4.1)
   byebug
   capybara (>= 2.15)
+  chartkick
   coveralls
   draper
   enumerize
   factory_bot_rails
+  groupdate
   haml-rails (~> 2.0)
   jbuilder (~> 2.7)
   jquery-rails

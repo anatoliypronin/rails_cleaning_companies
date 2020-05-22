@@ -13,8 +13,14 @@
       %td= article.admin.name
       %td= article.created_at
       %td= link_to t('.view article'), admin_article_path(article)
+.float-right
+  = paginate @articles
 .btn.btn-light
   = link_to t('.back'), admin_root_path, :class => "btn btn-info"
 .btn.btn-light
   = link_to t('.create'), new_admin_article_path, :class => "btn btn-info"
+.container.col-md-8.mt-4
+  %div
+    %p.text-center Статистика зарегистрированных публикаций
+    = area_chart Article.group_by_day(:created_at).count, max: 8
 
