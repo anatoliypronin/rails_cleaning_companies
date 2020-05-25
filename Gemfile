@@ -5,13 +5,17 @@ ruby '2.6.3'
 
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'bootstrap', '~> 4.4.1'
+gem 'chartkick'
 gem 'coveralls', require: false
 gem 'draper'
 gem 'enumerize'
+gem 'groupdate'
 gem 'haml-rails', '~> 2.0'
 gem 'jquery-rails'
+gem 'kaminari'
 gem 'pg'
 gem 'phonelib'
+gem 'pundit'
 gem 'rails-observers'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'rubocop-rails', require: false

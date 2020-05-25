@@ -1,4 +1,5 @@
 class Article < ApplicationRecord
+  paginates_per 5
   belongs_to :admin
 
   validates :title, :short_description, :description, presence: true

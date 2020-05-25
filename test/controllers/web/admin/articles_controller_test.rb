@@ -51,4 +51,16 @@ class Web::Admin::ArticleControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     assert_not Article.exists?(@article.id)
   end
+
+  test 'should put not update article admin by editor' do
+    sign_out_as_admin
+    editor = create :admin, :editor
+    sign_in_as_admin(editor)
+    attrs = {}
+    attrs[:title] = generate :title
+    put admin_article_path(@article), params: { article: attrs }
+    assert_response :redirect
+    @article.reload
+    assert_not_equal attrs[:title], @article.title
+  end
 end
