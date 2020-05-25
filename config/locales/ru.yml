@@ -33,6 +33,7 @@ ru:
           list_article: Список Статей
           list_service: Список Услуг
           list_service_price: Список цен
+          list_order: Список заказов
       admins:
         index:
           back: "Назад"
@@ -272,8 +273,9 @@ ru:
         company_id: Компания
       order:
         id: Номер заказа
-        service: Услуга
-        client: Клиент
+        client_name: Имя
+        client_surname: Фамилия
+        service_id: Услуга
         company: Компания
         date_start: Дата создания
         date_end: Дата выполнения

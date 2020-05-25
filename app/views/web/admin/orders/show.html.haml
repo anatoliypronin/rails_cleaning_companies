@@ -1,29 +1,31 @@
 %table.table
   %thead
     %tr
-      %th= Company.human_attribute_name (:id)
-      %th= Company.human_attribute_name (:service)
-      %th= Company.human_attribute_name (:client)
-      %th= Company.human_attribute_name (:phone_number)
-      %th= Company.human_attribute_name (:company)
-      %th= Company.human_attribute_name (:city)
-      %th= Company.human_attribute_name (:price)
-      %th= Company.human_attribute_name (:state)
-      %th= Company.human_attribute_name (:date_start)
-      %th= Company.human_attribute_name (:review)
+      %th= Order.human_attribute_name (:id)
+      %th= Order.human_attribute_name (:service_id)
+      %th= Order.human_attribute_name (:client_name)
+      %th= Order.human_attribute_name (:client_surname)
+      %th= Order.human_attribute_name (:phone_number)
+      %th= Order.human_attribute_name (:company)
+      %th= Order.human_attribute_name (:city)
+      %th= Order.human_attribute_name (:price)
+      %th= Order.human_attribute_name (:state)
+      %th= Order.human_attribute_name (:date_start)
+      %th= Order.human_attribute_name (:review)
   %tbody
     %tr
       %td=@order.id
       %td=@order.service_price.service.name
-      %td=@order.client.name + ' ' + @order.client.surname
+      %td=@order.client.name
+      %td=@order.client.surname
       %td=@order.client.phone_number
       %td=@order.service_price.company.name
       %td=@order.service_price.city.name
       %td=@order.price
-      %td=@order.state
+      %td=@order.human_state_name
       %td=@order.date_start
       %td=@order.review
-= link_to t('orders.back'), admin_orders_path, :class => "btn btn-info"
+= link_to t('.back'), admin_orders_path, :class => "btn btn-info"
 = link_to t('.edit'), edit_admin_order_path(@order.id), :class => "btn btn-info"
 -if @order.can_activate?
   = link_to t('.activate'),admin_order_activate_path(@order.id), method: :put, :class => "btn btn-info"

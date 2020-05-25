@@ -1,8 +1,9 @@
 %table.table
   %tr.table-info
     %th= Order.human_attribute_name (:id)
-    %th= Order.human_attribute_name (:service)
-    %th= Order.human_attribute_name (:client)
+    %th= Order.human_attribute_name (:service_id)
+    %th= Order.human_attribute_name (:client_name)
+    %th= Order.human_attribute_name (:client_surname)
     %th= Order.human_attribute_name (:company)
     %th= Order.human_attribute_name (:city)
     %th= Order.human_attribute_name (:price)
@@ -15,14 +16,15 @@
     %tr{ class:[ ('bg-light' if order.active?), ('bg-danger' if order.rejected?), ('bg-success' if order.completed?), ('bg-warning' if order.pending?) ] }
       %td=order.id
       %td=order.service_price.service.name
-      %td=order.client.name + ' ' + order.client.surname
+      %td=order.client.name
+      %td=order.client.surname
       %td=order.service_price.company.name
       %td=order.service_price.city.name
       %td=order.price
-      %td=order.state
+      %td=order.human_state_name
       %td=order.date_start
       %td=order.date_end
       %td=order.review
       %td=link_to t('.view'), admin_order_path(order)
 .btn.btn-light
-  = link_to t('orders.back'), admin_root_path, :class => "btn btn-info"
+  = link_to t('.back'), admin_root_path, :class => "btn btn-info"
