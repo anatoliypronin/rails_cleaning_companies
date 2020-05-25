@@ -1,11 +1,3 @@
-= link_to t('.list_admin'), admin_admins_path, :class => "btn btn-info"
-= link_to t('.list_company'), admin_companies_path, :class => "btn btn-info"
-= link_to t('.list_client'), admin_clients_path, :class => "btn btn-info"
-= link_to t('.list_city'), admin_cities_path, :class => "btn btn-info"
-= link_to t('.list_article'), admin_articles_path, :class => "btn btn-info"
-= link_to t('.list_service'), admin_services_path, :class => "btn btn-info"
-= link_to t('.list_service_price'), admin_service_prices_path, :class => "btn btn-info"
-= link_to t('.list_order'), admin_orders_path, :class => "btn btn-info"
 .row.mt-2
   .col-md-2.text-center
     = link_to t('.list_article'), admin_articles_path, :class => "btn btn-info btn-block"
@@ -22,4 +14,6 @@
         = link_to t('.list_service'), admin_services_path, :class => "btn btn-info btn-block"
       .mt-1
         = link_to t('.list_service_price'), admin_service_prices_path, :class => "btn btn-info btn-block"
+      .mt-1
+        = link_to t('.list_order'), admin_orders_path, :class => "btn btn-info btn-block"
   .col-md-10
