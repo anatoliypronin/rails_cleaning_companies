@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   namespace :v1 do
     resources :company, only: [:index, :show]
     resources :service_price, only: :index
-    resource :registration, only: :create
   end
  end
 
@@ -50,7 +49,7 @@ Rails.application.routes.draw do
       end
     end
     namespace :client do
-      resource :registration, only: :new
+      resources :registration, only: [:new, :create]
       resource :profile, only: %i[show edit update]
       resource :session, only: %i[new create destroy]
       resources :orders, except: :delete
