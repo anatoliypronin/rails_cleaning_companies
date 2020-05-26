@@ -10,7 +10,7 @@ class ArticlesList extends React.Component {
       .then(response => response.json())
       .then(result => this.setState({
         articles: result,
-        scope: 1
+        scope: 3
       }))
       this.loadMore = this.loadMore.bind(this);
   };
@@ -21,7 +21,7 @@ class ArticlesList extends React.Component {
 
   loadMore() {
     this.setState(old => {
-      return {scope: old.scope + 1}
+      return {scope: old.scope + 2}
     })
   }
 
