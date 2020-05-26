@@ -19,6 +19,15 @@ class ArticlesList extends React.Component {
     this.fetchArticles();
   };
 
+  formatedDateDay(datetime) {
+    return new Date(datetime).getDate();
+  }
+
+  formatedDateMonth(datetime) {
+    var date = new Date(datetime);
+    return date.toLocaleString('en-US', { month: 'long' });
+  }
+
   loadMore() {
     this.setState(old => {
       return {scope: old.scope + 2}
@@ -34,8 +43,8 @@ class ArticlesList extends React.Component {
             { this.state.articles.slice(0, this.state.scope).map(article => (
               <li key={ article.id }>
                 <span className='date'>
-                  <em className='day'>{ new Date(article.created_at).toISOString().slice(8,10) }</em>
-                  <em className='month'>{ new Date(article.created_at).toUTCString().slice(8, 11) }</em>
+                  <em className='day'>{ this.formatedDateDay(article.created_at) }</em>
+                  <em className='month'>{ this.formatedDateMonth(article.created_at) }</em>
                 </span>
                 <div className='article_title'>
                   <a href="#">{ article.title }</a>
