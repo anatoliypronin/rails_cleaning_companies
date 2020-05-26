@@ -19,8 +19,8 @@
       %td=order.date_start
       %td=link_to t('.orders_edit'), edit_client_order_path(order)
   = paginate @orders
-.btn.btn-light
+.btn.btn-info
   = link_to t('.back'), client_profile_path, :class => "btn btn-info"
-.btn.btn-light
+.btn.btn-info
   = link_to t('.orders_new'), new_client_order_path, :class => "btn btn-info"
 

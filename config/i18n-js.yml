@@ -1,0 +1,4 @@
+fallbacks: true
+translations:
+- file: 'public/javascripts/translations.js'
+  only: 'ru.*'

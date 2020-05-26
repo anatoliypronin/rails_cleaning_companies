@@ -1,6 +1,6 @@
 class Api::V1::CompanyController < Api::V1::ApplicationController
   def index
-    company = Company.active.order(name: :asc)
+    company = Company.active.order(rating: :desc)
     render json: company, each_serializer: CompanyIndexSerializer
   end
 
