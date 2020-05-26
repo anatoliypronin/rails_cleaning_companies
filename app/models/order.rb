@@ -3,7 +3,7 @@ class Order < ApplicationRecord
   belongs_to :service_price
   belongs_to :client
 
-  validates :date_start, :review, :price, presence: true
+  validates :date_start, :review, presence: true
   validates :review, numericality: { greater_than_or_equal_to: 0.0, less_than_or_equal_to: 5.0 }
 
   state_machine initial: :pending do
