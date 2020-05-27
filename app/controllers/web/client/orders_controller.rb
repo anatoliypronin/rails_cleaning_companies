@@ -11,8 +11,8 @@ class Web::Client::OrdersController < Web::Client::ApplicationController
     @order = Order.new(orders_params)
     @order.client = current_client
     @order[:date_start] = DateTime.now
-    @order[:price] = ServicePrice.find(orders_params[:service_price_id]).price
     if @order.save
+      @order.update(price: ServicePrice.find(orders_params[:service_price_id]).price)
       redirect_to action: :index
     else
       render action: :new
@@ -29,8 +29,8 @@ class Web::Client::OrdersController < Web::Client::ApplicationController
 
   def update
     @order = current_client.orders.find(params[:id])
-    @order[:price] = ServicePrice.find(orders_params[:service_price_id]).price
     if @order.update(orders_params)
+      @order.update(price: ServicePrice.find(orders_params[:service_price_id]).price)
       redirect_to action: :index
     else
       render action: :edit
