@@ -9,6 +9,26 @@ ru:
     exit: Выход
     home: Главная страница
   cancel: Отмена
+
+  orders:
+    id: id
+    service_name: Сервис
+    company_name: Компания
+    city_name: Город
+    price: Цена
+    state: Состояние
+    date_start: Дата заказа
+    new: Создать заказ
+    back: Назад
+    edit: Редактировать заказ
+
+  auth:
+    cancel: Отмена
+    email: Ваша Почта
+    password: Ваш Пароль
+    authorization: Авторизоваться
+    registation: Зарегистрироваться
+
   
   attributes:
     id: ID
@@ -20,9 +40,15 @@ ru:
   web:
     welcome:
       index:
-        login_admin: Вход администратор
-        login_company: Вход компания
-        login_client: Вход клиент
+        static_data: Статистика сайта
+        services: Сервисы
+        companies: Компании
+        articles: Статьи
+        last_articles: Последние статьи
+        author: Автор
+        load_more: Загрузить еще
+        top_companies: Топ 5 компаний
+        rating: Рейтинг
     admin:
       welcome:
         index:
@@ -159,6 +185,18 @@ ru:
           edit_profile: Редактировать профиль
           create_new_order: Создать заказ
           view_orders: Просмотр всех заказов
+  layouts:
+    welcome:
+      header:
+        title: Мойдодыр
+        title_description: Агрегатор клининговых компаний
+        main_page: Главная
+        company_registration: Зарегистрироваться как компания
+        client_registration: Зарегистрироваться как клиент
+        company_authorization: Авторизоваться как компания
+        client_authorization: Авторизоваться как клиент
+        our_blog: Наш блог
+        service_list: Список сервисов
           
 
   activerecord:

@@ -1,3 +1,3 @@
 class CompanyIndexSerializer < ActiveModel::Serializer
-  attributes :name
+  attributes :name, :rating
 end

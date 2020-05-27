@@ -1,0 +1,27 @@
+#header
+  .title
+    .title_decription
+      %h2=t('.title_description')
+    .title_name
+      %h1=t('.title')
+  .auth
+    %ul
+      %li
+        = react_component('CompanyAuthorization')
+      %li
+        = react_component('ClientAuthorization')
+.clear
+#menu.menu
+  %ul
+    %li
+      =link_to t('.main_page'), '#'
+    %li
+      =link_to t('.client_registration'), '#'
+    %li
+      =link_to t('.company_registration'), '#'
+    %li
+      =link_to t('.our_blog'), '#'
+    %li
+      =link_to t('.service_list'), '#'
+
+  %br{:style => "clear: left"}/
