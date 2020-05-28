@@ -40,6 +40,7 @@ Rails.application.routes.draw do
         end
     end
     namespace :company do
+      resource :sign_up, only: [:new, :create]
       resource :session, only: [:new, :create, :destroy]
       resource :profile, only: [:show, :edit, :update]
       resources :orders, only: [:index, :show] do
@@ -49,7 +50,7 @@ Rails.application.routes.draw do
       end
     end
     namespace :client do
-      resources :registration, only: [:new, :create]
+      resource :sign_up, only: [:new, :create]
       resource :profile, only: %i[show edit update]
       resource :session, only: %i[new create destroy]
       resources :orders, except: :delete

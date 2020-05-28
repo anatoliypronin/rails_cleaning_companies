@@ -23,6 +23,8 @@ ru:
         login_admin: Вход администратор
         login_company: Вход компания
         login_client: Вход клиент
+        sign_up_client: Зарегистрироваться как клиент
+        sign_up_company: Зарегистрироваться как компания
     admin:
       welcome:
         index:
