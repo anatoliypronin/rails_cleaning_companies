@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :article, only: :index
     resources :service, only: :index
     resources :service_price, only: :index
+    resource :client_session, only: :create
   end
  end
 
