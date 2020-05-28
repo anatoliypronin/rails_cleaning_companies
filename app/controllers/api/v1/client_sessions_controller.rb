@@ -8,19 +8,16 @@ class Api::V1::ClientSessionsController < Api::V1::ApplicationController
     if sign_in_form.sms_code.present?
       if sign_in_form.sms_code == session[:verification_code]
         client_sign_in(sign_in_form.client)
-
         render json: { message: t('.auth_success') }, status: :ok
       else
         render json: { message: t('.incorrect_sms_code') }, status: :unprocessable_entity
       end
-    else
-      if sign_in_form.client.present?
-        session[:verification_code] = SmsService.send_sms_code(sign_in_form.phone_number)
+    elsif sign_in_form.client.present?
+      session[:verification_code] = SmsService.send_sms_code(sign_in_form.phone_number)
 
-        render json: { message: t('.sms_sent') }, status: :ok
-      else
-        render json: { message: t('.client_not_found') }, status: :not_found
-      end
+      render json: { message: t('.sms_sent') }, status: :ok
+    else
+      render json: { message: t('.client_not_found') }, status: :not_found
     end
   end
 
