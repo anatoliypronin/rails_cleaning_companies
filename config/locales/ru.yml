@@ -1,5 +1,5 @@
 ru:
-
+  varification_code: "Проверочный код %{code}"
   client_mailer:
     welcome:
       subject: "Добро пожаловать!"
@@ -197,7 +197,16 @@ ru:
         client_authorization: Авторизоваться как клиент
         our_blog: Наш блог
         service_list: Список сервисов
-          
+  api:
+    v1:
+      client_sessions:
+        create:
+          bad_params: Неверные параметры
+          empty_phone: Пустой номер телефона
+          auth_success: Авторизация была успешна
+          incorrect_sms_code: Неверный код подтверждения
+          sms_sent: Смс была отправлена
+          client_not_found: Клиента с таким номером телефона не существует
 
   activerecord:
     state_machines:
