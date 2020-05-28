@@ -7,6 +7,11 @@ module SmsService
       code = rand(1000..9999).to_s
       message = I18n.t('verification_code', code: code)
       Gateways::SmsGateway::Company.send_sms_message(phone_number, message)
+
+      #message = I18n.t('.verification_code', code: code)
+
+      Gateways::SmsGateway::Client.send_sms_message(phone_number, message)
+
       code
     end
   end

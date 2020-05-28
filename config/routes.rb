@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :service, only: :index
     resources :service_price, only: :index
     resource :session_company, only: :create
+    resource :client_session, only: :create
   end
  end
 
