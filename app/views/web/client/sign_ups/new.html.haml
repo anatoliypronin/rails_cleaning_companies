@@ -1,5 +1,7 @@
 = simple_form_for :client, url: client_sign_up_path do |f|
-  = f.input :company
+  = f.input :name
+  = f.input :surname
   = f.input :email
+  = f.input :phone_number
   = f.input :password
-  = f.button :button, class: "btn btn-info"
+  = f.button :submit, class: 'btn btn-info'
