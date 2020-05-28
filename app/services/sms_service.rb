@@ -5,7 +5,7 @@ module SmsService
       return TEST_VERIFICATION_CODE if Rails.env.test?
 
       code = rand(1000..9999).to_s
-      message = "Проверочный код: #{code}"
+      message = I18n.t('verification_code', code: code)
       Gateways::SmsGateway::Company.send_sms_message(phone_number, message)
       code
     end

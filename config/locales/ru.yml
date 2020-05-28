@@ -1,5 +1,5 @@
 ru:
-
+  verification_code: "Проверочный код %{code}" 
   client_mailer:
     welcome:
       subject: "Добро пожаловать!"
