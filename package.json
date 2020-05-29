@@ -14,7 +14,11 @@
     "react-dom": "^16.13.1",
     "react-drag-drawer": "^3.3.3",
     "react-motion": "^0.5.2",
+<<<<<<< HEAD
     "react-yandex-maps": "^4.4.0",
+=======
+    "react-router-dom": "^5.2.0",
+>>>>>>> 04c362353081624ad5021a445e39043e57aa5746
     "react_ujs": "^2.6.1",
     "reactjs-popup": "^1.5.0",
     "turbolinks": "^5.2.0"

@@ -443,6 +443,8 @@ img.right {
 	margin-bottom: 50px;
 }
 
+
+
 /*-----------------------------------------------------------------------------------*/
 /*	POPUP
 /*-----------------------------------------------------------------------------------*/
@@ -646,4 +648,65 @@ ul.top_companies li em.place {
 	border: 1px solid black;
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
 	border-radius: 2px;
+}
+/*	POSTS
+/*-----------------------------------------------------------------------------------*/
+
+.post {
+	padding-bottom: 45px;
+	margin-bottom: 45px;
+	border-bottom: 1px solid #454545;
+}
+.post-date .day {
+	font-size: 52px;
+	float: left;
+	padding-right: 10px;
+	line-height: 42px;
+}
+.post-date .month {
+	display: block;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+.post-date .year {
+	display: block;
+	font-size: 18px;
+	line-height: 15px;
+	padding-top: 7px;
+}
+
+.post-author {
+	float: right;
+	color: #252222;
+  font-size: 14px;
+  text-decoration: underline;
+}
+.post-title {
+	width: 435px;
+	float: right;
+}
+.post-title h1 {
+	padding: 0 0 7px 0;
+	color: #252222;
+	margin-top: -3px;
+}
+
+.post-title a {
+	color: #252222;
+}
+.post-info:after {
+	content: '';
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.post iframe {
+	margin-bottom:10px;
+}
+.post-meta {
+	font-family: 'CharisSILItalic';
+	font-size: 12px;
+	height: 13px;
+	display: block;
 }

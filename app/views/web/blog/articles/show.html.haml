@@ -1,0 +1,9 @@
+#container
+  .blog
+    .content
+      = react_component('BlogPost')
+    .sidebar.content__right.col-md-4
+      = react_component('ArticlesList')
+      = react_component('CompaniesTopList')
+      = react_component('StaticData')
+  .clear
