@@ -13,7 +13,7 @@ class Company < ApplicationRecord
   validates :name, length: { maximum: 30 }
   validates :email, uniqueness: true, email: true
   validates :phone_number, phone: true
-  validates :rating, inclusion: 0..5
+  validates :rating, inclusion: 0..5, on: :update
 
   has_secure_password validations: false
 

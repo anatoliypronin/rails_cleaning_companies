@@ -58,8 +58,4 @@ module AuthHelper
   def authenticate_client!
     redirect_to new_client_session_path unless client_sign_in?
   end
-
-  #def unauthenticated_client!
-  #redirect_to root_path if client_sign_in?
-  #end
 end

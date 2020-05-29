@@ -33,14 +33,6 @@ class CompanyTest < ActiveSupport::TestCase
     assert_nil created_company
   end
 
-  test 'should not create company with wrong raiting range' do
-    company = build :company, rating: 6
-    company.save
-
-    created_company = Company.last
-    assert_nil created_company
-  end
-
   test 'should deleted company' do
     company = create :company
     company.del

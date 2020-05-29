@@ -1,5 +1,5 @@
 class Web::Company::SignUpsController < Web::Company::ApplicationController
-  skip_before_action :authenticate_company!, only: [:new, :create]
+  skip_before_action :authenticate_company!, only: %i[new create]
   def new; end
 
   def create
@@ -15,7 +15,7 @@ class Web::Company::SignUpsController < Web::Company::ApplicationController
   private
 
   def companies_attrs
-    params.require(:company).permit(:name, :email, :password, :requisites, :description, :rating, :phone_number,
+    params.require(:company).permit(:name, :email, :password, :requisites, :description, :phone_number,
                                     city_ids: [], service_price_id: [])
   end
 end
