@@ -33,7 +33,6 @@ ru:
     authorization: Авторизоваться
     registation: Зарегистрироваться
 
-  
   attributes:
     id: ID
     email: Почта
