@@ -58,33 +58,26 @@ class ClientAuthorization extends React.Component {
           {this.state.isVisible &&
             <div className='popup'>
               <div className='form_container'>
-                <form className='form_contact' onSubmit={this.handleSubmitPhone}>
+                <form className='form_contact' onSubmit={this.state.isSmsSend ? this.handleSubmitSmsCode : this.handleSubmitPhone }>
                   <h3>{ I18n.t('layouts.welcome.header.client_authorization') }</h3>
                   {
-                    !this.state.isSmsSend &&
+                    !this.state.isSmsSend ?
                     <fieldset>
                       <input placeholder={ I18n.t('auth.phone_number') } value={this.state.phone} onChange={this.handleChangePhone} type="tel" required/>
-                    </fieldset>
-                  }
-                  {
-                    !this.state.isSmsSend &&
-                    <fieldset>
-                      <button name="submit" type="submit" className='form_button_submit'>{ I18n.t('auth.sms_send') }</button>
-                    </fieldset>
-                  }
-                  {
-                    this.state.isSmsSend &&
+                    </fieldset> :
                     <fieldset>
                       <input placeholder={ I18n.t('auth.sms_code') } value={this.state.sms_code} onChange={this.handleChangeSmsCode} type="text" required/>
                     </fieldset>
                   }
                   {
-                    this.state.isSmsSend &&
+                    !this.state.isSmsSend ?
+                    <fieldset>
+                      <button name="submit" type="submit" className='form_button_submit'>{ I18n.t('auth.sms_send') }</button>
+                    </fieldset> :
                     <fieldset>
                       <button name="submit" type="submit" className='form_button_submit'>{ I18n.t('auth.sms_accept') }</button>
                     </fieldset>
                   }
-
                   <fieldset>
                     <button name="submit" type="submit" className='form_button_cancel' onClick={this.onToggle} >{ I18n.t('auth.cancel') }</button>
                   </fieldset>
