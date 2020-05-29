@@ -47,7 +47,7 @@ class ArticlesList extends React.Component {
                   <em className='month'>{ this.formatedDateMonth(article.created_at) }</em>
                 </span>
                 <div className='article_title'>
-                  <a href="#">{ article.title }</a>
+                  <a href={"/blog/articles/" + article.id}>{ article.title }</a>
                 </div>
                 <div className='article_author'>
                   { I18n.t('web.welcome.index.author') }: { article.author.name }
