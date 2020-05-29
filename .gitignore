@@ -19,6 +19,7 @@
 /public/assets
 .byebug_history
 
+/public/javascripts/translations.js
 /public/packs
 /public/packs-test
 /node_modules
