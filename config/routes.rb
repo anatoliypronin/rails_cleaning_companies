@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :company, only: [:index, :show]
     resources :article, only: :index
     resources :service, only: :index
+    resources :city, only: :index
     resources :service_price, only: :index
     resource :client_session, only: :create
   end
