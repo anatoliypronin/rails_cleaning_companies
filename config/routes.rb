@@ -3,7 +3,7 @@ Rails.application.routes.draw do
  namespace :api do
   namespace :v1 do
     resources :company, only: [:index, :show]
-    resources :article, only: :index
+    resources :article, only: [:index, :show]
     resources :service, only: :index
     resources :service_price, only: :index
     resource :client_session, only: :create
@@ -55,6 +55,9 @@ Rails.application.routes.draw do
       resource :profile, only: %i[show edit update]
       resource :session, only: %i[new create destroy]
       resources :orders, except: :delete
+    end
+    namespace :blog do
+      resources :articles, only: %i[index show]
     end
   end
 end
