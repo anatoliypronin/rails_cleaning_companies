@@ -6,10 +6,16 @@
       %h1=t('.title')
   .auth
     %ul
-      %li
-        = react_component('CompanyAuthorization')
-      %li
-        = react_component('ClientAuthorization')
+      - if client_sign_in?
+        %li
+          =link_to current_client.email, '#', class:'navbar-brand'
+        %li
+          =link_to t('header.exit'), client_session_path, method: :delete, class:'navbar-brand'
+      - else
+        %li
+          = react_component('CompanyAuthorization')
+        %li
+          = react_component('ClientAuthorization')
 .clear
 #menu.menu
   %ul
