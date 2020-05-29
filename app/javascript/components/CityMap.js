@@ -22,9 +22,8 @@ class CityMap extends React.Component {
       )))
   };
 
-
   componentDidMount() {
-    // this.fetchCities();
+    this.fetchCities();
   };
 
   render(){
@@ -41,9 +40,11 @@ class CityMap extends React.Component {
 
           }}
         >
-          {/* {this.state.cities_geometry.map(geometry => (
-            <Placemark geometry={[geometry.lat, geometry.lng]} />
-          ))} */}
+          {
+            this.state.cities_geometry.map(geometry => (
+              <Placemark geometry={[geometry.lat, geometry.lng]} />
+            ))
+          }
           <ZoomControl options={{ float: 'right' }} />
 
         </Map>
