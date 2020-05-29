@@ -7,6 +7,7 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'bootstrap', '~> 4.4.1'
 gem 'chartkick'
 gem 'coveralls', require: false
+gem 'curb'
 gem 'draper'
 gem 'enumerize'
 gem 'groupdate'
