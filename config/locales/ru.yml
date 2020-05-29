@@ -26,10 +26,13 @@ ru:
     cancel: Отмена
     email: Ваша Почта
     password: Ваш Пароль
+    phone_number: Ваш Номер Телефона
+    sms_send: Отправить СМС
+    sms_accept: Подтвердить
+    sms_code: Проверочный СМС Код
     authorization: Авторизоваться
     registation: Зарегистрироваться
 
-  
   attributes:
     id: ID
     email: Почта
