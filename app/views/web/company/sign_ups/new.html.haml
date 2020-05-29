@@ -1,8 +1,8 @@
 <h2>Поля, отмеченные звездочкой(*), обязательны для заполнения.</h2>
-= simple_form_for :company, url: company_sign_up_path do |f|
+= simple_form_for @company=Company.new, url: company_sign_up_path do |f|
   = f.input :name
   = f.input :email
-  = f.input :city
+  = f.association :cities, as: :check_boxes
   = f.input :password
   = f.input :requisites
   = f.input :description

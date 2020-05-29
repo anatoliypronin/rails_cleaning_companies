@@ -11,8 +11,11 @@ class Web::Client::SignUpsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should post create new client' do
-    sign_in_as_client(@client)
+    client_attrs = attributes_for :client
+    post client_sign_up_path, params: { client: client_attrs }
     assert_response :redirect
-    assert_equal session[:client_id], @client.id
+
+    client = Client.last
+    assert_equal client_attrs[:email], client.email
   end
 end

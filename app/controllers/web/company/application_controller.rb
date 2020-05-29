@@ -1,5 +1,5 @@
 class Web::Company::ApplicationController < Web::ApplicationController
-  layout 'company/application'
   before_action :authenticate_company!
-  helper_method :current_company
+  helper_method %i[current_company company_sign_in?]
+  layout 'company/application'
 end
