@@ -185,6 +185,9 @@ ru:
           edit_profile: Редактировать профиль
           create_new_order: Создать заказ
           view_orders: Просмотр всех заказов
+      sign_ups:
+        new:
+          sign_ups_new: Зарегистрироваться
   layouts:
     welcome:
       header:
@@ -330,6 +333,7 @@ ru:
         service_price: Выберите сервис
         city: Город
         price: Цена
+
   views:
     pagination:
       first: "&laquo; Первая"
