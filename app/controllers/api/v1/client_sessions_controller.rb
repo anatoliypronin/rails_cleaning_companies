@@ -1,4 +1,5 @@
 class Api::V1::ClientSessionsController < Api::V1::ApplicationController
+  skip_before_action :verify_authenticity_token
   def create
     return render json: { message: t('.bad_params') }, status: :bad_request if params.blank? || params[:client].blank?
 

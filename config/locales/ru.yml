@@ -26,10 +26,13 @@ ru:
     cancel: Отмена
     email: Ваша Почта
     password: Ваш Пароль
+    phone_number: Ваш Номер Телефона
+    sms_send: Отправить СМС
+    sms_accept: Подтвердить
+    sms_code: Проверочный СМС Код
     authorization: Авторизоваться
     registation: Зарегистрироваться
 
-  
   attributes:
     id: ID
     email: Почта
@@ -207,6 +210,13 @@ ru:
           incorrect_sms_code: Неверный код подтверждения
           sms_sent: Смс была отправлена
           client_not_found: Клиента с таким номером телефона не существует
+      session_companies:
+          Bad_params: Неверные параметры
+          PhoneNumber_is_empty: Пустой номер телефона
+          Auth_success: Авторизация успешна
+          Incorrect_sms_code: Неверный код подтверждения
+          Sms_sent: Смс была отправлена
+          Company_not_found: Компании с таким номером телефона не существует
 
   activerecord:
     state_machines:
