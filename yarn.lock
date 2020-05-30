@@ -6391,16 +6391,6 @@ react-motion@^0.5.2, react-motion@~0.5.2:
     prop-types "^15.5.8"
     raf "^3.1.0"
 
-<<<<<<< HEAD
-react-yandex-maps@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/react-yandex-maps/-/react-yandex-maps-4.4.0.tgz#42b116b94675dd3845fc808110f5e981fc3e7000"
-  integrity sha512-AdLah4/xtCXFvuVAA3S76k6/otMsGnDp8G6Z5ku6rF4Rag3cSfv33GZOoDKQXXY4O7QefNFY3v+BWoDuzKSZvQ==
-  dependencies:
-    create-react-context "^0.2.3"
-    prop-types "^15.7.2"
-    react-display-name "^0.2.4"
-=======
 react-router-dom@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-5.2.0.tgz#9e65a4d0c45e13289e66c7b17c7e175d0ea15662"
@@ -6429,7 +6419,15 @@ react-router@5.2.0:
     react-is "^16.6.0"
     tiny-invariant "^1.0.2"
     tiny-warning "^1.0.0"
->>>>>>> 04c362353081624ad5021a445e39043e57aa5746
+
+react-yandex-maps@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/react-yandex-maps/-/react-yandex-maps-4.4.0.tgz#42b116b94675dd3845fc808110f5e981fc3e7000"
+  integrity sha512-AdLah4/xtCXFvuVAA3S76k6/otMsGnDp8G6Z5ku6rF4Rag3cSfv33GZOoDKQXXY4O7QefNFY3v+BWoDuzKSZvQ==
+  dependencies:
+    create-react-context "^0.2.3"
+    prop-types "^15.7.2"
+    react-display-name "^0.2.4"
 
 react@^16.13.1:
   version "16.13.1"

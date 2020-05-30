@@ -52,6 +52,8 @@ ru:
         load_more: Загрузить еще
         top_companies: Топ 5 компаний
         rating: Рейтинг
+        find_us: Вы можете найти нас здесь
+
     admin:
       welcome:
         index:
