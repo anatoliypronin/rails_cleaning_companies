@@ -8,7 +8,7 @@ FactoryBot.define do
   end
 
   sequence :surname, aliases: %i[patronymic] do
-    "teststring"
+    'teststring'
   end
 
   sequence :text, aliases: %i[requisites description short_description] do |n|
