@@ -4,7 +4,7 @@ class Admin < ApplicationRecord
 
   has_many :article, dependent: :nullify
 
-  LETTER_REGEX = /\A[а-яА-ЯёЁa-zA-Z]+\z/
+  LETTER_REGEX = /\A[а-яА-ЯёЁa-zA-Z]+\z/.freeze
 
   validates :name, :surname, :patronymic, :email, :role, presence: true
   validates :password, presence: true, length: { minimum: 6 }, on: :create
